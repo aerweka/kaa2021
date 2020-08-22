@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-9" id="welcome">
 				<h1 id="welcometext">Welcome Back, Dea!</h1>
-				<h3 id="welcomemenu">Data Pendaftar</h3>
+				<h3 id="welcomemenu">Verifikasi Pembayaran</h3>
 			</div>
 			<!-- <div class="col-3">
 				<div class="card card-body" id="card-jam">
@@ -27,7 +27,7 @@
 	</div>
 </div>
 <div class="row ml-3">
-	<h1 class="judulhalaman">Pendaftar</h1>
+	<h1 class="judulhalaman">Konfirmasi Pembayaran</h1>
 </div>
 <nav id="nav-data-pendaftar">
 	<div class="nav nav-tabs" id="nav-tab-pendaftar" role="tablist">
@@ -64,11 +64,12 @@
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->
+		  	@foreach($datasemua as $d)
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center">
-				<div class="col-2"><span class="nopendaftaran">P0000001</span></div>
-				<div class="col-3"><span class="nama">Elsa Jihan Salsabila</span></div>
-				<div class="col-2"><span class="univ">Universitas Airlangga</span></div>
-				<div class="col-2"><span class="email">Rp 150.000</span></div>
+				<div class="col-2"><span class="nopendaftaran">{{$d->id_pendaftaran}}</span></div>
+				<div class="col-3"><span class="nama">{{$d->nama_pendaftar}}</span></div>
+				<div class="col-2"><span class="univ">{{$d->asal_univ_pendaftar}}</span></div>
+				<div class="col-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
 				<div class="col-2">
 					<div class="row mb-2 ">
 						<span class="badge badge-success statusdaftar">Menunggu Verifikasi</span>
@@ -80,37 +81,34 @@
 				  <div class="card card-body card-drop">
 				  	<div class="row">
 					    <div class="col-4">
-					    	<div class="row drop-nopendaftar" id="drop-nopendaftar3">P00000001</div>
-					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>Elsa Jihan Salsabila</div>
-					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>elsajihans@gmail.com</div>
+					    	<div class="row drop-nopendaftar" id="drop-nopendaftar3">{{$d->id_pendaftaran}}</div>
+					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
+					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
 					    	<div class="row">
-					    		<div class="col-6 dropdata drop-notelp p-0" id="drop-notelp3"><span class="icon icon-telp"></span>081333654616</div>
-					    		<div class="col-6 dropdata drop-line p-0" id="drop-line3"><span class="icon icon-line"></span>rizalfahm</div>
+					    		<div class="col-6 dropdata drop-notelp p-0" id="drop-notelp3"><span class="icon icon-telp"></span>{{$d->no_telepon_pendaftar}}</div>
+					    		<div class="col-6 dropdata drop-line p-0" id="drop-line3"><span class="icon icon-line"></span>{{$d->id_line_pendaftar}}</div>
 					    	</div>
-					    	<div class="row dropdata drop-kota" id="drop-kota3"><span class="icon icon-kota"></span>Gresik</div>
-					    	<div class="row dropdata drop-univ" id="drop-univ3"><span class="icon icon-univ"></span>Universitas Airlangga</div>
+					    	<div class="row dropdata drop-kota" id="drop-kota3"><span class="icon icon-kota"></span>{{$d->asal_daerah}}</div>
+					    	<div class="row dropdata drop-univ" id="drop-univ3"><span class="icon icon-univ"></span>{{$d->asal_univ_pendaftar}}</div>
 					    	<div class="row dropdata">
 					    		Telah melakukan pembayaran menggunakan rekening
 					    	</div>
 					    	<div class="row dropdata">
-					    		<span><b>Bank BCA<br>
-					    			Atas Nama : Elsa Jihan<br>
-					    			No. Rek : 08134423213
+					    		<span><b>{{$d->bank_asal}}<br>
+					    			Atas Nama : {{$d->atas_nama_rekening}}<br>
+					    			No. Rek : {{$d->nomor_rekening}}
 					    		</b>
 					    		</span>
 					    		<br>
 					    	</div>
 					    	<div class="row dropdata">
-					    		<span>Pada <b>16/08/2020 20:45</b></span>
+					    		<span>Pada <b>{{$d->tanggal_pembayaran}}</b></span>
 					    	</div>
 					    </div>
 					    <div class="col-4">
 					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
 					    </div>
 					    <div class="col-4">
-					    	<div class="row mb-5">
-					    		Keterangan :
-					    	</div>
 					    	<div class="row">
 					    		<div class="card card-body card-drop card-berkas" id="berkas3">
 					    		<div class="row justify-content-center">
@@ -139,6 +137,7 @@
 				<!-- End of Button dan Card yang benar -->
 			</div>
 			<div class="dropdown-divider"></div>
+			@endforeach
 			<!-- End of Data Pendaftar -->
 	  	</div>
 	  </div>
