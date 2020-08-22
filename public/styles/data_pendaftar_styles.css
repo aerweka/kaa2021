@@ -48,6 +48,7 @@ input{
 }
 
 .drop[aria-expanded="true"]{
+	cursor: pointer;
 	width: 30px;
 	height: 30px;
 	display: inline-block;
@@ -57,6 +58,7 @@ input{
 }
 
 .drop[aria-expanded="false"]{
+	cursor: pointer;
 	width: 30px;
 	height: 30px;
 	display: inline-block;

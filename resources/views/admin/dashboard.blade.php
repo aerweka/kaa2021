@@ -60,8 +60,8 @@
 					<div class="card-body">
 						<div class="row p-0">
 							<div class="col p-0">
-								<h2 class="angka-kecil mb-1">1000</h2>
-								<h2 class="orang-kecil">orang</h2>
+								<h2 class="angka-kecil mb-1">{{$datacard[1]}}</h2>
+								<h2 class="orang-kecil">pendaftar</h2>
 							</div>
 							<div class="col p-0 m-0">
 								<img class="p-0 card-img-top-kecil" src="{{asset('/assets/icons/pendaftar.svg')}}">
@@ -77,8 +77,8 @@
 					<div class="card-body">
 						<div class="row p-0">
 							<div class="col p-0">
-								<h2 class="angka-kecil mb-1">1000</h2>
-								<h2 class="orang-kecil">orang</h2>
+								<h2 class="angka-kecil mb-1">{{$datacard[2]}}</h2>
+								<h2 class="orang-kecil">konfirmasi pembayaran</h2>
 							</div>
 							<div class="col p-0 m-0">
 								<img class="p-0 card-img-top-kecil konfirmasi" src="{{asset('/assets/icons/konfirmasi.svg')}}">
@@ -94,16 +94,14 @@
 					<div class="card-body">
 						<div class="row p-0">
 							<div class="col p-0">
-								<h2 class="angka-kecil mb-1">1000</h2>
-								<h2 class="orang-kecil">orang</h2>
+								<h2 class="angka-kecil mb-1">{{$datacard[3]}}</h2>
+								<h2 class="orang-kecil">pembayaran diterima</h2>
 							</div>
 							<div class="col p-0 m-0">
 								<img class="p-0 card-img-top-kecil" src="{{asset('/assets/icons/verifikasi.svg')}}">
 							</div>
 						</div>
-
 					</div>
-					
 				</div>
 			</div>
 		</div>
@@ -115,7 +113,7 @@
 					<div class="col p-0" id="peserta">
 						<h1 class="judulcard">Jumlah Peserta</h1>
 						<h3 id="capt-peserta"><i>Pendaftar yang telah mengisi data dengan lengkap.</i></h3>
-						<h2 class="angka">1000</h2>
+						<h2 class="angka">{{$datacard[0]}}</h2>
 						<h2 class="orang">orang</h2>
 						<button class="btn text-right download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button>
 					</div>
@@ -133,29 +131,27 @@
 					<h1 class="judulcard">Konfirmasi Pembayaran</h1>
 				</div>
 				<div class="col-3 align-self-end">
-					<h1 class="viewall text-right">View All</h1>
+					<h1 class="viewall text-right"><a href="{{url('/admin/verifikasi')}}">View All</a></h1>
 				</div>
 			</div>
+			@foreach($datakonfirmasi as $d)
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center">
 				<div class="col-1"><span class="foto"></span></div>
-				<div class="col-4"><span class="nama">Nur Aini</span></div>
-				<div class="col-3"><span class="total">Rp 150.000</span></div>
-				<div class="col-3"><span class="badge badge-danger status">Belum Diverifikasi</span></div>
+				<div class="col-4"><span class="nama">{{$d->nama_pendaftar}}</span></div>
+				<div class="col-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-3"><span class="badge
+					@if($d->status_pembayaran)badge-success
+					@else
+					badge-danger
+					@endif
+					status">
+					@if($d->status_pembayaran)Diterima
+					@else
+					Belum Diverifikasi
+					@endif</span></div>
 			</div>
 			<div class="dropdown-divider"></div>
-			<div class="row data-row-konfirmasi justify-content-between align-items-center">
-				<div class="col-1"><span class="foto"></span></div>
-				<div class="col-4"><span class="nama">Nur Aini</span></div>
-				<div class="col-3"><span class="total">Rp 150.000</span></div>
-				<div class="col-3"><span class="badge badge-danger status">Belum Diverifikasi</span></div>
-			</div>
-			<div class="dropdown-divider"></div>
-			<div class="row data-row-konfirmasi justify-content-between align-items-center">
-				<div class="col-1"><span class="foto"></span></div>
-				<div class="col-4"><span class="nama">Nur Aini</span></div>
-				<div class="col-3"><span class="total">Rp 150.000</span></div>
-				<div class="col-3"><span class="badge badge-success status">Diterima</span></div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 	<div class="col-lg-12 col-xl-6 pr-2">
@@ -165,68 +161,61 @@
 					<h1 class="judulcard">Pendaftar</h1>
 				</div>
 				<div class="col-3 align-self-end">
-					<h1 class="viewall text-right">View All</h1>
+					<h1 class="viewall text-right"><a href="{{url('/admin/pendaftar')}}">View All</a></h1>
 				</div>
 			</div>
+			@foreach($datapendaftar as $d)
 			<div class="row mt-3 data-row-konfirmasi align-items-center justify-content-betweenu">
 				<div class="col-1 mr-4"><span class="foto"></span></div>
 				<div class="col-4">
 					<div class="row">
-						<span class="nama">Nur Aini</span>
+						<span class="nama">{{$d->nama_pendaftar}}</span>
 					</div>
 					<div class="row">
-						<span class="univ">Universitas Airlangga</span>
+						<span class="univ">{{$d->asal_univ_pendaftar}}</span>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="row mb-2 justify-content-end">
-						<span class="badge badge-success statusdaftar"></span>
+						<span class="badge
+						@if($d->status_pembayaran!=null)
+							@if($d->status_pembayaran == 1)
+							badge-success
+							@else
+							badge-danger
+							@endif
+						@else
+						badge-danger
+						@endif
+						statusdaftar">
+							@if(!($d->status_pembayaran!=null))
+								@if($d->status_pembayaran == 1)
+								Diterima
+								@else
+								Menunggu Verifikasi
+								@endif
+							@else
+							Belum Konfirmasi
+							@endif
+						</span>
 					</div>
 					<div class="row justify-content-end">
-						<span class="badge badge-success statusdata">Data Lengkap</span>
+						<span class="badge @if($d->status_pendaftaran == 1)
+							badge-success
+							@else
+							badge-danger
+							@endif statusdata">
+							@if($d->status_pendaftaran)
+							Data Lengkap
+							@else
+							Data belum lengkap
+							@endif
+						</span>
 					</div>
 				</div>
 			</div>
 			<div class="dropdown-divider"></div>
-			<div class="row data-row-konfirmasi align-items-center">
-				<div class="col-1 mr-4"><span class="foto"></span></div>
-				<div class="col-4">
-					<div class="row">
-						<span class="nama">Nur Aini</span>
-					</div>
-					<div class="row">
-						<span class="univ">Universitas Airlangga</span>
-					</div>
-				</div>
-				<div class="col-6 text-right">
-					<div class="row mb-2 justify-content-end">
-						<span class="badge badge-success statusdaftar">Pembayaran Diterima</span>
-					</div>
-					<div class="row justify-content-end">
-						<span class="badge badge-danger statusdata">Data Belum Lengkap</span>
-					</div>
-				</div>
-			</div>
-			<div class="dropdown-divider"></div>
-			<div class="row data-row-konfirmasi align-items-center">
-				<div class="col-1 mr-4"><span class="foto"></span></div>
-				<div class="col-4">
-					<div class="row">
-						<span class="nama">Nur Aini</span>
-					</div>
-					<div class="row">
-						<span class="univ">Universitas Airlangga</span>
-					</div>
-				</div>
-				<div class="col-6 text-right">
-					<div class="row mb-2 justify-content-end">
-						<span class="badge badge-success statusdaftar">Sudah Konfirmasi</span>
-					</div>
-					<div class="row justify-content-end">
-						<span class="badge badge-danger statusdata">Data Belum Lengkap</span>
-					</div>
-				</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </div>
