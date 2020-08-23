@@ -9,16 +9,20 @@
 <body>
     <div class="background">
         <q class="lgs">Let's Get Started</q>
-        <form>
+        <form method="post" action="/postregister">
             <div class="container">
                     <h2 class="signin">REGISTER</h2>
-                    <input type="text" class="name" placeholder="Name">
+                    {{ csrf_field() }}
+                    <input type="text" class="nama_pendaftar" id="nama_pendaftar"
+                    placeholder="Masukan Nama" name="nama_pendaftar">
                     <br><br>
-                    <input type="text" class="univercity" placeholder="Univercity">
+                    <input type="text" class="asal_univ_pendaftar" id="asal_univ_pendaftar"
+                    placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar">
                     <br><br>
-                    <input type="email" class="email" placeholder="Email">
+                    <input type="email" class="email_pendaftar" id="email_pendaftar"
+                    placeholder="Masukan Email" name="email_pendaftar">
                     <br><br>
-                    <a type="submit" class="btn" href="/peserta/dashboard_user">Sign Up</a>
+                    <button type="submit" class="btn">Sign Up</button>
                     <p>Already Have Account? <a href="/login">Click Here</p>
                 </div>
             </form>

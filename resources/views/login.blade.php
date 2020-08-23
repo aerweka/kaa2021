@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="background">
-        <form>
+        <form  method="POST" action="/postlogin">
             <div class="container">
                     <h2 class="signin">LOGIN</h2>
                     <input type="text" class="username" placeholder="Username">
                     <br><br>
                     <input type="password" class="password" placeholder="Password">
                     <br><br>
-                    <a type="submit" class="btn" href="/peserta/dashboard_user">Sign In</a>
+                    <button type="submit" class="btn">Sign In</button>
                     <p>Don't Have Account? <a href="/register">Click Here</p>
                 </div>
             </form>
