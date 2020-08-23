@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/landingpage');
 });
+Route::get('/semnas', function () {
+    return view('/semnas');
+});
+// Route::group(['middleware' => 'auth'], function () {});
+// ->name('login');
+// ->name('register');
+
+route::get('/login', 'AuthController@login');
+// route::post('/postlogin', 'AuthController@postlogin');
+// route::get('/logout', 'AuthController@logout');
+route::get('/register', 'AuthController@register');
+// route::post('/postregister', 'AuthController@postregister');
+
+route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
+route::get('/peserta/alur_pembayaran', 'PesertaController@alur_pembayaran');
+route::get('/peserta/konfirmasi_pembayaran', 'PesertaController@konfirmasi_pembayaran');
+route::get('/peserta/form_pendaftaran', 'PesertaController@form_pendaftaran');
+route::get('/peserta/cetak_kartu_peserta', 'PesertaController@cetak_kartu_peserta');
+
+
+route::post('/peserta/form_pendaftaran', 'PesertaController@store_pendaftaran');
