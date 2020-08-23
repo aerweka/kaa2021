@@ -10,19 +10,6 @@
 				<h1 id="welcometext">Welcome Back, Dea!</h1>
 				<h3 id="welcomemenu">Data Pendaftar</h3>
 			</div>
-			<!-- <div class="col-3">
-				<div class="card card-body" id="card-jam">
-					<div class="row px-2">
-						<div class="col-4">
-							<div class="row px-1" id="hari">Sun,</div>
-							<div class="row px-1" id="tgl">20 Aug</div>
-						</div>
-						<div class="col-8 p-0">
-							<h1 id="jam" class="text-center align-middle">13:45</h1>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</div>
 </div>
@@ -46,21 +33,21 @@
 	  	<div class="container-fluid">
 	  		<!-- Search dan Tombol Download -->
 	  		<div class="row justify-content-between mb-4" class="atas-table-home">
-	  			<div class="col-4">
+	  			<div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 	  				<form id="search-all">
 	  					<input type="text" name="search-all" placeholder="Search" id="searchall">
 	  				</form>
 	  			</div>
-	  			<div class="col-4 text-right">
-	  				<a href="{{url('/admin/export/semua')}}"><button class="btn text-right download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
+	  			<div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-right">
+	  				<a href="{{url('/admin/export/semua')}}"><button class="btn text-right download-btn px-4 mt-3 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
 	  			</div>
 		  	</div>
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-2 col-md-3">Nama</div>
-		  		<div class="col-2 col-lg-2 col-md-3">Asal Universitas</div>
+		  		<div class="col-2 col-lg-2 col-md-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Asal Universitas</div>
 		  		<div class="col-2 d-none d-xl-block">Email</div>
 		  		<div class="col-2 col-lg-3 col-md-3">Status</div>
 		  	</div>
@@ -68,9 +55,9 @@
 		  	<!-- Data Pendaftar -->
 		  	@foreach($all as $d)
 			<div class="row mt-3 data-row-konfirmasi align-items-center data-semua" id="datasemua-{{$d->id_pendaftaran}}">
-				<div class="col-2"><span class="data-semua nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
+				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="data-semua nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3 col-lg-2 col-md-3"><span class="data-semua nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3"><span class="data-semua univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="data-semua univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="data-semua email searchable" id="email-{{$d->id_pendaftaran}}">{{$d->email_pendaftar}}</span></div>
 				<div class="col-4 col-md-3 col-lg-3">
 					<div class="row mb-2">
@@ -115,7 +102,7 @@
 					</div>
 				</div>
 				<!-- Button dan Card yang benar -->
-				<div class="col-1 col-md-1 col-lg-1"><span class="drop" id="drop" data-toggle="collapse" data-target="#data-semuadrop{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-semuadrop{{$d->id_pendaftaran}}"></span></div>
+				<div class="col col-md-1 col-lg-1 col-xl-1 col-sm-1 text-right"><span class="drop" id="drop" data-toggle="collapse" data-target="#data-semuadrop{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-semuadrop{{$d->id_pendaftaran}}"></span></div>
 				<div class="collapse mt-3" id="data-semuadrop{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row">
@@ -124,12 +111,12 @@
 					    	<div class="row dropdata drop-nama"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
 					    	<div class="row dropdata drop-email"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
 					    	<div class="row">
-					    		<div class="col-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
 								-
 								@else
 								{{ $d->no_telepon_pendaftar }}
 								@endif</div>
-					    		<div class="col-6 dropdata drop-line p-0"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-line p-0"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
 								-
 								@else
 								{{ $d->id_line_pendaftar }}
@@ -149,10 +136,10 @@
 					    			<h1 class="judulcard">Berkas</h1>
 					    		</div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Scan KTM
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge 
 					    				@if($d->scan_ktm != null)
 										badge-success
@@ -166,7 +153,7 @@
 										@endif
 										</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary"@if($d->scan_ktm == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -177,10 +164,10 @@
 					    		</div>
 					    		<div class="dropdown-divider"></div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Pas Foto
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge @if($d->pas_foto != null)
 										badge-success
 										@else
@@ -191,7 +178,7 @@
 										Belum Diupload
 										@endif</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary"@if($d->pas_foto == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -202,10 +189,10 @@
 					    		</div>
 					    		<div class="dropdown-divider"></div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Scan Keterangan
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge @if($d->scan_suket_aktif != null)
 										badge-success
 										@else
@@ -216,7 +203,7 @@
 										Belum Diupload
 										@endif</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -247,21 +234,21 @@
 	  	<div class="container-fluid">
 	  		<!-- Search dan Tombol Download -->
 	  		<div class="row justify-content-between mb-4" class="atas-table-home">
-	  			<div class="col-4">
+	  			<div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 	  				<form id="search-pendaftar">
 	  					<input type="text" name="search-pendaftar" placeholder="Search" id="searchpendaftar">
 	  				</form>
 	  			</div>
-	  			<div class="col-4 text-right">
-	  				<a href="{{url('/admin/export/pendaftar')}}"><button class="btn text-right download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
+	  			<div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-right">
+	  				<a href="{{url('/admin/export/pendaftar')}}"><button class="btn text-right download-btn px-4 mt-3 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
 	  			</div>
 		  	</div>
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-2 col-md-3">Nama</div>
-		  		<div class="col-2 col-lg-2 col-md-3">Asal Universitas</div>
+		  		<div class="col-2 col-lg-2 col-md-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Asal Universitas</div>
 		  		<div class="col-2 d-none d-xl-block">Email</div>
 		  		<div class="col-2 col-lg-3 col-md-3">Status</div>
 		  	</div>
@@ -269,9 +256,9 @@
 		  	<!-- Data Pendaftar -->
 		  	@foreach($pendaftar as $d)
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center data-pendaftar" id="datapendaftar-{{$d->id_pendaftaran}}">
-				<div class="col-2"><span class="data-pendaftar nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
+				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="data-pendaftar nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3 col-lg-2 col-md-3"><span class="data-pendaftar nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3"><span class="data-pendaftar univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="data-pendaftar univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="data-pendaftar email searchable" id="email-{{$d->id_pendaftaran}}">{{$d->email_pendaftar}}</span></div>
 				<div class="col-4 col-md-3 col-lg-3">
 					<div class="row mb-2">
@@ -316,7 +303,7 @@
 					</div>
 				</div>
 				<!-- Button dan Card yang benar -->
-				<div class="col-1 col-md-1 col-lg-1"><span class="drop" id="drop" data-toggle="collapse" data-target="#data-pendaftardrop{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-pendaftardrop{{$d->id_pendaftaran}}"></span></div>
+				<div class="col col-md-1 col-lg-1 col-xl-1 col-sm-1 text-right"><span class="drop" id="drop" data-toggle="collapse" data-target="#data-pendaftardrop{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-pendaftardrop{{$d->id_pendaftaran}}"></span></div>
 				<div class="collapse mt-3" id="data-pendaftardrop{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row">
@@ -330,13 +317,12 @@
 								@endif</div>
 					    	<div class="row dropdata drop-email"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
 					    	<div class="row">
-					    		<div class="col-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
 								-
 								@else
-								{{$d->no_telepon_pendaftar}}
+								{{ $d->no_telepon_pendaftar }}
 								@endif</div>
-					    		<div class="col-6 dropdata drop-line p-0"><span class="icon icon-line"></span>
-					    		@if($d->id_line_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-line p-0"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
 								-
 								@else
 								{{ $d->id_line_pendaftar }}
@@ -355,10 +341,10 @@
 					    			<h1 class="judulcard">Berkas</h1>
 					    		</div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Scan KTM
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge 
 					    				@if($d->scan_ktm != null)
 										badge-success
@@ -372,7 +358,7 @@
 										@endif
 										</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary"@if($d->scan_ktm == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -383,10 +369,10 @@
 					    		</div>
 					    		<div class="dropdown-divider"></div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Pas Foto
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge @if($d->pas_foto != null)
 										badge-success
 										@else
@@ -397,7 +383,7 @@
 										Belum Diupload
 										@endif</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary"@if($d->pas_foto == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -408,10 +394,10 @@
 					    		</div>
 					    		<div class="dropdown-divider"></div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Scan Keterangan
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge @if($d->scan_suket_aktif != null)
 										badge-success
 										@else
@@ -422,7 +408,7 @@
 										Belum Diupload
 										@endif</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -453,21 +439,21 @@
 	  	<div class="container-fluid">
 	  		<!-- Search dan Tombol Download -->
 	  		<div class="row justify-content-between mb-4" class="atas-table-home">
-	  			<div class="col-4">
+	  			<div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 	  				<form id="search-peserta">
 	  					<input type="text" name="search-peserta" placeholder="Search" id="searchpeserta">
 	  				</form>
 	  			</div>
-	  			<div class="col-4 text-right">
-	  				<a href="{{url('/admin/export/peserta')}}"><button class="btn text-right download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
+	  			<div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-right">
+	  				<a href="{{url('/admin/export/peserta')}}"><button class="btn text-right download-btn px-4 mt-3 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
 	  			</div>
 		  	</div>
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-2 col-md-3">Nama</div>
-		  		<div class="col-2 col-lg-2 col-md-3">Asal Universitas</div>
+		  		<div class="col-2 col-lg-2 col-md-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Asal Universitas</div>
 		  		<div class="col-2 d-none d-xl-block">Email</div>
 		  		<div class="col-2 col-lg-3 col-md-3">Status</div>
 		  	</div>
@@ -475,9 +461,9 @@
 		  	<!-- Data Pendaftar -->
 		  	@foreach($peserta as $d)
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center data-peserta" id="datapeserta-{{$d->id_pendaftaran}}">
-				<div class="col-2"><span class="data-peserta nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
+				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="data-peserta nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3 col-lg-2 col-md-3"><span class="data-peserta nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3"><span class="data-peserta univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="data-peserta univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="data-peserta email searchable" id="email-{{$d->id_pendaftaran}}">{{$d->email_pendaftar}}</span></div>
 				<div class="col-4 col-md-3 col-lg-3">
 					<div class="row mb-2">
@@ -522,7 +508,7 @@
 					</div>
 				</div>
 				<!-- Button dan Card yang benar -->
-				<div class="col-1 col-md-1 col-lg-1"><span class="drop" id="drop" data-toggle="collapse" data-target="#data-pesertadrop{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-pesertadrop{{$d->id_pendaftaran}}"></span></div>
+				<div class="col col-md-1 col-lg-1 col-xl-1 col-sm-1 text-right"><span class="drop" id="drop" data-toggle="collapse" data-target="#data-pesertadrop{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-pesertadrop{{$d->id_pendaftaran}}"></span></div>
 				<div class="collapse mt-3" id="data-pesertadrop{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row">
@@ -536,13 +522,12 @@
 								@endif</div>
 					    	<div class="row dropdata drop-email"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
 					    	<div class="row">
-					    		<div class="col-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
 								-
 								@else
-								{{$d->no_telepon_pendaftar}}
+								{{ $d->no_telepon_pendaftar }}
 								@endif</div>
-					    		<div class="col-6 dropdata drop-line p-0"><span class="icon icon-line"></span>
-					    		@if($d->id_line_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-line p-0"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
 								-
 								@else
 								{{ $d->id_line_pendaftar }}
@@ -561,10 +546,10 @@
 					    			<h1 class="judulcard">Berkas</h1>
 					    		</div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Scan KTM
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge 
 					    				@if($d->scan_ktm != null)
 										badge-success
@@ -578,7 +563,7 @@
 										@endif
 										</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary"@if($d->scan_ktm == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -589,10 +574,10 @@
 					    		</div>
 					    		<div class="dropdown-divider"></div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Pas Foto
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge @if($d->pas_foto != null)
 										badge-success
 										@else
@@ -603,7 +588,7 @@
 										Belum Diupload
 										@endif</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary"@if($d->pas_foto == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>
@@ -614,10 +599,10 @@
 					    		</div>
 					    		<div class="dropdown-divider"></div>
 					    		<div class="row align-items-center">
-					    			<div class="col-3 col-xl-4">
+					    			<div class="col-12 col-md-3 col-lg-3 col-xl-4 col-sm-3">
 					    				Scan Keterangan
 					    			</div>
-					    			<div class="col-3 col-xl-3">
+					    			<div class="col-12 col-md-3 col-lg-3 col-sm-3 col-xl-3">
 					    				<span class="badge @if($d->scan_suket_aktif != null)
 										badge-success
 										@else
@@ -628,7 +613,7 @@
 										Belum Diupload
 										@endif</span>
 					    			</div>
-					    			<div class="col">
+					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
 					    				<button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button>

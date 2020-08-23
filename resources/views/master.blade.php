@@ -19,14 +19,14 @@
 </head>
 <body>
 	@yield('nav')
-	<div class="container-fluid">
+	<div class="container-fluid" style="min-height: 1000px">
 		@yield('body')
 	</div>
 	<!-- Footer -->
 <footer class="page-footer font-small blue pt-5">
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">
-  	© 2020 Copyright MDBootstrap.com
+  	© 2020 Copyright <b>Himpunan Mahasiswa D3 Akuntansi Universitas Airlangga</b>
   </div>
   <!-- Copyright -->
 
