@@ -163,7 +163,7 @@
 	</div> -->
 	
 </div>
-<div class="row mx-1 mt-4 justify-content-between">
+<div class="row mx-1 mt-4 justify-content-between d-none d-xl-block d-lg-block d-md-block d-sm-block">
 	<div class="col-12 col-xl-6 pr-2 pl-0 mb-3">
 		<div class="card card-body px-4" id="card-konfirmasi-besar">
 			<div class="row p-0 justify-content-between">
