@@ -24,10 +24,10 @@ Route::get('/semnas', function () {
 // ->name('register');
 
 route::get('/login', 'AuthController@login');
-// route::post('/postlogin', 'AuthController@postlogin');
+route::post('/postlogin', 'AuthController@postlogin');
 // route::get('/logout', 'AuthController@logout');
 route::get('/register', 'AuthController@register');
-// route::post('/postregister', 'AuthController@postregister');
+route::post('/postregister', 'AuthController@postregister');
 
 route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
 route::get('/peserta/alur_pembayaran', 'PesertaController@alur_pembayaran');
