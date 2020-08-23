@@ -21,7 +21,7 @@
         </div>
         <div class="conten">
             <div class="bungkus">
-                <h2>PENGUMUMAN</h2>
+                <h2>FORM PENDAFTARAN</h2>
                 <form method="post" action="/peserta/form_pendaftaran" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 
