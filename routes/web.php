@@ -37,3 +37,4 @@ route::get('/peserta/cetak_kartu_peserta', 'PesertaController@cetak_kartu_pesert
 
 
 route::post('/peserta/form_pendaftaran', 'PesertaController@store_pendaftaran');
+route::post('/peserta/konfirmasi_pembayaran', 'PesertaController@store_pembayaran');
