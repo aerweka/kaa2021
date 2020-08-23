@@ -53,20 +53,20 @@
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
 		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
-		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3">Total</div>
+		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
 		  		<div class="col-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->
 		  	@foreach($datasemua as $d)
 			<div class="row mt-3 data-row-konfirmasi align-items-center data-semua" id="datasemua-{{$d->id_pendaftaran}}">
-				<div class="col-2"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
+				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3 col-sm-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
 				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
@@ -97,7 +97,7 @@
 					</div>
 				</div>
 				<!-- Button dan Card yang benar -->
-				<div class="col-1"><span class="drop" id="drop{{$d->id_pendaftaran}}" data-toggle="collapse" data-target="#data-drop-semua{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-drop-semua{{$d->id_pendaftaran}}"></span></div>
+				<div class="col col-md-1 col-lg-1 col-xl-1 col-sm-1 text-right"><span class="drop" id="drop{{$d->id_pendaftaran}}" data-toggle="collapse" data-target="#data-drop-semua{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-drop-semua{{$d->id_pendaftaran}}"></span></div>
 				<div class="collapse mt-3" id="data-drop-semua{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row">
@@ -106,15 +106,15 @@
 					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
 					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
 					    	<div class="row">
-					    		<div class="col-6 dropdata drop-notelp p-0" id="drop-notelp3"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
 								-
 								@else
-								{{ $d->no_telepon_pendaftar }}
+								{{$d->no_telepon_pendaftar}}
 								@endif</div>
-					    		<div class="col-6 dropdata drop-line p-0" id="drop-line3"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-line p-0"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
 								-
 								@else
-								{{ $d->id_line_pendaftar }}
+								{{$d->id_line_pendaftar }}
 								@endif</div>
 					    	</div>
 					    	<div class="row dropdata drop-kota" id="drop-kota3"><span class="icon icon-kota"></span>@if($d->asal_daerah == null)
@@ -142,7 +142,7 @@
 					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
 					    </div>
 					    @if($d->status_pembayaran == 0)
-					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4">
+					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4 mt-xl-0 mt-4">
 					    	<div class="row">
 					    		<div class="card card-body card-drop card-berkas" id="berkas3">
 					    		<div class="row justify-content-center">
@@ -150,10 +150,10 @@
 					    		</div>
 					    		<br>
 					    		<div class="row justify-content-between mt-3">
-					    			<div class="col-4 text-right">
+					    			<div class="col text-right">
 					    				<button class="btn btn-secondary btn-lg btn-tidak" id="tidak-{{$d->id_pembayaran}}">Tidak</button>
 					    			</div>
-					    			<div class="col-4 text-left">
+					    			<div class="col text-left">
 					    				<button class="btn btn-primary btn-lg btn-ya" id="ya-{{$d->id_pembayaran}}">Ya</button>
 					    			</div>
 					    		</div>
@@ -195,20 +195,20 @@
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
 		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
-		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3">Total</div>
+		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
 		  		<div class="col-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->
 		  	@foreach($databelum as $d)
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center data-belum" id="databelum-{{$d->id_pendaftaran}}">
-				<div class="col-2"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
+				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3 col-sm-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
 				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
@@ -239,7 +239,7 @@
 					</div>
 				</div>
 				<!-- Button dan Card yang benar -->
-				<div class="col-1"><span class="drop" id="drop{{$d->id_pendaftaran}}" data-toggle="collapse" data-target="#data-belum{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-belum{{$d->id_pendaftaran}}"></span></div>
+				<div class="col col-md-1 col-lg-1 col-xl-1 col-sm-1 text-right"><span class="drop" id="drop{{$d->id_pendaftaran}}" data-toggle="collapse" data-target="#data-belum{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-belum{{$d->id_pendaftaran}}"></span></div>
 				<div class="collapse mt-3" id="data-belum{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row">
@@ -248,12 +248,12 @@
 					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
 					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
 					    	<div class="row">
-					    		<div class="col-6 dropdata drop-notelp p-0" id="drop-notelp3"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
 								-
 								@else
 								{{ $d->no_telepon_pendaftar }}
 								@endif</div>
-					    		<div class="col-6 dropdata drop-line p-0" id="drop-line3"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-line p-0"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
 								-
 								@else
 								{{ $d->id_line_pendaftar }}
@@ -337,20 +337,20 @@
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
 		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
-		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3">Total</div>
+		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
 		  		<div class="col-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->
 		  	@foreach($datasudah as $d)
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center data-sudah" id="datasudah-{{$d->id_pendaftaran}}">
-				<div class="col-2"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
+				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3 col-sm-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
 				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
@@ -381,7 +381,7 @@
 					</div>
 				</div>
 				<!-- Button dan Card yang benar -->
-				<div class="col-1"><span class="drop" id="drop{{$d->id_pendaftaran}}" data-toggle="collapse" data-target="#data-sudah{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-sudah{{$d->id_pendaftaran}}"></span></div>
+				<div class="col col-md-1 col-lg-1 col-xl-1 col-sm-1 text-right"><span class="drop" id="drop{{$d->id_pendaftaran}}" data-toggle="collapse" data-target="#data-sudah{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-sudah{{$d->id_pendaftaran}}"></span></div>
 				<div class="collapse mt-3" id="data-sudah{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row justify-content-between">
@@ -390,12 +390,12 @@
 					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
 					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
 					    	<div class="row">
-					    		<div class="col-6 dropdata drop-notelp p-0" id="drop-notelp3"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-notelp p-0"><span class="icon icon-telp"></span>@if($d->no_telepon_pendaftar == null)
 								-
 								@else
 								{{ $d->no_telepon_pendaftar }}
 								@endif</div>
-					    		<div class="col-6 dropdata drop-line p-0" id="drop-line3"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
+					    		<div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-6 dropdata drop-line p-0"><span class="icon icon-line"></span>@if($d->id_line_pendaftar == null)
 								-
 								@else
 								{{ $d->id_line_pendaftar }}

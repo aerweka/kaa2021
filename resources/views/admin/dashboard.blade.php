@@ -1,4 +1,5 @@
 @extends('admin.master_admin')
+@section('judul','Dashboard')
 @section('style-admin')
 <style>
 	canvas {
@@ -55,7 +56,7 @@
 			</div>
 		</div>
 		<div class="row pr-xl-4">
-			<div class="col-4 col-xl-4">
+			<div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-5 pl-0">
 				<div class="card" id="card-pendaftar">
 					<div class="card-body">
 						<div class="row p-0">
@@ -72,8 +73,8 @@
 					
 				</div>
 			</div>
-			<div class="col-4 col-xl-4">
-				<div class="card"  id="card-konfirmasi">
+			<div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-5 pl-0">
+				<div class="card" id="card-konfirmasi">
 					<div class="card-body">
 						<div class="row p-0">
 							<div class="col p-0">
@@ -89,7 +90,7 @@
 					
 				</div>
 			</div>
-			<div class="col-4 col-xl-4">
+			<div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3 pl-0">
 				<div class="card"  id="card-pembayaran">
 					<div class="card-body">
 						<div class="row p-0">
@@ -106,7 +107,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-12 col-xl-3 p-0 d-none d-xl-block pl-5">
+	<div class="col-12 col-xl-3 p-0 d-none d-xl-block d-lg-block d-md-block d-sm-block pl-5">
 		<div class="card p-0" id="card-peserta">
 			<div class="card-body">
 				<div class="row p-0">
@@ -116,7 +117,7 @@
 						<h2 class="angka">{{$datacard[0]}}</h2>
 						<h2 class="orang">orang</h2>
 						<div class="row justify-content-end mr-3">
-							<button class="btn download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button>
+							<a href="{{url('/admin/export/peserta')}}"><button class="btn download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
 						</div>
 					</div>
 					
@@ -125,7 +126,26 @@
 			<img class="p-0 card-img-top" src="{{asset('/assets/icons/peserta.svg')}}">
 		</div>
 	</div>
-	<div class="col-12 col-xl-3 p-0 mt-3 d-block d-xl-none">
+	<div class="col-12 col-xl-3 p-0 d-block d-xl-none d-lg-none d-md-none d-sm-none mt-5">
+		<div class="card p-0" id="card-peserta">
+			<div class="card-body">
+				<div class="row p-0">
+					<div class="col" id="peserta">
+						<h1 class="judulcard">Jumlah Peserta</h1>
+						<h3 id="capt-peserta"><i>Pendaftar yang telah mengisi data dengan lengkap.</i></h3>
+						<h2 class="angka">{{$datacard[0]}}</h2>
+						<h2 class="orang">orang</h2>
+						<div class="row justify-content-end mr-3 my-3">
+							<a href="{{url('/admin/export/peserta')}}"><button class="btn download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button></a>
+						</div>
+					</div>
+					<img class="p-0 card-img-top" src="{{asset('/assets/icons/peserta.svg')}}">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- <div class="col-12 col-xl-3 p-0 mt-3 d-block d-sm-none d-xl-none">
 		<div class="card p-0" id="card-peserta">
 			<div class="card-body px-5">
 				<div class="row p-0">
@@ -140,7 +160,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 </div>
 <div class="row mx-1 mt-4 justify-content-between">
@@ -155,11 +175,11 @@
 				</div>
 			</div>
 			@foreach($datakonfirmasi as $d)
-			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center">
-				<div class="col-1"><span class="foto"></span></div>
+			<div class="row my-2 data-row-konfirmasi justify-content-between align-items-center">
+				<div class="col-1 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="foto"></span></div>
 				<div class="col-3"><span class="nama">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
-				<div class="col-4"><span class="badge
+				<div class="col-3 col-xs-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col col-xl-4 col-lg-4 col-md-4 col-sm-4 text-right"><span class="badge
 					@if($d->status_pembayaran)badge-success
 					@else
 					badge-danger
@@ -177,7 +197,7 @@
 	<div class="col-12 col-xl-6 px-2">
 		<div class="card card-body px-4" id="card-pendaftar-besar">
 			<div class="row p-0 justify-content-between">
-				<div class="col-4 align-self-end">
+				<div class="col align-self-end">
 					<h1 class="judulcard">Pendaftar</h1>
 				</div>
 				<div class="col-3 align-self-end">
@@ -185,8 +205,8 @@
 				</div>
 			</div>
 			@foreach($datapendaftar as $d)
-			<div class="row mt-3 data-row-konfirmasi align-items-center justify-content-betweenu">
-				<div class="col-1 mr-4"><span class="foto"></span></div>
+			<div class="row my-2 data-row-konfirmasi align-items-center justify-content-between">
+				<div class="col-1 mr-4 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="foto"></span></div>
 				<div class="col-4">
 					<div class="row">
 						<span class="nama">{{$d->nama_pendaftar}}</span>
@@ -195,7 +215,7 @@
 						<span class="univ">{{$d->asal_univ_pendaftar}}</span>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col mr-5">
 					<div class="row mb-2 justify-content-end">
 						<span class="badge
 						@if($d->status_pembayaran!=null)
