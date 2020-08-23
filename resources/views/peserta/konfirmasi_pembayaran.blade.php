@@ -20,15 +20,36 @@
         <div class="conten">
             <div class="bungkus">
                 <h2>KONFIRMASI PEMBAYARAN</h2>
-                    <p>Bukti Pembayaran</p>
-                    <a href="" class="upload">upload</a>
-                    <p class="note" style="color: red;">Note:Format yang diupload wajib (.jpg).</p>
-                    
-                    <a type="submit" href="" class="kirim">Kirim</a><br><br>
-                    
-                    <p>Status Pembayaran</p>
-                    <a class="status">data</a>
-                    <p class="note" style="color: red;">Note:Status pembayaran akan berubah "<b style="color: green;">DISETUJUI<b style="color: red;">" apabila pembayaran telah tervalidasi</p>
+
+                <form method="post" action="/peserta/konfirmasi_pembayaran" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                
+                @if(session()->has('success'))
+                <div style="text-align:center; border-radius:20px" class="alert alert-success alert-dismissible">
+                <strong>{{ session('success') }}</strong>
+                </div>
+                @endif
+
+                    <input type="text" class="atas_nama_rekening" id="atas_nama_rekening"
+                    placeholder="Masukan Atas Nama Rekening" name="atas_nama_rekening" value="{{ old('atas_nama_rekening') }}" required>
+
+                    <input type="text" class="bank_asal" id="bank_asal"
+                    placeholder="Masukan Bank Asal" name="bank_asal" value="{{ old('bank_asal') }}" required>
+
+                    <input type="number" class="nomor_rekening" id="nomor_rekening"
+                    placeholder="Masukan Nomor Rekening" name="nomor_rekening" value="{{ old('nomor_rekening') }}" required>
+
+                    <input type="number" class="total_pembayaran" id="total_pembayaran"
+                    placeholder="Masukan Total Pembayaran" name="total_pembayaran" value="{{ old('total_pembayaran') }}" required>
+
+                    <label>Bukti Pembayaran</label><br>
+                    <input type="file" class="bukti_pembayaran" name="bukti_pembayaran" id="bukti_pembayaran"required><br><br>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+
+
+
             </div>
             <!-- <div class="telpon">Phone Number</div> -->
         </div>

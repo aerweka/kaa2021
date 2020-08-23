@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Pendaftaran</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+
     <link rel="stylesheet" type="text/css" href="/css/form_pendaftaran.css">
 </head>
 <body>
@@ -18,21 +20,46 @@
             </tr>
         </div>
         <div class="conten">
-            <h1>Selamat Datang, User . .</h1>
             <div class="bungkus">
                 <h2>PENGUMUMAN</h2>
-                <input type="text" class="name" placeholder="Name">
-                <input type="text" class="alamat" placeholder="alamat">
-                <input type="text" class="univ" placeholder="Universitas">
-                <input type="text" class="telp" placeholder="telp">
-                <input type="text" class="email" placeholder="email">
-                <input type="text" class="line" placeholder="line">
+                <form method="post" action="/peserta/form_pendaftaran" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 
-                <a type="submit" class="btn" href="#">upload</a>
-                <a type="submit" class="btn" href="#">upload</a>
-                <a type="submit" class="btn" href="#">upload</a>
-                
-                <a type="submit" class="btn" href="#">Submit</a>
+                @if(session()->has('success'))
+                <div style="text-align:center; border-radius:20px" class="alert alert-success alert-dismissible">
+                <strong>{{ session('success') }}</strong>
+                </div>
+                @endif
+
+                    <input type="text" class="nama_pendaftar" id="nama_pendaftar"
+                    placeholder="Masukan Nama" name="nama_pendaftar" value="{{ old('nama_pendaftar') }}" required>
+
+                    <input type="text" class="asal_daerah" id="asal_daerah"
+                    placeholder="Masukan Asal Daerah" name="asal_daerah" value="{{ old('asal_daerah') }}" required>
+
+                    <input type="text" class="asal_univ_pendaftar" id="asal_univ_pendaftar"
+                    placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar" value="{{ old('asal_univ_pendaftar') }}" required>
+
+                    <input type="email" class="email_pendaftar" id="email_pendaftar"
+                    placeholder="Masukan Email" name="email_pendaftar" value="{{ old('email_pendaftar') }}" required>
+
+                    <input type="number" class="no_telepon_pendaftar" id="no_telepon_pendaftar"
+                    placeholder="Masukan Nomor Telepon" name="no_telepon_pendaftar" value="{{ old('no_telepon_pendaftar') }}" required>
+
+                    <input type="text" class="id_line_pendaftar" id="id_line_pendaftar"
+                    placeholder="Masukan ID Line" name="id_line_pendaftar" value="{{ old('id_line_pendaftar') }}" required>
+
+                    <label for="customer_id">Scan KTM</label><br>
+                    <input type="file" class="scan_ktm" name="scan_ktm" id="scan_ktm"required><br><br>
+                    
+                    <label for="customer_id">Pas Foto</label><br>
+                    <input type="file" class="pas_foto" name="pas_foto" id="pas_foto" required><br><br>
+                    
+                    <label for="customer_id">Scan Surat Keterangan</label><br>
+                    <input type="file" class="scan_suket_aktif" name="scan_suket_aktif" id="scan_suket_aktif"><br><br>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
             </div>
             <!-- <div class="telpon">Phone Number</div> -->
         </div>
