@@ -34,7 +34,7 @@ class Pembayaran extends Model
 
 	protected $casts = [
 		'total_pembayaran' => 'int',
-		'status_pembayaran' => 'bool'
+		'status_pembayaran' => 'int'
 	];
 
 	protected $dates = [

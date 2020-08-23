@@ -32,7 +32,7 @@
 				<li class="nav-item mr-4 data-menu">
 					<a class="nav-link" href="{{url('/admin/pendaftar')}}">
 						<span class="icon icon-data mr-2"></span>
-						<span class="menu-text">Daftar Pendaftar</span>
+						<span class="menu-text">Data Pendaftar</span>
 					</a>
 				</li>
 				<li class="nav-item mr-4 verif-menu">
@@ -84,6 +84,7 @@
 @endsection
 
 @section('script')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	<script>
 		$(document).ready(function() {
 			$('#profilec').on('show.bs.collapse', function () {
