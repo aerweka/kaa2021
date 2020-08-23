@@ -67,7 +67,7 @@ body{
 }
 .bungkus{
     background-color: rgb(238, 238, 238, 0.7);
-    height: 330px;
+    height: 350px;
     margin: 215px 40px 20px 40px;
     padding-bottom: 1px;
     border-radius: 20px;
@@ -106,10 +106,40 @@ p{
     font-size: 10px;
     margin: 5px;
 }
+input.atas_nama_rekening, input.bank_asal{
+    font-family: "Montserrat Alternates";
+    display: inline-block;
+    justify-content: center;
+    margin: 20px 17px 20px 17px;
+    text-align: center;
+    width: 42%;
+    padding: 10px;
+    border-radius: 8px;
+}
+input.nomor_rekening, input.total_pembayaran{
+    font-family: "Montserrat Alternates";
+    display: inline-block;
+    justify-content: center;
+    margin: 20px 17px 20px 17px;
+    text-align: center;
+    width: 42%;
+    padding: 10px;
+    border-radius: 8px;
+}
+input.bukti_pembayaran{
+    display: inline-block;
+    margin-left: 20px;
+    justify-content: center;
+    text-align: center;
+}
+label{
+    margin-top: 20px;
+    margin-left: 20px;
+}
 .btn{
     font-family: "Montserrat Alternates";
     display: block;
-    margin: 20px auto 20px auto;
+    margin: 10px auto 20px auto;
     justify-content: center;
     text-align: center;
     text-decoration: none;
