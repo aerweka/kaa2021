@@ -11,6 +11,7 @@
 @section('links')
 	@yield('links-admin')
 	<link rel="stylesheet" type="text/css" href="{{asset('/styles/admin_styles.css')}}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 @endsection
 
 @section('nav')
@@ -19,7 +20,7 @@
 			<img src="{{asset('/assets/images/logo.png')}}" width="50" height="50">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			<i class="fa fa-bars"></i>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav menu-ul">
@@ -42,7 +43,8 @@
 					</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav mr-2 ml-auto">
+		</div>
+		<ul class="navbar-nav mr-2 ml-auto">
 				<!-- <li class="nav-item mr-4">
 					<a data-toggle="collapse" href="#isiNotif" role="button" aria-expanded="false" aria-controls="isiNotif" id="notifbtn">
 						<span class="right-icon notif-icon"></span>
@@ -75,7 +77,6 @@
 					</div>
 				</li>
 			</ul>
-		</div>
 	</nav>
 @endsection
 
