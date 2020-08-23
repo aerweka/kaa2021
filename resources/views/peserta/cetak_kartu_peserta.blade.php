@@ -18,7 +18,6 @@
             </tr>
         </div>
         <div class="conten">
-            <h1>Selamat Datang, User . .</h1>
                 <div class="bungkus">
                 <h2>CETAK KARTU PESERTA</h2>
                 <input type="text" class="name" placeholder="Name">
