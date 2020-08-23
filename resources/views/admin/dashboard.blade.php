@@ -188,7 +188,7 @@
 						badge-danger
 						@endif
 						statusdaftar">
-							@if(!($d->status_pembayaran!=null))
+							@if(($d->status_pembayaran!=null))
 								@if($d->status_pembayaran == 1)
 								Diterima
 								@else
@@ -205,7 +205,7 @@
 							@else
 							badge-danger
 							@endif statusdata">
-							@if($d->status_pendaftaran)
+							@if($d->status_pendaftaran == 1)
 							Data Lengkap
 							@else
 							Data belum lengkap
@@ -232,38 +232,43 @@
 	});
 </script>
 <script>
+	var jumlahPeserta = <?php echo json_encode($datagraphic_p); ?>;
+	var jumlahPendaftar = <?php echo json_encode($datagraphic); ?>;
+	console.log(jumlahPendaftar);
 		var lineChartData = {
-			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			labels: ['23 Agustus', '26 Agustus', '29 Agustus','1 September', '4 September','7 September','10 September','13 September'],
 			datasets: [{
 				label: 'Pendaftar',
 				borderColor: window.chartColors.red,
 				backgroundColor: window.chartColors.red,
 				fill: false,
 				data: [
-					3,
-					5,
-					7,
-					9,
-					11,
-					19,
-					20
+					jumlahPendaftar[0],
+					jumlahPendaftar[1],
+					jumlahPendaftar[2],
+					jumlahPendaftar[3],
+					jumlahPendaftar[4],
+					jumlahPendaftar[5],
+					jumlahPendaftar[6],
+					jumlahPendaftar[7]
 				],
-				yAxisID: 'y-axis-1',
+				
 			}, {
 				label: 'Peserta',
 				borderColor: window.chartColors.blue,
 				backgroundColor: window.chartColors.blue,
 				fill: false,
 				data: [
-					5,
-					7,
-					9,
-					11,
-					19,
-					20,
-					21
+					jumlahPeserta[0],
+					jumlahPeserta[1],
+					jumlahPeserta[2],
+					jumlahPeserta[3],
+					jumlahPeserta[4],
+					jumlahPeserta[5],
+					jumlahPeserta[6],
+					jumlahPeserta[7]
 				],
-				yAxisID: 'y-axis-2'
+				
 			}]
 		};
 
@@ -301,15 +306,5 @@
 				}
 			});
 		};
-
-		document.getElementById('randomizeData').addEventListener('click', function() {
-			lineChartData.datasets.forEach(function(dataset) {
-				dataset.data = dataset.data.map(function() {
-					return randomScalingFactor();
-				});
-			});
-
-			window.myLine.update();
-		});
 	</script>
 @endsection
