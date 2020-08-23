@@ -53,21 +53,21 @@
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">No. Pendaftaran</div>
-		  		<div class="col-3">Nama</div>
-		  		<div class="col-2">Asal Universitas</div>
-		  		<div class="col-2">Total</div>
+		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
+		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
+		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3">Total</div>
 		  		<div class="col-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->
 		  	@foreach($datasemua as $d)
-			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center data-semua" id="datasemua-{{$d->id_pendaftaran}}">
+			<div class="row mt-3 data-row-konfirmasi align-items-center data-semua" id="datasemua-{{$d->id_pendaftaran}}">
 				<div class="col-2"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-2"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
-				<div class="col-2">
+				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
 						@if($d->status_pembayaran >= 0)
@@ -101,7 +101,7 @@
 				<div class="collapse mt-3" id="data-drop-semua{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row">
-					    <div class="col-4">
+					    <div class="col-xl-4">
 					    	<div class="row drop-nopendaftar" id="drop-nopendaftar3">{{$d->id_pendaftaran}}</div>
 					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
 					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
@@ -138,22 +138,22 @@
 					    		<span>Pada <b>{{$d->tanggal_pembayaran}}</b></span>
 					    	</div>
 					    </div>
-					    <div class="col-4">
+					    <div class="col-xl-4">
 					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
 					    </div>
 					    @if($d->status_pembayaran == 0)
-					    <div class="col-4">
+					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4">
 					    	<div class="row">
 					    		<div class="card card-body card-drop card-berkas" id="berkas3">
 					    		<div class="row justify-content-center">
 					    			<h4 class="text-center pertanyaan-text">Apakah pembayaran sudah diterima dan sesuai?</h4>
 					    		</div>
 					    		<br>
-					    		<div class="row justify-content-center mt-3">
-					    			<div class="col-4">
+					    		<div class="row justify-content-between mt-3">
+					    			<div class="col-4 text-right">
 					    				<button class="btn btn-secondary btn-lg btn-tidak" id="tidak-{{$d->id_pembayaran}}">Tidak</button>
 					    			</div>
-					    			<div class="col-4">
+					    			<div class="col-4 text-left">
 					    				<button class="btn btn-primary btn-lg btn-ya" id="ya-{{$d->id_pembayaran}}">Ya</button>
 					    			</div>
 					    		</div>
@@ -195,10 +195,10 @@
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">No. Pendaftaran</div>
-		  		<div class="col-3">Nama</div>
-		  		<div class="col-2">Asal Universitas</div>
-		  		<div class="col-2">Total</div>
+		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
+		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
+		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3">Total</div>
 		  		<div class="col-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
@@ -207,9 +207,9 @@
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center data-belum" id="databelum-{{$d->id_pendaftaran}}">
 				<div class="col-2"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-2"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
-				<div class="col-2">
+				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
 						@if($d->status_pembayaran >= 0)
@@ -243,7 +243,7 @@
 				<div class="collapse mt-3" id="data-belum{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row">
-					    <div class="col-4">
+					    <div class="col-xl-4">
 					    	<div class="row drop-nopendaftar" id="drop-nopendaftar3">{{$d->id_pendaftaran}}</div>
 					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
 					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
@@ -280,11 +280,11 @@
 					    		<span>Pada <b>{{$d->tanggal_pembayaran}}</b></span>
 					    	</div>
 					    </div>
-					    <div class="col-4">
+					    <div class="col-xl-4">
 					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
 					    </div>
 					    @if($d->status_pembayaran == 0)
-					    <div class="col-4">
+					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4">
 					    	<div class="row">
 					    		<div class="card card-body card-drop card-berkas" id="berkas3">
 					    		<div class="row justify-content-center">
@@ -292,10 +292,10 @@
 					    		</div>
 					    		<br>
 					    		<div class="row justify-content-center mt-3">
-					    			<div class="col-4">
+					    			<div class="col-4 text-right">
 					    				<button class="btn btn-secondary btn-lg btn-tidak-belum" id="tidak-{{$d->id_pembayaran}}">Tidak</button>
 					    			</div>
-					    			<div class="col-4">
+					    			<div class="col-4 text-left">
 					    				<button class="btn btn-primary btn-lg btn-ya-belum" id="ya-{{$d->id_pembayaran}}">Ya</button>
 					    			</div>
 					    		</div>
@@ -337,10 +337,10 @@
 		  	<!-- End of Search dan Tombol Download -->
 		  	<!-- Header -->
 		  	<div class="row p-2 table-header" id="table-home-header">
-		  		<div class="col-2">No. Pendaftaran</div>
-		  		<div class="col-3">Nama</div>
-		  		<div class="col-2">Asal Universitas</div>
-		  		<div class="col-2">Total</div>
+		  		<div class="col-2">ID Pendaftaran</div>
+		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
+		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
+		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3">Total</div>
 		  		<div class="col-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
@@ -349,9 +349,9 @@
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center data-sudah" id="datasudah-{{$d->id_pendaftaran}}">
 				<div class="col-2"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-2"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
-				<div class="col-2">
+				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
 						@if($d->status_pembayaran >= 0)
@@ -385,7 +385,7 @@
 				<div class="collapse mt-3" id="data-sudah{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
 				  	<div class="row justify-content-between">
-					    <div class="col-4">
+					    <div class="col-xl-4">
 					    	<div class="row drop-nopendaftar" id="drop-nopendaftar3">{{$d->id_pendaftaran}}</div>
 					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
 					    	<div class="row dropdata drop-email" id="drop-email3"><span class="icon icon-email"></span>{{$d->email_pendaftar}}</div>
@@ -422,7 +422,7 @@
 					    		<span>Pada <b>{{$d->tanggal_pembayaran}}</b></span>
 					    	</div>
 					    </div>
-					    <div class="col-4">
+					    <div class="col-xl-4">
 					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
 					    </div>
 				    </div>

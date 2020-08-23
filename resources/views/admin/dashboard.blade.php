@@ -15,7 +15,7 @@
 <div class="row m-1 mb-4">
 	<div class="card card-body" id="card-atas">
 		<div class="row">
-			<div class="col-9" id="welcome">
+			<div class="col-12 col-xl-9" id="welcome">
 				<h1 id="welcometext">Welcome Back, Dea!</h1>
 				<h3 id="welcomemenu">Dashboard</h3>
 			</div>
@@ -36,8 +36,8 @@
 	</div>
 </div>
 <div class="row my-1 mx-1 justify-content-between">
-	<div class="col-9 p-0">
-		<div class="row col mb-4">
+	<div class="col col-xl-9 p-0">
+		<div class="row col mb-4 pr-sm-0 pr-md-0 pr-lg-0 mr-sm-0 mr-md-0 mr-lg-0">
 			<div class="card card-body px-5" id="card-graphic">
 				<div class="row">
 					<h1 class="judulcard" id="graphic-title">Data User</h1>
@@ -54,9 +54,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="row pr-4">
-			<div class="col-4">
-				<div class="card"  id="card-pendaftar">
+		<div class="row pr-xl-4">
+			<div class="col-4 col-xl-4">
+				<div class="card" id="card-pendaftar">
 					<div class="card-body">
 						<div class="row p-0">
 							<div class="col p-0">
@@ -72,7 +72,7 @@
 					
 				</div>
 			</div>
-			<div class="col-4">
+			<div class="col-4 col-xl-4">
 				<div class="card"  id="card-konfirmasi">
 					<div class="card-body">
 						<div class="row p-0">
@@ -89,7 +89,7 @@
 					
 				</div>
 			</div>
-			<div class="col-4">
+			<div class="col-4 col-xl-4">
 				<div class="card"  id="card-pembayaran">
 					<div class="card-body">
 						<div class="row p-0">
@@ -106,28 +106,48 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-3 px-3">
+	<div class="col-12 col-xl-3 p-0 d-none d-xl-block pl-5">
 		<div class="card p-0" id="card-peserta">
-			<div class="card-body px-5">
+			<div class="card-body">
 				<div class="row p-0">
-					<div class="col p-0" id="peserta">
+					<div class="col" id="peserta">
 						<h1 class="judulcard">Jumlah Peserta</h1>
 						<h3 id="capt-peserta"><i>Pendaftar yang telah mengisi data dengan lengkap.</i></h3>
 						<h2 class="angka">{{$datacard[0]}}</h2>
 						<h2 class="orang">orang</h2>
-						<button class="btn text-right download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button>
+						<div class="row justify-content-end mr-3">
+							<button class="btn download-btn px-4" id="download-dash-btn"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button>
+						</div>
 					</div>
+					
 				</div>
 			</div>
 			<img class="p-0 card-img-top" src="{{asset('/assets/icons/peserta.svg')}}">
 		</div>
 	</div>
+	<div class="col-12 col-xl-3 p-0 mt-3 d-block d-xl-none">
+		<div class="card p-0" id="card-peserta">
+			<div class="card-body px-5">
+				<div class="row p-0">
+					<div class="col-6 col-xl-12 pr-5 pl-0" id="peserta">
+						<h1 class="judulcard">Jumlah Peserta</h1>
+						<h3 id="capt-peserta"><i>Pendaftar yang telah mengisi data dengan lengkap.</i></h3>
+						<h2 class="angka">{{$datacard[0]}}</h2>
+						<h2 class="orang">orang</h2>
+						<button class="btn text-right download-btn mt-2" id="download-dash-btn-mobile"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button>
+					</div>
+					<img class="d-xl-none col-6 p-0 card-img-top-mobile" src="{{asset('/assets/icons/peserta.svg')}}" height="50%" width="50%">
+				</div>
+			</div>
+		</div>
+	</div>
+	
 </div>
 <div class="row mx-1 mt-4 justify-content-between">
-	<div class="col-lg-12 col-xl-6 pr-2 pl-0">
+	<div class="col-12 col-xl-6 pr-2 pl-0 mb-3">
 		<div class="card card-body px-4" id="card-konfirmasi-besar">
 			<div class="row p-0 justify-content-between">
-				<div class="col-4">
+				<div class="col">
 					<h1 class="judulcard">Konfirmasi Pembayaran</h1>
 				</div>
 				<div class="col-3 align-self-end">
@@ -137,9 +157,9 @@
 			@foreach($datakonfirmasi as $d)
 			<div class="row mt-3 data-row-konfirmasi justify-content-between align-items-center">
 				<div class="col-1"><span class="foto"></span></div>
-				<div class="col-4"><span class="nama">{{$d->nama_pendaftar}}</span></div>
+				<div class="col-3"><span class="nama">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-3"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
-				<div class="col-3"><span class="badge
+				<div class="col-4"><span class="badge
 					@if($d->status_pembayaran)badge-success
 					@else
 					badge-danger
@@ -154,7 +174,7 @@
 			@endforeach
 		</div>
 	</div>
-	<div class="col-lg-12 col-xl-6 pr-2">
+	<div class="col-12 col-xl-6 px-2">
 		<div class="card card-body px-4" id="card-pendaftar-besar">
 			<div class="row p-0 justify-content-between">
 				<div class="col-4 align-self-end">

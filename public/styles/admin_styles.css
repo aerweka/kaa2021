@@ -149,7 +149,7 @@
 #profilec{
 	z-index: 100;
 	position: fixed;
-	right: 41px;
+	right: 26px;
 	margin-top: -5px;
 	background-color: #BDDEB1 !important;
 	border-radius: 10px 0px 10px 10px;
@@ -169,7 +169,7 @@
 
 .collapsing#profilec{
 	position: fixed !important;
-	right: 41px !important;
+	right: 26px !important;
 }
 
 #profilec a:hover{
@@ -382,8 +382,8 @@ body{
 	padding-left: 1rem;
 }
 
-#download-dash-btn{
-	margin-left: 40% !important;
+#download-dash-btn-mobile{
+	margin-left: 60% !important;
 }
 
 .viewall{
@@ -431,4 +431,12 @@ body{
 	letter-spacing: 1px !important;
 	font-size: 0.7rem !important;
 	font-weight: 500 !important;
+}
+
+.row{
+	margin-left: 0px !important;
+}
+
+.col{
+	padding-left: 0px !important;
 }
