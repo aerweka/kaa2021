@@ -24,6 +24,28 @@ body{
     display: flex;
     justify-content: center;
 }
+.container-flex{
+    height: 200px;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.bukti{
+    flex: 1;
+    padding: 15px;
+    background-color: rgb(204, 204, 204, 0.6);
+    border-radius: 15px;
+    border-inline-end: black solid 3px;
+}
+.status{
+    flex: 1;
+    padding: 15px;
+    background-color: rgb(204, 204, 204, 0.6);
+    border-radius: 15px;
+    border-inline-start: black solid 3px;
+}
 .header{
     background: url(/img/1597722989485_logo_2-1-removebg-preview.png);
     background-size: 120px;
@@ -45,7 +67,7 @@ body{
 }
 .bungkus{
     background-color: rgb(238, 238, 238, 0.7);
-    height: auto;
+    height: 330px;
     margin: 215px 40px 20px 40px;
     padding-bottom: 1px;
     border-radius: 20px;
@@ -77,36 +99,42 @@ h2{
     border-radius: 20px;
     background-color: #92E3A9;
 }
+label{
+    font-size: 20px;
+}
 p{
-    width: 90%;
-    padding: 20px auto;
-    margin: 30px auto;
+    font-size: 10px;
+    margin: 5px;
 }
-a.upload{
-    position: relative;
-    margin-left: 30px;
-    padding: 15px;
-    width: auto;
+.btn{
+    font-family: "Montserrat Alternates";
+    display: block;
+    margin: 20px auto 20px auto;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
+    padding: 5px;
+    width: 20%;
     color: white;
-    border-radius: 10px;
-    background-color: blue;
+    border-radius: 20px;
+    background-color: rgb(0, 109, 255, 0.8);
     transition: 0.50s;
     cursor: pointer;
 }
-a.kirim{
-    position: relative;
-    margin-left: 30px;
-    padding: 15px;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
+.btn:hover{
+    background: rgb(0, 96, 221);
     color: white;
-    border-radius: 10px;
-    background-color: blue;
-    transition: 0.50s;
-    cursor: pointer;
+}
+.sp{
+    display: block;
+    margin: auto;
+    width: 60%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: black solid 3px;
+    justify-content: center;
+    text-align: center;
 }
 .menu1{
     background: url(/flaticon/home-green.svg);
