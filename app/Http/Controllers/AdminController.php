@@ -70,7 +70,7 @@ class AdminController extends Controller
     public function verifikasi(){
     	$datasemua = Pembayaran::select('pembayaran.*','p.*')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->orderBy('pembayaran.tanggal_pembayaran','DESC')->paginate(10);
     	$databelum = Pembayaran::select('pembayaran.*','p.*')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->where('status_pembayaran','=',0)->orderBy('pembayaran.tanggal_pembayaran','DESC')->paginate(10);
-    	$datasudah = Pembayaran::select('pembayaran.*','p.*')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->where('status_pembayaran','=',1)->orderBy('pembayaran.tanggal_pembayaran','DESC')->paginate(10);
+    	$datasudah = Pembayaran::select('pembayaran.*','p.*')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->where('status_pembayaran','=',1)->orWhere('status_pembayaran','=',2)->orderBy('pembayaran.tanggal_pembayaran','DESC')->paginate(10);
     	return view('admin.verifikasi',['datasemua' => $datasemua,'databelum' => $databelum,'datasudah' => $datasudah]);
     }
 
