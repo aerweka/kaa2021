@@ -67,7 +67,7 @@ class AuthController extends Controller
         $pengguna = Pengguna::find($id);
         echo "username pengguna dan password lama".$pengguna->username.$pengguna->password;
         echo "password lama hasil input".bcrypt($req->pwnow);
-        if(bcrypt($req->pwnow) == $pengguna->password){
+        if(Hash::check($req->pwnow,$pengguna->password){
             echo "masuk if pertama";
             if($req->pwnew == $req->pwnew2){
                 echo "masuk if kedua";
