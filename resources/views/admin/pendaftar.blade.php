@@ -1,4 +1,5 @@
 @extends('admin.master_admin')
+@section('judul','Data Pendaftar')
 @section('links-admin')
 <link rel="stylesheet" type="text/css" href="{{asset('/styles/data_pendaftar_styles.css')}}">
 @endsection

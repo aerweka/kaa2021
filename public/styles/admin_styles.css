@@ -416,10 +416,11 @@ body{
 .foto{
 	height: 50px;
 	width: 50px;
-	background-image: url('/assets/images/uploads/foto/1.jpg');
-	background-size: cover;
 	border-radius: 50%;
 	display: inline-block;
+	object-fit: cover;
+	object-position: center;
+
 }
 
 .badge{
