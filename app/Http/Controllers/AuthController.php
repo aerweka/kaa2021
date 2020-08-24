@@ -5,7 +5,8 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Models\Pendaftaran;
 use App\Models\Pengguna;
-
+use Illuminate\Support\Facades\Hash;
+use DB;
 
 class AuthController extends Controller
 {
@@ -61,23 +62,16 @@ class AuthController extends Controller
 
     public function changepass(Request $req){
 
-        echo "masuk controller";
         $id = Auth::user()->id_user;
-        echo "id pengguna yang login ".$id;
         $pengguna = Pengguna::find($id);
-        echo "username pengguna dan password lama".$pengguna->username.$pengguna->password;
-        echo "password lama hasil input".bcrypt($req->pwnow);
-        if(Hash::check($req->pwnow,$pengguna->password){
-            echo "masuk if pertama";
+        if(Hash::check($req->pwnow,$pengguna->password)){
             if($req->pwnew == $req->pwnew2){
-                echo "masuk if kedua";
-                $pengguna->password = bcrypt($req->pwnew);
+                $pengguna->password = Hash::make($req->pwnew);
                 $pengguna->save();
-                echo "selesai save";
             }
         }
         
-        // return redirect('/home');
+        return redirect('/home');
     }
 
 }

@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/gantipassword1','AuthController@changepass');
+// Route::post('/gantipassword','AuthController@changepass');
+Route::post('/gantipassword','AuthController@changepass');
 Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/','AdminController@home');
 	Route::get('/pendaftar','AdminController@pendaftar');

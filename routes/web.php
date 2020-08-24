@@ -15,7 +15,7 @@ Route::get('/register', 'AuthController@register');
 Route::post('/postregister', 'AuthController@postregister');
 
 Auth::routes();
-Route::post('/gantipassword','AuthController@changepass');
+
 Route::middleware('peserta')->group(function () {
 
     Route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
