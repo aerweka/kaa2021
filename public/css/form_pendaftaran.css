@@ -34,11 +34,11 @@ body{
     padding: 20px;
 }
 .conten{
-    background: url(/flaticon/user.svg);
+    /* background: url(/flaticon/user.svg);
     background-size: 40px;
     background-repeat: no-repeat;
     background-position-y: 15px;
-    background-position-x: 785px;
+    background-position-x: 785px; */
     /* background-color: rgb(187, 255, 118); */
     flex: 3;
 }
