@@ -50,6 +50,10 @@ body, html{
     margin-left: 50px;
     margin-top: 20px;
 }
+.persyaratan p{
+  font-size: 18px;
+  margin-top: 20px;
+}
 .flex{
     display: flex;
     margin-top: 30px;
@@ -242,3 +246,39 @@ body, html{
   .button:hover {
     background-color: #555;
   }
+
+  /* =================================responsive================================= */
+@media screen and (max-width: 700px) {
+body{
+  width: auto;
+}
+.judul{
+  font-size: 32px;
+}
+.left::after {
+  left: 230px;
+}
+h3{
+  font-size: 19px;
+}
+.persyaratan p{
+  font-size: 16px;
+}
+.fasilitas{
+  margin: 0;
+  text-align: center;
+}
+.fasilitas h3{
+  font-size: 16px;
+  text-align: center;
+}
+p{
+  font-size: 16px;
+}
+.box{display: block;
+  text-align: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+}

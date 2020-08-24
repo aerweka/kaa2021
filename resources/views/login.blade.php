@@ -8,18 +8,20 @@
     <!-- <img src="/public/undraw_welcome_cats_thqn.svg" alt=""> -->
 </head>
 <body>
-    <div class="background">
-        <form  method="POST" action="/postlogin">
-            <div class="container">
+    <div class="flex">
+        <div class="background"></div>
+        <div class="container">
+            <form  method="POST" action="/postlogin">
                     <h2 class="signin">LOGIN</h2>
-                    <input type="text" class="username" placeholder="Username">
-                    <br><br>
-                    <input type="password" class="password" placeholder="Password">
-                    <br><br>
+                    {{ csrf_field() }}
+                    <input type="text" name="username" id="username" class="username" placeholder="Masukan Username" required>
+                    <br>
+                    <input type="password" name="password_user" id="password_user" class="password_user" placeholder="Masukan Password" required>
+                    <br>
                     <button type="submit" class="btn">Sign In</button>
                     <p>Don't Have Account? <a href="/register">Click Here</p>
-                </div>
             </form>
         </div>
+    </div>
 </body>
 </html>

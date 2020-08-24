@@ -1,20 +1,11 @@
 <?php
 
-// namespace App;
-
-// use Illuminate\Database\Eloquent\Model;
-
-// class Pendaftaran extends Model
-// {
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
-class Pendaftaran extends Model implements AuthenticatableContract {
-    
-    use Authenticatable;
+class Pendaftaran extends Model
+{
     protected $table = 'pendaftaran';
     protected $primaryKey = 'id_pendaftaran';
     protected $fillable = [

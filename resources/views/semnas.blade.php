@@ -52,7 +52,7 @@
     <!-- KONTEN KEDUA KIRI -->
     <div class="persyaratan">
         <h3 style="text-align: center;"><b>Persyaratan Umum :</b></h3>
-        <p style="font-size: 18px; margin-top: 20px;">1.	Mahasiswa D3, D4 atau S1 dari universitas, Sekolah <br>Tinggi maupun Politeknik di Indonesia yang<br> mendaftar dan dinyatakan terdaftar.<br>
+        <p>1.	Mahasiswa D3, D4 atau S1 dari universitas, Sekolah <br>Tinggi maupun Politeknik di Indonesia yang<br> mendaftar dan dinyatakan terdaftar.<br>
             2.	Peserta Umum.</p>
     </div>
     <!-- END KONTEN KEDUA KIRI -->
