@@ -42,7 +42,7 @@ class Pengguna extends Authenticatable
 		'id_role',
 		'id_pendaftaran',
 		'username',
-		'password_user',
+		'password',
 		'status_user'
 	];
 
