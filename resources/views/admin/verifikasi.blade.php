@@ -1,4 +1,5 @@
 @extends('admin.master_admin')
+@section('judul','Verifikasi Pembayaran')
 @section('links-admin')
 <link rel="stylesheet" type="text/css" href="{{asset('/styles/data_pendaftar_styles.css')}}">
 @endsection
@@ -56,8 +57,8 @@
 		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
 		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
-		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
-		  		<div class="col-3">Status</div>
+		  		<div class="col-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
+		  		<div class="col-2 col-lg-2 col-md-3 col-sm-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->
@@ -139,7 +140,7 @@
 					    	</div>
 					    </div>
 					    <div class="col-xl-4">
-					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
+					    	<img class="img-fluid" src="{{url('storage/bukti_pembayaran/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;">
 					    </div>
 					    @if($d->status_pembayaran == 0)
 					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4 mt-xl-0 mt-4">
@@ -149,13 +150,9 @@
 					    			<h4 class="text-center pertanyaan-text">Apakah pembayaran sudah diterima dan sesuai?</h4>
 					    		</div>
 					    		<br>
-					    		<div class="row justify-content-between mt-3">
-					    			<div class="col text-right">
-					    				<button class="btn btn-secondary btn-lg btn-tidak" id="tidak-{{$d->id_pembayaran}}">Tidak</button>
-					    			</div>
-					    			<div class="col text-left">
-					    				<button class="btn btn-primary btn-lg btn-ya" id="ya-{{$d->id_pembayaran}}">Ya</button>
-					    			</div>
+					    		<div class="row justify-content-center">
+					    			<button class="btn btn-secondary btn-lg btn-tidak mx-2 my-2" id="tidak-{{$d->id_pembayaran}}">Tidak</button>
+					    			<button class="btn btn-primary btn-lg btn-ya mx-2  my-2" id="ya-{{$d->id_pembayaran}}">Ya</button>
 					    		</div>
 					    		<br>
 					    		<div class="row justify-content-center mt-3">
@@ -198,8 +195,8 @@
 		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
 		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
-		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
-		  		<div class="col-3">Status</div>
+		  		<div class="col-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
+		  		<div class="col-2 col-lg-2 col-md-3 col-sm-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->
@@ -281,7 +278,7 @@
 					    	</div>
 					    </div>
 					    <div class="col-xl-4">
-					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
+					    	<img class="img-fluid" src="{{url('storage/bukti_pembayaran/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;">
 					    </div>
 					    @if($d->status_pembayaran == 0)
 					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4">
@@ -340,8 +337,8 @@
 		  		<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">ID Pendaftaran</div>
 		  		<div class="col-3 col-lg-3 col-md-3 col-sm-3">Nama</div>
 		  		<div class="col-2 d-none d-xl-block">Asal Universitas</div>
-		  		<div class="col-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
-		  		<div class="col-3">Status</div>
+		  		<div class="col-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">Total</div>
+		  		<div class="col-2 col-lg-2 col-md-3 col-sm-3">Status</div>
 		  	</div>
 		  	<!-- End of Header -->
 		  	<!-- Data Pendaftar -->

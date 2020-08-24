@@ -163,8 +163,8 @@
 	</div> -->
 	
 </div>
-<div class="row mx-1 mt-4 justify-content-between d-none d-xl-block d-lg-block d-md-block d-sm-block">
-	<div class="col-12 col-xl-6 pr-2 pl-0 mb-3">
+<div class="row mx-1 mt-4 justify-content-between">
+	<div class="col col-xl-6 pr-2 pl-0 mb-3 d-none d-xl-block d-lg-block d-md-block d-sm-block">
 		<div class="card card-body px-4" id="card-konfirmasi-besar">
 			<div class="row p-0 justify-content-between">
 				<div class="col">
@@ -176,7 +176,7 @@
 			</div>
 			@foreach($datakonfirmasi as $d)
 			<div class="row my-2 data-row-konfirmasi justify-content-between align-items-center">
-				<div class="col-1 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="foto"></span></div>
+				<div class="col-1 d-none d-xl-block d-lg-block d-md-block d-sm-block"><img class="foto" src="{{url('storage/pas_foto/'.$d->pas_foto)}}"></div>
 				<div class="col-3"><span class="nama">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-3 col-xs-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
 				<div class="col col-xl-4 col-lg-4 col-md-4 col-sm-4 text-right"><span class="badge
@@ -194,7 +194,7 @@
 			@endforeach
 		</div>
 	</div>
-	<div class="col-12 col-xl-6 px-2">
+	<div class="col col-xl-6 px-2 d-none d-xl-block d-lg-block d-md-block d-sm-block">
 		<div class="card card-body px-4" id="card-pendaftar-besar">
 			<div class="row p-0 justify-content-between">
 				<div class="col align-self-end">
@@ -206,7 +206,7 @@
 			</div>
 			@foreach($datapendaftar as $d)
 			<div class="row my-2 data-row-konfirmasi align-items-center justify-content-between">
-				<div class="col-1 mr-4 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="foto"></span></div>
+				<div class="col-1 mr-4 d-none d-xl-block d-lg-block d-md-block d-sm-block"><img class="foto" src="{{url('storage/pas_foto/'.$d->pas_foto)}}"></div>
 				<div class="col-4">
 					<div class="row">
 						<span class="nama">{{$d->nama_pendaftar}}</span>
