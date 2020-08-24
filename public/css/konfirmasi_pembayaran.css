@@ -309,3 +309,75 @@ label{
     background-color: #92E3A9;
     color: white;
 }
+
+/* =================================responsive================================= */
+@media screen and (max-width: 700px) {
+    body, html{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        background-color: white;
+        background-image: none;
+        width: 100%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        display: table-row;
+    }
+    .menu1{
+        margin-bottom: 40px;
+        margin-left: 60px;
+    }
+    .header {
+        display: inline-block;
+        box-sizing: border-box;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        width: 500px;
+        /* width: 100%; */
+        height: auto;
+        position: relative;
+    }
+    .bungkus{
+        margin-top: 100px;
+        height: auto;
+    }
+    input.bank_asal, input.atas_nama_rekening, input.nomor_rekening, input.total_pembayaran{
+        display: block;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 80%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    input.bukti_pembayaran{
+        display: block;
+        width: 50%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    label{
+        display: block;
+        width: 80%;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form{
+        height: auto;
+    }
+    h2{
+        font-size: 20px;
+        text-align: center;
+    }
+    p{
+        font-size: 14px;
+    }
+  }

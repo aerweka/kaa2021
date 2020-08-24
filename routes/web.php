@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('/landingpage');
@@ -38,3 +39,6 @@ route::get('/peserta/cetak_kartu_peserta', 'PesertaController@cetak_kartu_pesert
 
 route::post('/peserta/form_pendaftaran', 'PesertaController@store_pendaftaran');
 route::post('/peserta/konfirmasi_pembayaran', 'PesertaController@store_pembayaran');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -454,3 +454,26 @@ body{
   .button:hover {
     background-color: #555;
   }
+
+  /* =================================responsive================================= */
+@media screen and (max-width: 700px) {
+body{
+  width: 500px;
+}
+.logo{
+  background-size: 200px;
+}
+.juara{
+  display: block;
+  width: 100%;
+  height: auto;
+  background-image: none;
+  text-align: start;
+  margin-top: 45px;
+  margin-bottom: auto;
+  margin-left: 45px;
+  margin-right: auto;
+  font-size: 14px;
+  float: left;
+}
+}
