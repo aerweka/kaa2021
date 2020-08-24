@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/semnas', function () {
     return view('/semnas');
 });
-Route::post('/gantipassword','AuthController@changepass');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
@@ -15,6 +15,7 @@ Route::get('/register', 'AuthController@register');
 Route::post('/postregister', 'AuthController@postregister');
 
 Auth::routes();
+Route::post('/gantipassword','AuthController@changepass');
 Route::middleware('peserta')->group(function () {
 
     Route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
