@@ -68,7 +68,7 @@
 					<div class="collapse" id="profilec">
 					  <div class="p-2" id="profileContainer">
 					  	<div class="card card-body mx-1 my-2 p-3">
-					  		<a href="{{url('/admin/gantipassword')}}"><span>Ganti Password</span></a>
+					  		<a href="{{url('/admin/changepassword')}}"><span>Ganti Password</span></a>
 					  	</div>
 					  	<div class="card card-body mx-1 my-2 p-3">
 					  		<a href="{{url('/logout')}}"><span>Logout</span></a>

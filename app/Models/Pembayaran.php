@@ -16,9 +16,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $id_pendaftaran
  * @property string $atas_nama_rekening
  * @property string $bank_asal
+ * @property string $nomor_rekening
  * @property Carbon $tanggal_pembayaran
  * @property int $total_pembayaran
- * @property bool $status_pembayaran
+ * @property int $status_pembayaran
  * @property string $bukti_pembayaran
  * 
  * @property Pendaftaran $pendaftaran
@@ -45,6 +46,7 @@ class Pembayaran extends Model
 		'id_pendaftaran',
 		'atas_nama_rekening',
 		'bank_asal',
+		'nomor_rekening',
 		'tanggal_pembayaran',
 		'total_pembayaran',
 		'status_pembayaran',

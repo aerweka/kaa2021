@@ -2,43 +2,29 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Auth::routes();
-
-Route::get('/', function () {
-    return view('/landingpage');
-});
 Route::get('/semnas', function () {
     return view('/semnas');
 });
-// Route::group(['middleware' => 'auth'], function () {});
-// ->name('login');
-// ->name('register');
-
-route::get('/login', 'AuthController@login');
-route::post('/postlogin', 'AuthController@postlogin');
-// route::get('/logout', 'AuthController@logout');
-route::get('/register', 'AuthController@register');
-route::post('/postregister', 'AuthController@postregister');
-
-route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
-route::get('/peserta/alur_pembayaran', 'PesertaController@alur_pembayaran');
-route::get('/peserta/konfirmasi_pembayaran', 'PesertaController@konfirmasi_pembayaran');
-route::get('/peserta/form_pendaftaran', 'PesertaController@form_pendaftaran');
-route::get('/peserta/cetak_kartu_peserta', 'PesertaController@cetak_kartu_peserta');
-
-
-route::post('/peserta/form_pendaftaran', 'PesertaController@store_pendaftaran');
-route::post('/peserta/konfirmasi_pembayaran', 'PesertaController@store_pembayaran');
-Auth::routes();
+Route::post('/gantipassword','AuthController@changepass');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function () {
+    return view('/landingpage');
+});
+Route::get('/register', 'AuthController@register');
+Route::post('/postregister', 'AuthController@postregister');
+
+Auth::routes();
+Route::middleware('peserta')->group(function () {
+
+    Route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
+	Route::get('/peserta/alur_pembayaran', 'PesertaController@alur_pembayaran');
+	Route::get('/peserta/konfirmasi_pembayaran', 'PesertaController@konfirmasi_pembayaran');
+	Route::get('/peserta/form_pendaftaran', 'PesertaController@form_pendaftaran');
+	Route::get('/peserta/cetak_kartu_peserta', 'PesertaController@cetak_kartu_peserta');
+	Route::post('/peserta/form_pendaftaran', 'PesertaController@store_pendaftaran');
+	Route::post('/peserta/konfirmasi_pembayaran', 'PesertaController@store_pembayaran');
+
+});
+
+Route::get('/logout', 'AuthController@logout');

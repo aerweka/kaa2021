@@ -16,7 +16,8 @@ a, a:hover{
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-6">
-		<form action="{{url('/admin/gantipassword')}}" method="POST">
+		<form action="{{url('/gantipassword')}}" method="POST">
+			@csrf
 		  <div class="form-group mx-auto">
 		    <label>Password Lama</label>
 		    <div class="input-group">
