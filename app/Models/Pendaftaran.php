@@ -15,15 +15,16 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property string $id_pendaftaran
  * @property string $nama_pendaftar
- * @property string $asal_daerah
+ * @property string|null $asal_daerah
  * @property string $asal_univ_pendaftar
  * @property string $email_pendaftar
- * @property string $no_telepon_pendaftar
- * @property string $id_line_pendaftar
- * @property string $scan_ktm
- * @property string $pas_foto
+ * @property string|null $no_telepon_pendaftar
+ * @property string|null $id_line_pendaftar
+ * @property string|null $scan_ktm
+ * @property string|null $pas_foto
  * @property string|null $scan_suket_aktif
  * @property Carbon $tgl_pendaftaran
+ * @property bool $status_pendaftaran
  * 
  * @property Collection|Pembayaran[] $pembayarans
  * @property Collection|Pengguna[] $penggunas
@@ -36,6 +37,10 @@ class Pendaftaran extends Model
 	protected $primaryKey = 'id_pendaftaran';
 	public $incrementing = false;
 	public $timestamps = false;
+
+	protected $casts = [
+		'status_pendaftaran' => 'bool'
+	];
 
 	protected $dates = [
 		'tgl_pendaftaran'
@@ -51,7 +56,8 @@ class Pendaftaran extends Model
 		'scan_ktm',
 		'pas_foto',
 		'scan_suket_aktif',
-		'tgl_pendaftaran'
+		'tgl_pendaftaran',
+		'status_pendaftaran'
 	];
 
 	public function pembayarans()

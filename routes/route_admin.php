@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/','AdminController@home');
 	Route::get('/pendaftar','AdminController@pendaftar');
 	Route::get('/verifikasi','AdminController@verifikasi');
@@ -21,7 +21,7 @@ Route::prefix('admin')->group(function () {
 	Route::get('/verifikasi/true{id}','AdminController@verifikasiTrue');
 	Route::get('/verifikasi/false{id}','AdminController@verifikasiFalse');
 
-	Route::get('/gantipassword',function(){
+	Route::get('/changepassword',function(){
 		return view('admin.gantipassword');
 	});
 });
