@@ -20,6 +20,15 @@
             </tr>
         </div>
         <div class="conten">
+
+            <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn"></button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Change Password</a>
+                <a href="#">Logout</a>
+            </div>
+            </div>
+
             <div class="bungkus">
                 <h2>FORM PENDAFTARAN</h2>
                 <form method="post" action="/peserta/form_pendaftaran" enctype="multipart/form-data">
@@ -64,5 +73,28 @@
             <!-- <div class="telpon">Phone Number</div> -->
         </div>
     </div>
+
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+        }
+    }
+    }
+    </script>
+    
 </body>
 </html>
