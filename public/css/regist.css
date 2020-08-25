@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body{
     padding: 0;
@@ -37,20 +37,20 @@ body{
     flex: 1;
 }
 .lgs{
-    font-family: "Montserrat Alternates";
+    font-family: "Montserrat";
     margin-left: 20px;
     font-size: 64px;
     color: #8BBF99;
 }
 h2{
-    font-family: "Montserrat Alternates";
+    font-family: "Montserrat";
     font-size: 30px;
     margin-left: 40px;
     margin-top: 180px;
 
 }
 input{
-    font-family: "Montserrat Alternates";
+    font-family: "Montserrat";
     margin-left: 40px;
     margin-right: 40px;
     width: 400px;
@@ -61,7 +61,7 @@ p{
     margin-left: 130px;
 }
 .btn{
-  font-family: "Montserrat Alternates";
+  font-family: "Montserrat";
   display: block;
   margin-left: 40px;
   margin-right: 40px;

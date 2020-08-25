@@ -39,28 +39,7 @@
       <div class="logo">
       </div>
       
-      <div class="title" style="justify-content: center;">
-          <table style="height: 50%; width: auto; text-align: center; margin-top: 80px;">
-            <tbody>
-              <tr>
-                <td class="align-baseline">
-                  <div class="shapetop">
-                    <h4><b>KAA</b></h4>
-                  </div>
-                </td>
-                <td class="align-middle">
-                  <div class="shape">
-                    <h4><b>KOMPETISI AKUNTANSI<br> AIRLANGGA</b></h4>
-                  </div>
-                </td>
-                <td class="align-bottom">
-                  <div class="shapebot">
-                    <h4><b>2020</b></h4>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="title">
       </div>
     </div>
     <!-- END LOGO+TITLE -->
@@ -275,7 +254,7 @@
             <img src="" alt="" style="width:100%">
             <div class="container4">
               <h2>Eltin Mahdani</h2>
-              <p class="title2">No.Telpo :</p>
+              <p class="title2">No.Telp :</p>
               <p>085236191648</p>
               <p class="title2">Line :</p>
               <p>eltinmahdani</p>

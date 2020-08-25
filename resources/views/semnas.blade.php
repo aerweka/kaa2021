@@ -23,7 +23,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link btn" id="bh"  href="/"><b>BACK</b></a>
+            <a class="nav-item nav-link btn" id="bh"  href="/"><b>Back</b></a>
           </div>
         </div>
       </div>
@@ -31,12 +31,15 @@
     <!-- END NAVBAR -->
     
     <!-- JUDUL -->
-        <div class="judul"><b>SEMINAR NASIONAL</b></div>
+    <div class="d-flex justify-content-center">
+        <div class="judul">
+        </div>
+    </div>
     <!-- END JUDUL -->
 
     <!-- KONTEN PERTAMA -->
-    <div class="keterangan">
-        <p><b>Seminar Nasional Akuntansi (Semnas)</b> adalah program kerja tahunan dari HIMA PRODI D-III 
+    <div class="d-flex justify-content-center" style="margin: 20px; padding: 10px;">
+        <p style="text-align: center; font-size: 17px;"><b>Seminar Nasional Akuntansi (Semnas)</b> adalah program kerja tahunan dari HIMA PRODI D-III 
             Akuntansi Fakultas Vokasi Universitas Airlangga sebagai suatu bentuk kontribusi terhadap  pengetahuan mahasiswa akuntansi serta menyiapkan para calon akuntan untuk bersaing du dunia kerja. Mengundang pakar dan praktisi di bidang akuntansi sehingga diharapkan mahasiswa akuntansi dapat belajar langsung dari praktisi dan pakar sehingga tidak hanya pengetahuan yang didapat dari ruang kuliah saja yang diasah, melainkan juga mendapat tambahan pengetahuan baru melalui seminar nasional ini.
             Serangkaian acara seminar nasional ini yaitu Kompetisi Akuntansi Airlangga (KAA) yang merupakan ajang untuk mengasah dan memperdalam kemampuan mahasiswa akuntansi mengundang juri ahli di bidang akuntansi
         </p>
