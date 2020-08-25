@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <!-- bootstrap -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-    <!-- bootstrap -->
     <link rel="stylesheet" type="text/css" href="/css/dashboard_user.css">
 </head>
 <body>
@@ -25,28 +19,64 @@
         </div>
         <div class="conten">
 
+        <!-- Item Profile -->
             <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn"></button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="#">Change Password</a>
-                <a href="#">Logout</a>
-            </div>
+                <button onclick="myFunction()" class="dropbtn"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a onclick="openForm()">Profile</a>
+                        <a href="/logout">Logout</a>
+                    </div>
             </div>
 
-            <h1>Selamat Datang, User . .</h1>
+            <!-- Profile Card -->
+            <div class="form-popup" id="myForm">
+                <form class="form-container">
+                    <div class="card">
+
+                    @foreach( $profile as $pr)
+
+                    <p>Name :</p>
+                    <h4>{{ $pr->nama_pendaftar}}</h4>
+                    <p>Email :</p>
+                    <h4>{{ $pr->email_pendaftar}}</h4>
+                    <p>University :</p>
+                    <h4>{{ $pr->asal_univ_pendaftar}}</h4>
+
+                    @endforeach
+
+                    </div>
+                    <button type="button" class="btn warning" onclick="openFormPass()">Change Password</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+            
+            <!-- Form Password -->
+            <div class="form-popup2" id="myFormPass">
+                <form action="/action_page.php" class="form-container2">
+                    <h1 style="font-size: 24px; text-align: center;">Change Password</h1>
+
+                    <input type="password" placeholder="Password" name="pwnow" required>
+
+                    <input type="password" placeholder="New Password" name="pwnew" required>
+
+                    <input type="password" placeholder="Confirmation Password" name="pwnew2" required>
+
+                    <button type="submit" class="btn">Submit</button>
+                    <button type="button" class="btn cancel" onclick="closeFormPass()">Close</button>
+                </form>
+            </div>
+
+            <!-- content -->
+            <h1 class="welcome">Selamat Datang, {{$pr->nama_pendaftar}}</h1>
+
             <div class="bungkus">
                 <h2>PENGUMUMAN</h2>
+
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora laborum cum beatae libero nam soluta corrupti quasi, assumenda doloribus impedit voluptate dolore vel harum minus accusamus cumque at dignissimos rerum? Accusamus alias illo nulla atque accusantium minus quo fugit amet.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum eveniet laudantium distinctio, porro molestiae et sit suscipit provident totam repudiandae ducimus obcaecati? Nam, voluptas consectetur cum sequi mollitia dicta vero nisi molestiae optio libero, est architecto eos quo inventore accusantium sunt in vitae qui expedita laborum ducimus asperiores. Iure adipisci ipsam optio placeat, maiores corporis voluptatem, assumenda quae pariatur ipsum voluptatum cupiditate ad molestias nihil alias beatae accusamus dignissimos hic labore doloremque soluta praesentium facere. Quo soluta, perferendis autem delectus sunt nostrum magnam fugit vero perspiciatis, accusamus minima facilis! Porro dignissimos impedit corrupti facilis ut itaque eum deserunt sit repellendus?
                     </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore quas magni ducimus eligendi sit asperiores possimus recusandae laborum vel cumque eum labore accusantium velit aspernatur distinctio ex, non in facilis modi quos fugit sequi rem soluta illo. Harum, non repudiandae maxime pariatur tempore rem eum unde alias eius vel eveniet suscipit nisi quo quod, natus voluptatum beatae neque, omnis cupiditate error totam. Magnam quis sapiente aut impedit odio perferendis ea!
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, perferendis molestias! Ut doloremque, temporibus dolor laudantium minima deleniti dolores voluptates!
-                    </p>
+
             </div>
-            <!-- <div class="telpon">Phone Number</div> -->
         </div>
     </div>
 
@@ -69,6 +99,26 @@
         }
         }
     }
+    }
+
+    // when the user clicks on the buttom, the form will be showing for profile page
+    function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    }
+
+    // when the user clicks on the buttom, the form will be closing for profile page
+    function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    }
+
+    // when the user clicks on the buttom, the form will be showing for change password page
+    function openFormPass() {
+    document.getElementById("myFormPass").style.display = "block";
+    }
+
+    // when the user clicks on the buttom, the form will be closing for change password page
+    function closeFormPass() {
+    document.getElementById("myFormPass").style.display = "none";
     }
     </script>
     
