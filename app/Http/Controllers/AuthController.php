@@ -48,7 +48,7 @@ class AuthController extends Controller
             'id_role' => 2,
             'id_pendaftaran' => $id_daftar->id_pendaftaran,
             'username' => $request->username,
-            'password_user' => bcrypt($request->password_user),
+            'password' => bcrypt($request->password_user),
             'status_user' => 1
         ]);
 

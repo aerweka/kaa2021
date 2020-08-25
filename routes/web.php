@@ -11,10 +11,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('/landingpage');
 });
-Route::get('/register', 'AuthController@register');
-Route::post('/postregister', 'AuthController@postregister');
 
 Auth::routes();
+Route::get('/register', 'AuthController@register');
+Route::post('/postregister', 'AuthController@postregister');
 
 Route::middleware('peserta')->group(function () {
 
