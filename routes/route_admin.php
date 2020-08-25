@@ -25,6 +25,14 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 	Route::get('/changepassword',function(){
 		return view('admin.gantipassword');
 	});
+
+	Route::get('/scan_ktm/{id}/view','AdminController@viewScanKTM');
+	Route::get('/pas_foto/{id}/view','AdminController@viewPasFoto');
+	Route::get('/scan_suket_aktif/{id}/view','AdminController@viewScanSuketAktif');
+
+	Route::get('/scan_ktm/{id}/download','AdminController@downloadScanKTM');
+	Route::get('/pas_foto/{id}/download','AdminController@downloadPasFoto');
+	Route::get('/scan_suket_aktif/{id}/download','AdminController@downloadScanSuketAktif');
 });
 
 

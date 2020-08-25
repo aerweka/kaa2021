@@ -100,4 +100,8 @@ class AdminController extends Controller
 
     	return response()->json(['success' => true]);
     }
+
+    public function viewScanKTM($id){
+        
+    }
 }

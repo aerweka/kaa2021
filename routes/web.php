@@ -6,13 +6,12 @@ Route::get('/semnas', function () {
     return view('/semnas');
 });
 
-
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('/landingpage');
 });
 
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/register', 'AuthController@register');
 Route::post('/postregister', 'AuthController@postregister');
 

@@ -25,9 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+        echo "masuk controller home";
+        // if (!Auth::check()) {
+        //     return redirect('/');
+        // }
 
         if (Auth::user()->id_role == 1) {
             return redirect('/admin');
