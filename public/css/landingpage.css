@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body{
-    font-family: "Montserrat Alternates";
+    font-family: "Montserrat";
 }
 .logo{
-    height: 400px;
     width: 50%;
+    height: 400px;
+    margin-top: 50px;
     background: url(/img/1597722989485_logo_2-1-removebg-preview.png) no-repeat;
     background-size: 300px;
     background-position: center;
 }
 .title{
     width: 50%;
+    margin-top: 70px;
+    background: url(/img/KAA2020.svg) no-repeat;
+    background-size: 600px;
+    background-position: center;
 }
 .title-konten{
     margin-top: 180px;
@@ -77,7 +82,7 @@ body{
     text-align: center;
 }
 .daftar{
-    font-family: "Montserrat Alternates";
+    font-family: "Montserrat";
     display: block;
     margin: 40px auto 20px auto;
     justify-content: center;
@@ -97,7 +102,7 @@ body{
       color: white;
 }
 .download{
-    font-family: "Montserrat Alternates";
+    font-family: "Montserrat";
     display: block;
     margin: 50px auto 20px auto;
     justify-content: center;
@@ -120,14 +125,14 @@ body{
     width: 100%;
     background-color: #8BBF99;
     color: white;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-left: 10px;
 }
 #bh2{
     width: 100%;
     background-color: yellow;
     color: red;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-right: 10px;
 }
 #bh:hover{
@@ -137,36 +142,6 @@ body{
 #bh2:hover{
       background: red;
       color: yellow;
-}
-.shape{
-    padding: 15px;
-	width: auto;
-	height: auto;
-	transform: skew(20deg);
-    background: #92E3A9;
-    border-radius: 10px;
-    border: black solid 1px;
-    color: white;
-}
-.shapetop{
-    padding: 5px;
-	width: auto;
-	height: auto;
-	transform: skew(20deg);
-    background: #8BBF99;
-    border-radius: 10px;
-    border: black solid 1px;
-    color: white;
-}
-.shapebot{
-    padding: 5px;
-	width: auto;
-	height: auto;
-	transform: skew(20deg);
-    background: #DFE8D5;
-    border-radius: 10px;
-    border: black solid 1px;
-    color: white;
 }
 /* ================================================BUTTOM UP==================================== */
 #myBtn {
@@ -461,7 +436,13 @@ body{
   width: 500px;
 }
 .logo{
+  width: 50%;
+  height: 300px;
   background-size: 200px;
+}
+.title{
+  width: 60%;
+  background-size: 250px;
 }
 .juara{
   display: block;
