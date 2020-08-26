@@ -144,9 +144,9 @@
 					    	<img class="xzoom img-fluid" src="{{url('storage/'.$d->bukti_pembayaran)}}" xoriginal="{{url('storage/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;"/>
 					    </div>
 					    @if($d->status_pembayaran == 0)
-					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4 mt-xl-0 mt-4">
+					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4 mt-xl-0 mt-4" id="pertanyaan-{{$d->id_pembayaran}}">
 					    	<div class="row">
-					    		<div class="card card-body card-drop card-berkas" id="berkas3">
+					    		<div class="card card-body card-drop card-berkas">
 					    		<div class="row justify-content-center">
 					    			<h4 class="text-center pertanyaan-text">Apakah pembayaran sudah diterima dan sesuai?</h4>
 					    		</div>
@@ -282,19 +282,19 @@
 					    	<img class="xzoom img-fluid" src="{{url('storage/'.$d->bukti_pembayaran)}}" xoriginal="{{url('storage/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;"/>
 					    </div>
 					    @if($d->status_pembayaran == 0)
-					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4">
+					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4" id="pertanyaan-belum-{{$d->id_pembayaran}}">
 					    	<div class="row">
-					    		<div class="card card-body card-drop card-berkas" id="berkas3">
+					    		<div class="card card-body card-drop card-berkas">
 					    		<div class="row justify-content-center">
 					    			<h4 class="text-center pertanyaan-text">Apakah pembayaran sudah diterima dan sesuai?</h4>
 					    		</div>
 					    		<br>
 					    		<div class="row justify-content-center mt-3">
 					    			<div class="col-4 text-right">
-					    				<button class="btn btn-secondary btn-lg btn-tidak-belum" id="tidak-{{$d->id_pembayaran}}">Tidak</button>
+					    				<button class="btn btn-secondary btn-lg btn-tidak-belum" id="tidak-belum-{{$d->id_pembayaran}}">Tidak</button>
 					    			</div>
 					    			<div class="col-4 text-left">
-					    				<button class="btn btn-primary btn-lg btn-ya-belum" id="ya-{{$d->id_pembayaran}}">Ya</button>
+					    				<button class="btn btn-primary btn-lg btn-ya-belum" id="ya-belum-{{$d->id_pembayaran}}">Ya</button>
 					    			</div>
 					    		</div>
 					    		<br>
@@ -382,7 +382,7 @@
 				<div class="col col-md-1 col-lg-1 col-xl-1 col-sm-1 text-right"><span class="drop" id="drop{{$d->id_pendaftaran}}" data-toggle="collapse" data-target="#data-sudah{{$d->id_pendaftaran}}" aria-expanded="false" aria-controls="data-sudah{{$d->id_pendaftaran}}"></span></div>
 				<div class="collapse mt-3" id="data-sudah{{$d->id_pendaftaran}}" style="width: 100%;">
 				  <div class="card card-body card-drop">
-				  	<div class="row justify-content-between">
+				  	<div class="row">
 					    <div class="col-xl-4">
 					    	<div class="row drop-nopendaftar" id="drop-nopendaftar3">{{$d->id_pendaftaran}}</div>
 					    	<div class="row dropdata drop-nama" id="drop-nama3"><span class="icon icon-nama"></span>{{$d->nama_pendaftar}}</div>
@@ -421,7 +421,7 @@
 					    	</div>
 					    </div>
 					    <div class="col-xl-4">
-					    	<img src="{{asset('/assets/images/uploads/bukti-trf/1.jpg')}}" width="100%">
+					    	<img class="xzoom img-fluid" src="{{url('storage/'.$d->bukti_pembayaran)}}" xoriginal="{{url('storage/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;"/>
 					    </div>
 				    </div>
 				  </div>
@@ -761,6 +761,8 @@
 
 		function statusberubah(id){
 			$("#data-belum"+id).remove();
+			$("#pertanyaan-"+id).hide();
+			$("#pertanyaan-belum-"+id).hide();
 		}
 	});
 </script>
