@@ -21,7 +21,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('/home', 'HomeController@index');
 
 //route untuk logout
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout')->middleware('auth');
 
 Route::middleware('peserta')->group(function () {
 	Route::get('/peserta',function(){
