@@ -20,9 +20,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers {
-        logout as doLogout;
-    }
+    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
@@ -45,7 +43,7 @@ class LoginController extends Controller
     {
         return 'username';
     }
-
+  
     public function logout(Request $request)
     {
         $this->guard()->logout();

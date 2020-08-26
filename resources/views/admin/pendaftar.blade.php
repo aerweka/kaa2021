@@ -155,7 +155,7 @@
 										</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary"@if($d->scan_ktm == null)
+					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}" target="_blank"><button class="btn btn-secondary"@if($d->scan_ktm == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->scan_ktm == null)
@@ -180,7 +180,7 @@
 										@endif</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary"@if($d->pas_foto == null)
+					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary"@if($d->pas_foto == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->pas_foto == null)
@@ -205,7 +205,7 @@
 										@endif</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
+					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->scan_suket_aktif == null)
@@ -360,7 +360,7 @@
 										</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary"@if($d->scan_ktm == null)
+					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary"@if($d->scan_ktm == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->scan_ktm == null)
@@ -385,7 +385,7 @@
 										@endif</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary"@if($d->pas_foto == null)
+					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary"@if($d->pas_foto == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->pas_foto == null)
@@ -410,7 +410,7 @@
 										@endif</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
+					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->scan_suket_aktif == null)
@@ -565,7 +565,7 @@
 										</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary"@if($d->scan_ktm == null)
+					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary"@if($d->scan_ktm == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->scan_ktm == null)
@@ -590,7 +590,7 @@
 										@endif</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary"@if($d->pas_foto == null)
+					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary"@if($d->pas_foto == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->pas_foto == null)
@@ -615,7 +615,7 @@
 										@endif</span>
 					    			</div>
 					    			<div class="col-12 col-md-6 col-lg-6 col-sm-6 col-xl-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0">
-					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/view')}}"><button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
+					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/view')}}"  target="_blank"><button class="btn btn-secondary" @if($d->scan_suket_aktif == null)
 										disabled
 										@endif><span class="icon icon-view"></span>Pratinjau</button></a>
 					    				<a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/download')}}"><button class="btn btn-primary"@if($d->scan_suket_aktif == null)
