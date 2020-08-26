@@ -10,30 +10,14 @@ use DB;
 
 class AuthController extends Controller
 {
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('/');
-    }
     
     public function register()
     {
-        return view('/register');
+        return view('register');
     }
     
     public function postregister(Request $request)
     {
-        // dd('register oke');
-        
-        // $daftar = Pendaftaran::create([
-        //     'nama_pendaftar'=>$request->nama_pendaftar,
-        //     'asal_univ_pendaftar'=>$request->asal_univ_pendaftar,
-        //     'email_pendaftar'=>$request->email_pendaftar
-        //     ]);
-        //     // dd($request->all());
-        // auth()->loginUsingId($daftar->id_pendaftaran);
-        // return redirect('/peserta/dashboard_user');
-        // // return redirect()->back();
 
         $pendaftaran = Pendaftaran::create([
             'nama_pendaftar' => $request->nama_pendaftar,
@@ -52,10 +36,15 @@ class AuthController extends Controller
             'status_user' => 1
         ]);
 
-            // return redirect()->back();
-            // dd($request->all());
-            
-        // Auth::loginUsingId($pengguna->id_user);
+        $to_name = $request->nama_pendaftar;
+        $to_email = $request->email_pendaftar;
+        $data = array('name'=>'Ogbonna Vitalis(sender_name)', 'body' => 'A test mail');
+        Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)
+                ->subject(Laravel Test Mail’);
+                $message->from('deaamartya3@gmail.com','Test Mail');
+            }
+        );
 
         return redirect('/login');
     }

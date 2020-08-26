@@ -25,7 +25,7 @@ use Illuminate\Notifications\Notifiable;
  *
  * @package App\Models
  */
-class Pengguna extends Authenticatable
+class Pengguna extends Authenticatable implements MustVerifyEmail
 {
 	use Notifiable;
 
