@@ -10,16 +10,18 @@ Route::get('/', function () {
     return view('/landingpage');
 });
 
+
+//route untuk registrasi
 Route::get('/register', 'AuthController@register');
 Route::post('/postregister', 'AuthController@postregister');
 
+//route untuk login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
+Route::get('/home', 'HomeController@index');
 
-Route::middleware('auth')->group(function () {
-	Route::get('/home', 'HomeController@index')->name('home');
-	Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-});
+//route untuk logout
+Route::get('logout', 'Auth\LoginController@logout')->name('logout')->middleware('auth');
 
 Route::middleware('peserta')->group(function () {
 	Route::get('/peserta',function(){

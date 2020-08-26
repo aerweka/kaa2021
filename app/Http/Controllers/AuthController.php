@@ -36,15 +36,15 @@ class AuthController extends Controller
             'status_user' => 1
         ]);
 
-        $to_name = $request->nama_pendaftar;
-        $to_email = $request->email_pendaftar;
-        $data = array('name'=>'Ogbonna Vitalis(sender_name)', 'body' => 'A test mail');
-        Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
-            $message->to($to_email, $to_name)
-                ->subject(Laravel Test Mail’);
-                $message->from('deaamartya3@gmail.com','Test Mail');
-            }
-        );
+        // $to_name = $request->nama_pendaftar;
+        // $to_email = $request->email_pendaftar;
+        // $data = array('name'=>'Ogbonna Vitalis(sender_name)', 'body' => 'A test mail');
+        // Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
+        //     $message->to($to_email, $to_name)
+        //         ->subject('Laravel Test Mail');
+        //         $message->from('deaamartya3@gmail.com','Test Mail');
+        //     }
+        // );
 
         return redirect('/login');
     }

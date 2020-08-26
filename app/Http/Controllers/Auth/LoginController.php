@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Auth;
 
 class LoginController extends Controller
 {
@@ -20,7 +19,9 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as doLogout;
+    }
 
     /**
      * Where to redirect users after login.
@@ -46,11 +47,9 @@ class LoginController extends Controller
 
     public function logout()
     {
-        $this->guard()->logout();
+        $this->doLogout($request);
 
-        Auth::logout();
- 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 
 }
