@@ -176,7 +176,14 @@
 			</div>
 			@foreach($datakonfirmasi as $d)
 			<div class="row my-2 data-row-konfirmasi justify-content-between align-items-center">
-				<div class="col-1 d-none d-xl-block d-lg-block d-md-block d-sm-block"><img class="foto" src="{{url('storage/pas_foto/'.$d->pas_foto)}}"></div>
+				<div class="col-1 d-none d-xl-block d-lg-block d-md-block d-sm-block">
+					<img class="foto" src="
+					@if($d->pas_foto != null)
+					{{url('storage/'.$d->pas_foto)}}
+					@else
+					{{asset('/assets/images/defaultphoto.png')}}
+					@endif">
+				</div>
 				<div class="col-3"><span class="nama">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-3 col-xs-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
 				<div class="col col-xl-4 col-lg-4 col-md-4 col-sm-4 text-right"><span class="badge
@@ -206,7 +213,12 @@
 			</div>
 			@foreach($datapendaftar as $d)
 			<div class="row my-2 data-row-konfirmasi align-items-center justify-content-between">
-				<div class="col-1 mr-4 d-none d-xl-block d-lg-block d-md-block d-sm-block"><img class="foto" src="{{url('storage/pas_foto/'.$d->pas_foto)}}"></div>
+				<div class="col-1 mr-4 d-none d-xl-block d-lg-block d-md-block d-sm-block"><img class="foto" src="
+					@if($d->pas_foto != null)
+					{{url('storage/'.$d->pas_foto)}}
+					@else
+					{{asset('/assets/images/defaultphoto.png')}}
+					@endif"></div>
 				<div class="col-4">
 					<div class="row">
 						<span class="nama">{{$d->nama_pendaftar}}</span>
