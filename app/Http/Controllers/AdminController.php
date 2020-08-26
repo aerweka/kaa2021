@@ -11,6 +11,7 @@ use App\Exports\SemuaExport;
 use App\Exports\PesertaExport;
 use App\Exports\PendaftarExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Response;
 
 class AdminController extends Controller
 {
@@ -102,33 +103,36 @@ class AdminController extends Controller
     }
 
     public function viewScanKTM($id){
-        $namafile = Pengguna::find($id)->scan_ktm;
-        return Storage::url($namafile);
+        $namafile = Pendaftaran::find($id)->scan_ktm;
+        return redirect('/storage/'.$namafile);
     }
 
     public function viewPasFoto($id){
-        $namafile = Pengguna::find($id)->pas_foto;
-        return Storage::url($namafile);
+        $namafile = Pendaftaran::find($id)->pas_foto;
+        return redirect('/storage/'.$namafile);
     }
 
     public function viewScanSuketAktif($id){
-        $namafile = Pengguna::find($id)->scan_suket_aktif;
-        return Storage::url($namafile);
+        $namafile = Pendaftaran::find($id)->scan_suket_aktif;
+        return redirect('/storage/'.$namafile);
     }
 
     public function downloadScanKTM($id){
-        $namafile = Pengguna::find($id)->scan_ktm;
-        return Storage::download($namafile);
+        $namafile = Pendaftaran::find($id)->scan_ktm;
+        $namafile = public_path()."/storage/".$namafile;
+        return Response::download($namafile);
     }
 
     public function downloadPasFoto($id){
-        $namafile = Pengguna::find($id)->pas_foto;
-        return Storage::download($namafile);
+        $namafile = Pendaftaran::find($id)->pas_foto;
+        $namafile = public_path()."/storage/".$namafile;
+        return Response::download($namafile);
     }
 
     public function downloadScanSuketAktif($id){
-        $namafile = Pengguna::find($id)->scan_suket_aktif;
-        return Storage::download($namafile);
+        $namafile = Pendaftaran::find($id)->scan_suket_aktif;
+        $namafile = public_path()."/storage/".$namafile;
+        return Response::download($namafile);
     }
 
 }

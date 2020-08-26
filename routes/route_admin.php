@@ -16,13 +16,13 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 		return view('admin.gantipassword');
 	});
 
-	Route::get('/scan_ktm/{id}/view','AdminController@viewScanKTM');
-	Route::get('/pas_foto/{id}/view','AdminController@viewPasFoto');
-	Route::get('/scan_suket_aktif/{id}/view','AdminController@viewScanSuketAktif');
+	Route::get('/pendaftar/scan_ktm/{id}/view','AdminController@viewScanKTM');
+	Route::get('/pendaftar/pas_foto/{id}/view','AdminController@viewPasFoto');
+	Route::get('/pendaftar/scan_suket_aktif/{id}/view','AdminController@viewScanSuketAktif');
 
-	Route::get('/scan_ktm/{id}/download','AdminController@downloadScanKTM');
-	Route::get('/pas_foto/{id}/download','AdminController@downloadPasFoto');
-	Route::get('/scan_suket_aktif/{id}/download','AdminController@downloadScanSuketAktif');
+	Route::get('/pendaftar/scan_ktm/{id}/download','AdminController@downloadScanKTM');
+	Route::get('/pendaftar/pas_foto/{id}/download','AdminController@downloadPasFoto');
+	Route::get('/pendaftar/scan_suket_aktif/{id}/download','AdminController@downloadScanSuketAktif');
 });
 
 

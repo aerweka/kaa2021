@@ -2,6 +2,7 @@
 @section('judul','Verifikasi Pembayaran')
 @section('links-admin')
 <link rel="stylesheet" type="text/css" href="{{asset('/styles/data_pendaftar_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/xzoom/dist/xzoom.css">
 @endsection
 @section('body-admin')
 <div class="row m-1 mb-4">
@@ -140,7 +141,7 @@
 					    	</div>
 					    </div>
 					    <div class="col-xl-4">
-					    	<img class="img-fluid" src="{{url('storage/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;">
+					    	<img class="xzoom img-fluid" src="{{url('storage/'.$d->bukti_pembayaran)}}" xoriginal="{{url('storage/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;"/>
 					    </div>
 					    @if($d->status_pembayaran == 0)
 					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4 mt-xl-0 mt-4">
@@ -278,7 +279,7 @@
 					    	</div>
 					    </div>
 					    <div class="col-xl-4">
-					    	<img class="img-fluid" src="{{url('storage/bukti_pembayaran/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;">
+					    	<img class="xzoom img-fluid" src="{{url('storage/'.$d->bukti_pembayaran)}}" xoriginal="{{url('storage/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;"/>
 					    </div>
 					    @if($d->status_pembayaran == 0)
 					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4">
@@ -443,8 +444,27 @@
 
 @endsection
 @section('script-admin')
+<script src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		 $('.xzoom').each(function() {
+
+            //Initialization of xZoom here
+            var instance = $(this).xzoom(); //<-- Don't forget to add your options here
+
+            $('.xzoom-gallery', $(this).parent()).each(function () {
+                instance.xappend($(this));
+            });
+
+            var mobj = $(this);
+            var mw = mobj.width(), mh = mobj.height();
+
+            $(window).mousemove(function(event){
+                var mx = event.pageX, my = event.pageY, moffset = mobj.offset(), mtop = moffset.top, mleft = moffset.left;
+                //if (mx < mleft || mx > mleft + mw || my < mtop || my > mtop + mh) instance.closezoom();
+            });
+        });
+		 
 		$(".menu-ul").each(function(){
 			$(this).removeClass("active");
 		});

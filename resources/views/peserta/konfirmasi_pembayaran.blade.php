@@ -43,7 +43,7 @@
                     placeholder="Masukan Total Pembayaran" name="total_pembayaran" value="{{ old('total_pembayaran') }}" required>
 
                     <label>Bukti Pembayaran</label><br>
-                    <input type="file" class="bukti_pembayaran" name="bukti_pembayaran" id="bukti_pembayaran"required><br><br>
+                    <input type="file" class="bukti_pembayaran" name="bukti_pembayaran" id="bukti_pembayaran" required accept="image/*,.pdf"><br><br>
 
                     <button type="submit" class="btn">Submit</button>
                 </form>
