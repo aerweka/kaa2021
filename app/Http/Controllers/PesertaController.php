@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Pendaftaran;
 use App\Pembayaran;
+use Auth;
+use Storage;
 
 class PesertaController extends Controller
 {
@@ -25,20 +27,33 @@ class PesertaController extends Controller
     }
     public function store_pembayaran(Request $request)
     {
+        
+        $this->validate($request, [
+            'bukti_pembayaran' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'atas_nama_rekening' => 'required|string|max:30',
+            'bank_asal' => 'required|string|max:25',
+            'nomor_rekening' => 'required|numeric|max:20',
+            'total_pembayaran' => 'required|numeric',
+        ]);
+
         $pembayaran = new Pembayaran;
-        // $pembayaran->id_pembayaran = "1";
-        $pembayaran->id_pendaftaran = "P0001";
+        $pembayaran->id_pendaftaran = Auth::user()->id_pendaftaran;
         $pembayaran->atas_nama_rekening = $request->atas_nama_rekening;
         $pembayaran->bank_asal = $request->bank_asal;
         $pembayaran->nomor_rekening = $request->nomor_rekening;
         $pembayaran->total_pembayaran = $request->total_pembayaran;
-        $pembayaran->bukti_pembayaran = $request->bukti_pembayaran;
-        $pembayaran->status_pembayaran = "0";
+        $pembayaran->status_pembayaran = 0;
 
-        $request->file('bukti_pembayaran')->store('bukti_pembayarans');
+        $namafile = 'bukti_pembayaran-'.Auth::user()->id_pendaftaran.'.jpg';
+
+        $path = Storage::putFileAs(
+            'public/bukti_pembayaran',$request->file('bukti_pembayaran'),$namafile,'public'
+        );
+
+        $pembayaran->bukti_pembayaran = 'bukti_pembayaran/'.$namafile;
         
         $pembayaran->save();
-        // dd($request->all());
+
         session()->flash('success', 'Data Berhasil Di Tambahkan!');
         return redirect('/peserta/konfirmasi_pembayaran');
     }
@@ -49,25 +64,48 @@ class PesertaController extends Controller
     }
     public function store_pendaftaran(Request $request)
     {
+        $this->validate($request, [
+            'nama_pendaftar' => 'bail|required|max:30',
+            'asal_daerah' => 'bail|required|max:30',
+            'asal_univ_pendaftar' => 'bail|required|max:40',
+            'email_pendaftar' => 'bail|required|email:rfc|max:50',
+            'no_telepon_pendaftar' => 'bail|required|max:12',
+            'id_line_pendaftar' => 'bail|required|max:25',
+            'scan_ktm' => 'bail|required|file|max:2048|mimes:pdf',
+            'pas_foto' => 'bail|required|file|mimes:jpeg,png,jpg|max:2048',
+            'scan_suket_aktif' => 'bail|file|max:2048|mimes:pdf',
+        ]);
+
         $pendaftaran = new Pendaftaran;
-        // $pendaftaran->id_pendaftaran = "1";
         $pendaftaran->nama_pendaftar = $request->nama_pendaftar;
         $pendaftaran->asal_daerah = $request->asal_daerah;
         $pendaftaran->asal_univ_pendaftar = $request->asal_univ_pendaftar;
         $pendaftaran->email_pendaftar = $request->email_pendaftar;
         $pendaftaran->no_telepon_pendaftar = $request->no_telepon_pendaftar;
         $pendaftaran->id_line_pendaftar = $request->id_line_pendaftar;
-        $pendaftaran->scan_ktm = $request->scan_ktm;
-        $pendaftaran->pas_foto = $request->pas_foto;
-        $pendaftaran->scan_suket_aktif = $request->scan_suket_aktif;
         $pendaftaran->status_pendaftaran = "0";
 
-        $request->file('scan_ktm')->store('scan_ktms');
-        $request->file('pas_foto')->store('pas_fotos');
-        $request->file('scan_suket_aktif')->store('scascan_suket_aktifn_ktms');
+        $namafilescanktm = 'scan_ktm-'.Auth::user()->id_pendaftaran.'.pdf';
+        $namafilefoto = 'pas_foto-'.Auth::user()->id_pendaftaran.'.jpg';
+        $namafilescansuket = 'scan_suket_aktif-'.Auth::user()->id_pendaftaran.'.jpg';
+
+        Storage::putFileAs(
+            'public/scan_ktm',$request->file('scan_ktm'),$namafilescanktm,'public'
+        );
+
+        Storage::putFileAs(
+            'public/pas_foto',$request->file('pas_foto'),$namafilefoto,'public'
+        );
+
+        Storage::putFileAs(
+            'public/scan_suket_aktif',$request->file('scan_suket_aktif'),$namafilescansuket,'public'
+        );
+
+        $pendaftaran->scan_ktm = 'scan_ktm/'.$namafilescanktm;
+        $pendaftaran->pas_foto = 'pas_foto/'.$namafilefoto;
+        $pendaftaran->scan_suket_aktif = 'scan_suket_aktif/'.$namafilescansuket;
         
         $pendaftaran->save();
-        // dd($request->all());
         session()->flash('success', 'Data Berhasil Di Tambahkan!');
         return redirect('/peserta/form_pendaftaran');
     }

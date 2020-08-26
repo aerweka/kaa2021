@@ -102,6 +102,33 @@ class AdminController extends Controller
     }
 
     public function viewScanKTM($id){
-        
+        $namafile = Pengguna::find($id)->scan_ktm;
+        return Storage::url($namafile);
     }
+
+    public function viewPasFoto($id){
+        $namafile = Pengguna::find($id)->pas_foto;
+        return Storage::url($namafile);
+    }
+
+    public function viewScanSuketAktif($id){
+        $namafile = Pengguna::find($id)->scan_suket_aktif;
+        return Storage::url($namafile);
+    }
+
+    public function downloadScanKTM($id){
+        $namafile = Pengguna::find($id)->scan_ktm;
+        return Storage::download($namafile);
+    }
+
+    public function downloadPasFoto($id){
+        $namafile = Pengguna::find($id)->pas_foto;
+        return Storage::download($namafile);
+    }
+
+    public function downloadScanSuketAktif($id){
+        $namafile = Pengguna::find($id)->scan_suket_aktif;
+        return Storage::download($namafile);
+    }
+
 }

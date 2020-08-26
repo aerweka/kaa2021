@@ -140,7 +140,7 @@
 					    	</div>
 					    </div>
 					    <div class="col-xl-4">
-					    	<img class="img-fluid" src="{{url('storage/bukti_pembayaran/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;">
+					    	<img class="img-fluid" src="{{url('storage/'.$d->bukti_pembayaran)}}" style="max-height: 475px;width: auto;">
 					    </div>
 					    @if($d->status_pembayaran == 0)
 					    <div class="col-xl-4 mt-sm-4 mt-md-4 mt-lg-4 mt-xl-0 mt-4">
