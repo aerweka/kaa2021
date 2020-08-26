@@ -10,12 +10,12 @@ a, a:hover{
 
 @section('body-admin')
 	<div class="row justify-content-center my-5">
-		<div class="col-6">
+		<div class="col col-xl-6">
 			<h1 class="judulhalaman">Ganti Password</h1>
 		</div>
 	</div>
 	<div class="row justify-content-center">
-		<div class="col-6">
+		<div class="col col-xl-6">
 		<form action="{{url('/gantipassword')}}" method="POST">
 			@csrf
 		  <div class="form-group mx-auto">
