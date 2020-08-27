@@ -20,9 +20,9 @@ class AuthController extends Controller
     {
 
         $pendaftaran = Pendaftaran::create([
-            'nama_pendaftar' => $request->nama_pendaftar,
-            'asal_univ_pendaftar' => $request->asal_univ_pendaftar,
-            'email_pendaftar' => $request->email_pendaftar,
+            'nama_pendaftar' => ucwords($request->nama_pendaftar),
+            'asal_univ_pendaftar' => ucwords($request->asal_univ_pendaftar),
+            'email_pendaftar' => strtolower($request->email_pendaftar),
             'status_pendaftaran' => 0
             ]);
         
@@ -31,7 +31,7 @@ class AuthController extends Controller
         $pengguna = Pengguna::create([
             'id_role' => 2,
             'id_pendaftaran' => $id_daftar->id_pendaftaran,
-            'username' => $request->username,
+            'username' => strtolower($request->username),
             'password' => bcrypt($request->password_user),
             'status_user' => 1
         ]);

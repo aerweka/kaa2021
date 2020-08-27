@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="/css/regist.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/regist.css')}}">
 </head>
 <body>
     <div class="flex">
@@ -13,34 +13,138 @@
         </div>
         <div class="container">
             <form method="post" action="/postregister">
-                    <h2 class="signin">REGISTER</h2>
+                    <h2 class="signin">Register</h2>
                     {{ csrf_field() }}
 
-                    <!-- REGISTER VIA PENDAFTARAN -->
-                    <input type="text" class="username" id="username"
-                    placeholder="Masukan Username" name="username">
-                    <br><br>
-                    <input type="text" class="nama_pendaftar" id="nama_pendaftar"
-                    placeholder="Masukan Nama" name="nama_pendaftar">
-                    <br><br>
-                    <input type="text" class="asal_univ_pendaftar" id="asal_univ_pendaftar"
-                    placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar">
-                    <br><br>
-                    <input type="email" class="email_pendaftar" id="email_pendaftar"
-                    placeholder="Masukan Email" name="email_pendaftar">
-                    <br><br>
-                    <input type="password" class="password_user" id="password_user"
-                    placeholder="Masukan Password" name="password_user">
-                    <br><br>
-                    <!-- REGISTER VIA PENDAFTARAN -->
-
-                    <!-- REGISTER VIA PENGGUNA -->
-                    <!-- REGISTER VIA PENGGUNA -->
-
-                    <button type="submit" class="btn">Sign Up</button>
-                    <p>Already Have Account? <a href="/login">Click Here</p>
+                    <table style="margin: auto;">
+                        <tr>
+                            <td>
+                                <input type="text" class="username" id="username" placeholder="Masukan Username" name="username" required minlength="8" maxlength="15">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><small id="text-username"></small></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="nama_pendaftar" id="nama_pendaftar" placeholder="Masukan Nama Lengkap" name="nama_pendaftar" required minlength="3" maxlength="30"></td>
+                        </tr>
+                        <tr>
+                            <td><small id="text-nama"></small></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="asal_univ_pendaftar" id="asal_univ_pendaftar" placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar" required minlength="8" maxlength="40"></td>
+                        </tr>
+                        <tr>
+                            <td><small id="text-univ"></small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="email" class="email_pendaftar" id="email_pendaftar" placeholder="Masukan Email" name="email_pendaftar" required minlength="8" maxlength="50"></td>
+                        </tr>
+                        <tr>
+                            <td><small id="text-email"></small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="password" class="password_user" id="password_user" placeholder="Masukan Password" name="password_user" required minlength="8"></td>
+                        </tr>
+                        <tr>
+                            <td><small id="text-password"></small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button type="submit" class="btn" id="btn-daftar">Daftar</button></td>
+                        </tr>
+                    </table>
+                    <p>Sudah daftar ?    <a href="{{url('/login')}}">Login disini.</a></p>
             </form>
         </div>
     </div>
 </body>
+<!-- JQuery Script -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#username").on("input",function(){
+            $("#username").val($("#username").val().toLowerCase());
+            if($("#username").val().length > 5){
+                if($("#username").val().length < 8){
+                    $("#text-username").html("Minimal 8 karakter");
+                }
+                else{
+                    $.ajax({
+                        type: 'GET',
+                        url: "{{url('/cekusername/')}}"+"/"+$("#username").val(),
+                        success: function (results) {
+                            if (results.success === true) {
+                                $("#text-username").html("Username sudah dipakai");
+                                $("#btn-daftar").prop('disabled',true);
+                            }
+                            else{
+                                $("#text-username").html("Username dapat dipakai");
+                                 $("#btn-daftar").prop('disabled',false);
+                            }
+                        }
+                    });
+                }
+            }
+            else{
+                $("#text-username").html("Minimal 8 karakter dan unik.");
+                $("#btn-daftar").prop('disabled',true);
+            }
+        });
+        $("#password_user").on("input",function(){
+            if($("#password_user").val().length > 5){
+                if($("#password_user").val().length < 8){
+                    $("#text-password").html("Minimal 8 karakter");
+                }
+                else{
+                    $("#text-password").html("");
+                }
+            }
+        });
+        $("#email_pendaftar").on("input",function(){
+            if($("#email_pendaftar").val().length > 5){
+                if($("#email_pendaftar").val().length < 8){
+                    $("#text-email").html("Minimal 8 karakter");
+                }
+                else{
+                    $("#text-email").html("");
+                }
+            }
+        });
+        $("#email_pendaftar").on("input",function(){
+            if($("#email_pendaftar").val().length > 5){
+                if($("#email_pendaftar").val().length < 8){
+                    $("#text-email").html("Minimal 8 karakter");
+                }
+                else{
+                    $("#text-email").html("");
+                }
+            }
+        });
+        $("#asal_univ_pendaftar").on("input",function(){
+            if($("#asal_univ_pendaftar").val().length > 5){
+                if($("#asal_univ_pendaftar").val().length < 8){
+                    $("#text-univ").html("Minimal 8 karakter");
+                }
+                else{
+                    $("#text-univ").html("");
+                }
+            }
+        });
+        $("#nama_pendaftar").on("input",function(){
+            if($("#nama_pendaftar").val().length < 3){
+
+                $("#text-nama").html("Minimal 3 karakter");  
+
+            }
+            else{
+
+                $("#text-nama").html("");
+            }
+        });
+    });
+</script>
 </html>
