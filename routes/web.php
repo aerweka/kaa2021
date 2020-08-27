@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index');
 //route untuk logout
 Route::get('/logout', 'Auth\LoginController@logout');
 
+Route::get('/cekusername/{uname}', 'AuthController@cekUsername');
+
 Route::middleware('peserta')->group(function () {
 	Route::get('/peserta',function(){
 		return redirect('/peserta/dashboard_user');
