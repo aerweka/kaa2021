@@ -63,4 +63,17 @@ class AuthController extends Controller
         return redirect('/home');
     }
 
+    public function cekUsername($uname){
+
+        $jumlah = Pengguna::select("username")->where('username','=',$uname)->count();
+
+        if($jumlah == 1){
+            return response()->json(['success' => true]);
+        }
+        else{
+            return response()->json(['success' => false]);
+        }
+        
+    }
+
 }
