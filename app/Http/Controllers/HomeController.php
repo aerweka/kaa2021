@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -26,21 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(!Auth::check()){
+            return redirect('/');
+        }
         if (Auth::user()->id_role == 1) {
             return redirect('/admin');
         }
         else if (Auth::user()->id_role == 2) {
             return redirect('/peserta/dashboard_user');
         }
-        else{
-            return redirect('/');
-        }
     }
-
-    // public function logout()
-    // {
-    //     Auth::logout();
-    //     return redirect()->route('login');
-    // }
 
 }
