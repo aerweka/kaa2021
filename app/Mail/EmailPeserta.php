@@ -12,6 +12,7 @@ class EmailPeserta extends Mailable
 {
     use Queueable, SerializesModels;
     protected $user;
+    protected $link;
 
     /**
      * Create a new message instance.
@@ -21,6 +22,7 @@ class EmailPeserta extends Mailable
     public function __construct(Pengguna $user,$link)
     {
         $this->user = $user;
+        $this->link = $link;
     }
 
     /**

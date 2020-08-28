@@ -35,7 +35,8 @@ class Pengguna extends Authenticatable implements MustVerifyEmail
 	public $timestamps = false;
 
 	protected $casts = [
-		'status_user' => 'bool'
+		'status_user' => 'bool',
+		'email_verified_at' => 'datetime',
 	];
 
 	protected $fillable = [
@@ -43,7 +44,8 @@ class Pengguna extends Authenticatable implements MustVerifyEmail
 		'id_pendaftaran',
 		'username',
 		'password',
-		'status_user'
+		'status_user',
+		'email'
 	];
 
 	public function role()

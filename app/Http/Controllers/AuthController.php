@@ -35,7 +35,8 @@ class AuthController extends Controller
             'id_pendaftaran' => $id_daftar->id_pendaftaran,
             'username' => strtolower($request->username),
             'password' => bcrypt($request->password_user),
-            'status_user' => 1
+            'status_user' => 1,
+            'email' => strtolower($request->email_pendaftar)
         ]);
 
         $datapendaftar = Pengguna::select('p.nama_pendaftar','p.email_pendaftar','username')
@@ -44,8 +45,14 @@ class AuthController extends Controller
         ->first();
 
         Mail::to($datapendaftar->email_pendaftar)->send(new EmailPeserta($datapendaftar,url('/peserta/konfirmasi_pembayaran')));
+        
+        $pengguna = Pengguna::where('username','=',strtolower($request->username))->first();
 
-        return redirect('/verify');
+        Auth::login($pengguna);
+
+        // echo "login dengan email ".Auth::user()->email;
+
+        return redirect('/home');
     }
 
     public function changepass(Request $req){
