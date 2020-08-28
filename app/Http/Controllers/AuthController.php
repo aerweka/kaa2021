@@ -7,6 +7,8 @@ use App\Models\Pendaftaran;
 use App\Models\Pengguna;
 use Illuminate\Support\Facades\Hash;
 use DB;
+use App\Mail\EmailPeserta;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -36,17 +38,14 @@ class AuthController extends Controller
             'status_user' => 1
         ]);
 
-        // $to_name = $request->nama_pendaftar;
-        // $to_email = $request->email_pendaftar;
-        // $data = array('name'=>'Ogbonna Vitalis(sender_name)', 'body' => 'A test mail');
-        // Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
-        //     $message->to($to_email, $to_name)
-        //         ->subject('Laravel Test Mail');
-        //         $message->from('deaamartya3@gmail.com','Test Mail');
-        //     }
-        // );
+        $datapendaftar = Pengguna::select('p.nama_pendaftar','p.email_pendaftar','username')
+        ->join('pendaftaran as p','p.id_pendaftaran','=','pengguna.id_pendaftaran')
+        ->where('username','=',strtolower($request->username))
+        ->first();
 
-        return redirect('/login');
+        Mail::to($datapendaftar->email_pendaftar)->send(new EmailPeserta($datapendaftar,url('/peserta/konfirmasi_pembayaran')));
+
+        return redirect('/verify');
     }
 
     public function changepass(Request $req){
