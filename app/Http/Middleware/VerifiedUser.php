@@ -2,10 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Auth;
 use Closure;
+use Auth;
 
-class CheckPeserta
+class VerifiedUser
 {
     /**
      * Handle an incoming request.
@@ -16,16 +16,11 @@ class CheckPeserta
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login');
+        if(Auth::user()->verified){
+            return $next($request);
         }
-
-        //admin
-        if (Auth::user()->id_role == 1) {
-            return redirect('/admin');
+        else{
+            return view('auth.verify')->with('warning','Email anda belum terverifikasi.');
         }
-            
-        return $next($request);
-        
     }
 }

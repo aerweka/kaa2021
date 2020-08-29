@@ -36,7 +36,7 @@ class Pengguna extends Authenticatable implements MustVerifyEmail
 
 	protected $casts = [
 		'status_user' => 'bool',
-		'email_verified_at' => 'datetime',
+		'verified' => 'bool',
 	];
 
 	protected $fillable = [
@@ -56,5 +56,10 @@ class Pengguna extends Authenticatable implements MustVerifyEmail
 	public function pendaftaran()
 	{
 		return $this->belongsTo(Pendaftaran::class, 'id_pendaftaran');
+	}
+
+	public function verifyUser()
+	{
+	  return $this->hasOne(VerifyUser::class);
 	}
 }

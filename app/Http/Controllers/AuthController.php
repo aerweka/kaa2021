@@ -7,8 +7,9 @@ use App\Models\Pendaftaran;
 use App\Models\Pengguna;
 use Illuminate\Support\Facades\Hash;
 use DB;
-use App\Mail\EmailPeserta;
+use App\Mail\VerifyMail;
 use Illuminate\Support\Facades\Mail;
+use App\Models\VerifyUser;
 
 class AuthController extends Controller
 {
@@ -43,16 +44,21 @@ class AuthController extends Controller
         ->join('pendaftaran as p','p.id_pendaftaran','=','pengguna.id_pendaftaran')
         ->where('username','=',strtolower($request->username))
         ->first();
-
-        Mail::to($datapendaftar->email_pendaftar)->send(new EmailPeserta($datapendaftar,url('/peserta/konfirmasi_pembayaran')));
         
         $pengguna = Pengguna::where('username','=',strtolower($request->username))->first();
 
-        Auth::login($pengguna);
+        $token = sha1(time());
 
-        // echo "login dengan email ".Auth::user()->email;
+        $link = url('/email/verify/'.$pengguna->id_user.'/'.$token);
 
-        return redirect('/home');
+        $verifyUser = VerifyUser::create([
+            'id_user' => $pengguna->id_user,
+            'token' => $token
+        ]);
+
+        Mail::to($datapendaftar->email_pendaftar)->send(new VerifyMail($datapendaftar,$link));
+
+        return redirect('/email/verify');
     }
 
     public function changepass(Request $req){
