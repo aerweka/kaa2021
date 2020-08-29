@@ -38,7 +38,9 @@ Route::middleware('peserta')->group(function () {
 	Route::get('/peserta/konfirmasi_pembayaran', 'PesertaController@konfirmasi_pembayaran');
 	Route::get('/peserta/form_pendaftaran', 'PesertaController@form_pendaftaran');
 	Route::get('/peserta/cetak_kartu_peserta', 'PesertaController@cetak_kartu_peserta');
+	Route::get('/peserta/kartupeserta', 'PesertaController@kartupeserta');
+	Route::get('/exportpdf', 'PesertaController@exportpdf');
 	Route::post('/peserta/form_pendaftaran', 'PesertaController@store_pendaftaran');
 	Route::post('/peserta/konfirmasi_pembayaran', 'PesertaController@store_pembayaran');
-
+	Route::post('/gantipassword', 'AuthController@changepass');
 });

@@ -33,16 +33,12 @@
                 <form class="form-container">
                     <div class="card">
 
-                    @foreach( $profile as $pr)
-
                     <p>Name :</p>
-                    <h4>{{ $pr->nama_pendaftar}}</h4>
+                    <h4>{{ auth()->user()->pendaftaran->nama_pendaftar}}</h4>
                     <p>Email :</p>
-                    <h4>{{ $pr->email_pendaftar}}</h4>
+                    <h4>{{ auth()->user()->pendaftaran->email_pendaftar}}</h4>
                     <p>University :</p>
-                    <h4>{{ $pr->asal_univ_pendaftar}}</h4>
-
-                    @endforeach
+                    <h4>{{ auth()->user()->pendaftaran->asal_univ_pendaftar}}</h4>
 
                     </div>
                     <button type="button" class="btn warning" onclick="openFormPass()">Change Password</button>
@@ -52,12 +48,13 @@
             
             <!-- Form Password -->
             <div class="form-popup2" id="myFormPass">
-                <form action="/action_page.php" class="form-container2">
+                <form method="POST" action="/gantipassword" class="form-container2">
+                {{ csrf_field() }}
                     <h1 style="font-size: 24px; text-align: center;">Change Password</h1>
 
                     <input type="password" placeholder="Password" name="pwnow" required>
 
-                    <input type="password" placeholder="New Password" name="pwnew" required>
+                    <input type="password" placeholder="New Password" name="pwnew" minlength="8" required>
 
                     <input type="password" placeholder="Confirmation Password" name="pwnew2" required>
 
@@ -67,7 +64,7 @@
             </div>
 
             <!-- content -->
-            <h1 class="welcome">Selamat Datang, {{$pr->nama_pendaftar}}</h1>
+            <h1 class="welcome">Selamat Datang, {{ auth()->user()->pendaftaran->nama_pendaftar}}</h1>
 
             <div class="bungkus">
                 <h2>PENGUMUMAN</h2>

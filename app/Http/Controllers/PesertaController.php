@@ -8,6 +8,7 @@ use App\Pendaftaran;
 use App\Pembayaran;
 use Auth;
 use Storage;
+use PDF;
 
 class PesertaController extends Controller
 {
@@ -45,11 +46,9 @@ class PesertaController extends Controller
         $pembayaran->status_pembayaran = 0;
 
         $namafile = 'bukti_pembayaran-'.Auth::user()->id_pendaftaran.'.'.$request->file('bukti_pembayaran')->extension();
-
         $path = Storage::putFileAs(
             'public/bukti_pembayaran',$request->file('bukti_pembayaran'),$namafile,'public'
         );
-
         $pembayaran->bukti_pembayaran = 'bukti_pembayaran/'.$namafile;
         
         $pembayaran->save();
@@ -114,5 +113,16 @@ class PesertaController extends Controller
     public function cetak_kartu_peserta()
     {
         return view('peserta/cetak_kartu_peserta');
+    }
+
+    public function kartupeserta()
+    {
+        return view('peserta/kartupeserta');
+    }
+
+    public function exportpdf() //mencetak kartu peserta menjadi pdf
+    {
+        $pdf = \PDF::loadView('peserta/kartupeserta');
+        return $pdf->stream('kartu_peserta.pdf');
     }
 }
