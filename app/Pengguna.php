@@ -1,21 +1,5 @@
 <?php
 
-// namespace App;
-
-// use Illuminate\Database\Eloquent\Model;
-
-// class Pengguna extends Model {
-
-// namespace App;
-
-// use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Auth\Authenticatable;
-// use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-
-// class Pengguna extends Model implements AuthenticatableContract
-// {
-    
-//     use Authenticatable;
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;

@@ -1,73 +1,83 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/login.css')}}">
+</head>
+<body>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <div class="flex">
+        <div class="background"></div>
+        <div class="container">
+            <form method="POST" action="{{ route('login') }}">
+                    <h2 class="signin">Login</h2>
+                    {{ csrf_field() }}
+                    <table style="margin: auto;">
+                        <tr>
+                            <td>
+                                <input type="text" name="username" id="username" class="username" placeholder="Masukan Username" required minlength="8">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><small id="text-username"></small></td>
+                        </tr>
+                        <tr>
+                            <td><input type="password" name="password" id="password_user" class="password_user" placeholder="Masukan Password" required minlength="8"></td>
+                        </tr>
+                        <tr>
+                            <td><small id="text-password"></small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button type="submit" class="btn">Masuk</button></td>
+                        </tr>
+                    </table>
+                    
+            </form>
+            <a href="{{ url('/forgotpassword') }}"><p>Lupa Password?</p></a>
+            <p>Tidak punya akun?    <a href="{{ url('/register') }}">Daftar disini.</a></p>
         </div>
     </div>
-</div>
-@endsection
+</body>
+<!-- JQuery Script -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#username").on("input",function(){
+            $("#username").val($("#username").val().toLowerCase());
+            if($("#username").val().length > 5){
+                if($("#username").val().length < 8){
+                    $("#text-username").html("Minimal 8 karakter");
+                }
+                else{
+                    $.ajax({
+                        type: 'GET',
+                        url: "{{url('/cekusername/')}}"+"/"+$("#username").val(),
+                        success: function (results) {
+                            if (results.success === true) {
+                                $("#text-username").html("Username ditemukan");
+                            }
+                            else{
+                                $("#text-username").html("Username tidak ditemukan");
+                            }
+                        }
+                    });
+                }
+            }
+        });
+        $("#password_user").on("input",function(){
+            if($("#password_user").val().length > 5){
+                if($("#password_user").val().length < 8){
+                    $("#text-password").html("Minimal 8 karakter");
+                }
+                else{
+                    $("#text-password").html("");
+                }
+            }
+        });
+    });
+</script>
+</html>

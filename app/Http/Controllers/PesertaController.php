@@ -46,11 +46,9 @@ class PesertaController extends Controller
         $pembayaran->status_pembayaran = 0;
 
         $namafile = 'bukti_pembayaran-'.Auth::user()->id_pendaftaran.'.'.$request->file('bukti_pembayaran')->extension();
-
         $path = Storage::putFileAs(
             'public/bukti_pembayaran',$request->file('bukti_pembayaran'),$namafile,'public'
         );
-
         $pembayaran->bukti_pembayaran = 'bukti_pembayaran/'.$namafile;
         
         $pembayaran->save();
