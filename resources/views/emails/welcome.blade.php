@@ -1,16 +1,12 @@
 @component('mail::message')
-Halo  **{{$name}}** !   
-Terimakasih telah melakukan pendaftaran lomba KAA 2020. Langkah selanjutnya yaitu pembayaran.  
-Peserta melakukan pembayaran dengan tujuan rekening:  
-Bank BRI  
-<b style="color: red;">6291-01-016958-53-9 a/n Jeni Dwi Fitriana  </b>
-Sejumlah <b>Rp 50.000</b>   
-Setelah melakukan pembayaran, jangan lupa konfirmasi dengan klik tombol dibawah ya!
+Halo  **{{$user->nama_pendaftar}}** !   
+Terimakasih telah melakukan pendaftaran lomba KAA 2020.  
+Klik dibawah untuk verifikasi email.
 
 @component('mail::button', ['url' => $link, 'color' => 'success'])
-Konfirmasi Pembayaran
+Verifikasi Email
 @endcomponent
 
-Thanks,<br>
-Panitia KAA 2020
+Apabila tombol diatas tidak berfungsi, klik link dibawah ini
+<a href="{{$link}}">{{$link}}</a>
 @endcomponent

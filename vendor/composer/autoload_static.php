@@ -18,6 +18,10 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
+        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'abede361264e2ae69ec1eee813a101af' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/abs.php',
         '21a5860fbef5be28db5ddfbc3cca67c4' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/acos.php',
         '1546e3f9d127f2a9bb2d1b6c31c26ef1' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/acosh.php',
@@ -76,11 +80,7 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'aa53dcba601214d17ad405b7c291b7e8' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/operations/multiply.php',
         '75c79eb1b25749b05a47976f32b0d8a2' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/operations/divideby.php',
         '6ab8ad87a734f276a6bcd5a0fe1289be' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/operations/divideinto.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
-        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
-        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
-        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
@@ -98,12 +98,14 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         ),
         'X' => 
         array (
+            'Xethron\\MigrationsGenerator\\' => 28,
             'XdgBaseDir\\' => 11,
         ),
         'W' => 
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+            'Way\\Generators\\' => 15,
         ),
         'T' => 
         array (
@@ -180,6 +182,10 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
         ),
+        'K' => 
+        array (
+            'KitLoong\\MigrationsGenerator\\' => 29,
+        ),
         'J' => 
         array (
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
@@ -241,6 +247,10 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         array (
             0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
         ),
+        'Xethron\\MigrationsGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Xethron/MigrationsGenerator',
+        ),
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
@@ -252,6 +262,10 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Way\\Generators\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Way/Generators',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -458,6 +472,10 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'KitLoong\\MigrationsGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -564,6 +582,13 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
                 0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
             ),
         ),
+        'O' => 
+        array (
+            'Orangehill\\Iseed' => 
+            array (
+                0 => __DIR__ . '/..' . '/orangehill/iseed/src',
+            ),
+        ),
         'M' => 
         array (
             'Mockery' => 
@@ -611,10 +636,12 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Mail\\EmailPeserta' => __DIR__ . '/../..' . '/app/Mail/EmailPeserta.php',
+        'App\\Mail\\VerifyMail' => __DIR__ . '/../..' . '/app/Mail/VerifyMail.php',
         'App\\Models\\Pembayaran' => __DIR__ . '/../..' . '/app/Models/Pembayaran.php',
         'App\\Models\\Pendaftaran' => __DIR__ . '/../..' . '/app/Models/Pendaftaran.php',
         'App\\Models\\Pengguna' => __DIR__ . '/../..' . '/app/Models/Pengguna.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
+        'App\\Models\\VerifyUser' => __DIR__ . '/../..' . '/app/Models/VerifyUser.php',
         'App\\Pembayaran' => __DIR__ . '/../..' . '/app/Pembayaran.php',
         'App\\Pendaftaran' => __DIR__ . '/../..' . '/app/Pendaftaran.php',
         'App\\Pengguna' => __DIR__ . '/../..' . '/app/Pengguna.php',
@@ -2784,6 +2811,61 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\BooleanField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/BooleanField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\DatetimeField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/DatetimeField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\DecimalField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/DecimalField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\Decorator' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/Decorator.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\EnumField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/EnumField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\FieldGenerator' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/FieldGenerator.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\ForeignKeyGenerator' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/ForeignKeyGenerator.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\GeometryField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/GeometryField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\IndexGenerator' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/IndexGenerator.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\IntegerField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/IntegerField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\Modifier\\CommentModifier' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/Modifier/CommentModifier.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\Modifier\\DefaultModifier' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/Modifier/DefaultModifier.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\Modifier\\IndexModifier' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/Modifier/IndexModifier.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\Modifier\\NullableModifier' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/Modifier/NullableModifier.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\OtherField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/OtherField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\Platform' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/Platform.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\SchemaGenerator' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/SchemaGenerator.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\SetField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/SetField.php',
+        'KitLoong\\MigrationsGenerator\\Generators\\StringField' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Generators/StringField.php',
+        'KitLoong\\MigrationsGenerator\\MigrateGenerateCommand' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrateGenerateCommand.php',
+        'KitLoong\\MigrationsGenerator\\MigrationMethod\\ColumnModifier' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrationMethod/ColumnModifier.php',
+        'KitLoong\\MigrationsGenerator\\MigrationMethod\\ColumnName' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrationMethod/ColumnName.php',
+        'KitLoong\\MigrationsGenerator\\MigrationMethod\\ColumnType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrationMethod/ColumnType.php',
+        'KitLoong\\MigrationsGenerator\\MigrationMethod\\IndexType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrationMethod/IndexType.php',
+        'KitLoong\\MigrationsGenerator\\MigrationMethod\\PgSQLGeography' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrationMethod/PgSQLGeography.php',
+        'KitLoong\\MigrationsGenerator\\MigrationsGeneratorServiceProvider' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrationsGeneratorServiceProvider.php',
+        'KitLoong\\MigrationsGenerator\\MigrationsGeneratorSetting' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/MigrationsGeneratorSetting.php',
+        'KitLoong\\MigrationsGenerator\\Repositories\\MySQLRepository' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Repositories/MySQLRepository.php',
+        'KitLoong\\MigrationsGenerator\\Repositories\\PgSQLRepository' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Repositories/PgSQLRepository.php',
+        'KitLoong\\MigrationsGenerator\\Types\\DBALTypes' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/DBALTypes.php',
+        'KitLoong\\MigrationsGenerator\\Types\\DoubleType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/DoubleType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\EnumType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/EnumType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\GeographyType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/GeographyType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\GeomCollectionType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/GeomCollectionType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\GeometryCollectionType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/GeometryCollectionType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\GeometryType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/GeometryType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\IpAddressType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/IpAddressType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\JsonbType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/JsonbType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\LineStringType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/LineStringType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\LongTextType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/LongTextType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\MacAddressType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/MacAddressType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\MediumIntegerType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/MediumIntegerType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\MediumTextType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/MediumTextType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\MultiLineStringType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/MultiLineStringType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\MultiPointType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/MultiPointType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\MultiPolygonType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/MultiPolygonType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\PointType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/PointType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\PolygonType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/PolygonType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\SetType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/SetType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\TimeTzType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/TimeTzType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\TimestampType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/TimestampType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\TimestampTzType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/TimestampTzType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\TinyIntegerType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/TinyIntegerType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\UUIDType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/UUIDType.php',
+        'KitLoong\\MigrationsGenerator\\Types\\YearType' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/KitLoong/MigrationsGenerator/Types/YearType.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3428,6 +3510,11 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
+        'Orangehill\\Iseed\\Facades\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Facades/Iseed.php',
+        'Orangehill\\Iseed\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Iseed.php',
+        'Orangehill\\Iseed\\IseedCommand' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedCommand.php',
+        'Orangehill\\Iseed\\IseedServiceProvider' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedServiceProvider.php',
+        'Orangehill\\Iseed\\TableNotFoundException' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Exceptions.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',
@@ -3820,6 +3907,9 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
+        'PembayaranTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PembayaranTableSeeder.php',
+        'PendaftaranTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PendaftaranTableSeeder.php',
+        'PenggunaTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PenggunaTableSeeder.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -4683,6 +4773,7 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'Reliese\\Meta\\Sqlite\\Schema' => __DIR__ . '/..' . '/reliese/laravel/src/Meta/Sqlite/Schema.php',
         'Reliese\\Support\\Classify' => __DIR__ . '/..' . '/reliese/laravel/src/Support/Classify.php',
         'Reliese\\Support\\Dumper' => __DIR__ . '/..' . '/reliese/laravel/src/Support/Dumper.php',
+        'RoleTableSeeder' => __DIR__ . '/../..' . '/database/seeds/RoleTableSeeder.php',
         'Sabberworm\\CSS\\CSSList\\AtRuleBlockList' => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/AtRuleBlockList.php',
         'Sabberworm\\CSS\\CSSList\\CSSBlockList' => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/CSSBlockList.php',
         'Sabberworm\\CSS\\CSSList\\CSSList' => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/CSSList.php',
@@ -5613,6 +5704,11 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+        'Way\\Generators\\Commands\\GeneratorCommand' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Way/Generators/Commands/GeneratorCommand.php',
+        'Way\\Generators\\Compilers\\Compiler' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Way/Generators/Compilers/Compiler.php',
+        'Way\\Generators\\Compilers\\TemplateCompiler' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Way/Generators/Compilers/TemplateCompiler.php',
+        'Way\\Generators\\Generator' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Way/Generators/Generator.php',
+        'Way\\Generators\\Syntax\\Table' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Way/Generators/Syntax/Table.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\Mixin' => __DIR__ . '/..' . '/webmozart/assert/src/Mixin.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
@@ -5634,6 +5730,11 @@ class ComposerStaticInit171ec57554de757bbcff7d8123119be6
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'Xethron\\MigrationsGenerator\\Syntax\\AddForeignKeysToTable' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Xethron/MigrationsGenerator/Syntax/AddForeignKeysToTable.php',
+        'Xethron\\MigrationsGenerator\\Syntax\\AddToTable' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Xethron/MigrationsGenerator/Syntax/AddToTable.php',
+        'Xethron\\MigrationsGenerator\\Syntax\\DroppedTable' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Xethron/MigrationsGenerator/Syntax/DroppedTable.php',
+        'Xethron\\MigrationsGenerator\\Syntax\\RemoveForeignKeysFromTable' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Xethron/MigrationsGenerator/Syntax/RemoveForeignKeysFromTable.php',
+        'Xethron\\MigrationsGenerator\\Syntax\\Table' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Xethron/MigrationsGenerator/Syntax/Table.php',
         'ZipStream\\Bigint' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Bigint.php',
         'ZipStream\\DeflateStream' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/DeflateStream.php',
         'ZipStream\\Exception' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception.php',
