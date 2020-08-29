@@ -16,11 +16,9 @@ class VerifiedUser
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->verified){
-            return $next($request);
+        if(Auth::user()->verified == 0){
+            return redirect()->route('verification.notice');
         }
-        else{
-            return view('auth.verify')->with('warning','Email anda belum terverifikasi.');
-        }
+        return $next($request);
     }
 }
