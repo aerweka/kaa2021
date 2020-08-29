@@ -68,29 +68,24 @@
     $(document).ready(function(){
         $("#username").on("input",function(){
             $("#username").val($("#username").val().toLowerCase());
-            if($("#username").val().length > 5){
-                if($("#username").val().length < 8){
-                    $("#text-username").html("Minimal 8 karakter");
-                }
-                else{
-                    $.ajax({
-                        type: 'GET',
-                        url: "{{url('/cekusername/')}}"+"/"+$("#username").val(),
-                        success: function (results) {
-                            if (results.success === true) {
-                                $("#text-username").html("Username sudah dipakai");
-                                $("#btn-daftar").prop('disabled',true);
-                            }
-                            else{
-                                $("#text-username").html("Username dapat dipakai");
-                                 $("#btn-daftar").prop('disabled',false);
-                            }
+            if($("#username").val().length >= 5){
+                $.ajax({
+                    type: 'GET',
+                    url: "{{url('/cekusername/')}}"+"/"+$("#username").val(),
+                    success: function (results) {
+                        if (results.success === true) {
+                            $("#text-username").html("Username telah terpakai");
+                            $("#btn-daftar").prop('disabled',true);
                         }
-                    });
-                }
+                        else{
+                            $("#text-username").html("Username dapat dipakai");
+                            $("#btn-daftar").prop('disabled',false);
+                        }
+                    }
+                });
             }
             else{
-                $("#text-username").html("Minimal 8 karakter dan unik.");
+                $("#text-username").html("Minimal 5 karakter");
                 $("#btn-daftar").prop('disabled',true);
             }
         });

@@ -25,11 +25,11 @@ Route::get('/home', 'HomeController@index');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // Auth::routes(["verify" => true]);
-Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+Route::get('email/verify', 'VerifyEmailController@show')->name('verification.notice');
+Route::get('email/verify/{id}/{token}', 'VerifyEmailController@verify')->name('verification.verify');
+Route::post('email/resend', 'VerifyEmailController@resend')->name('verification.resend');
 
-Route::middleware('peserta')->group(function () {
+Route::middleware(['peserta','verified'])->group(function () {
 	Route::get('/peserta',function(){
 		return redirect('/peserta/dashboard_user');
 	});
