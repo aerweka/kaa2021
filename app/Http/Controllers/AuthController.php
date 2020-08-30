@@ -58,6 +58,8 @@ class AuthController extends Controller
 
         Mail::to($datapendaftar->email_pendaftar)->send(new VerifyMail($datapendaftar,$link));
 
+        Auth::login($pengguna);
+
         return redirect('/email/verify');
     }
 
