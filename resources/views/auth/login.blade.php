@@ -7,11 +7,15 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/css/login.css')}}">
 </head>
 <body>
-
     <div class="flex">
         <div class="background"></div>
         <div class="container">
             <form method="POST" action="{{ route('login') }}">
+                    @if(session('reset'))
+                    <div class="alert alert-success" role="alert">
+                        Reset Password berhasil. Silahkan login dengan password baru.
+                    </div>
+                    @endif
                     <h2 class="signin">Login</h2>
                     {{ csrf_field() }}
                     <table style="margin: auto;">
@@ -36,7 +40,7 @@
                     </table>
                     
             </form>
-            <a href="{{ url('/forgotpassword') }}"><p>Lupa Password?</p></a>
+            <a href="{{ url('/password/reset') }}"><p>Lupa Password?</p></a>
             <p>Tidak punya akun?    <a href="{{ url('/register') }}">Daftar disini.</a></p>
         </div>
     </div>
