@@ -19,7 +19,7 @@
                     <br>
                     <input type="password" name="password" id="password_user" class="password_user" placeholder="Masukan Password" required>
                     <br>
-                    <p><a href="{{ url('/forgotpassword') }}">Lupa Password?</a></p>
+                    <p><a href="{{ url('/password/reset') }}">Lupa Password?</a></p>
                     <br>
                     <button type="submit" class="btn">Sign In</button>
                     <p>Tidak punya akun? <a href="{{ url('/register') }}">Daftar disini.</a></p>
