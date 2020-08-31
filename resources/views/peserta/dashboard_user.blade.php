@@ -64,7 +64,7 @@
             </div>
 
             <!-- content -->
-            <h1 class="welcome">Selamat Datang, {{ auth()->user()->pendaftaran->nama_pendaftar}}</h1>
+            <h1 style="font-size: 40px;" class="welcome">Selamat Datang, {{ auth()->user()->pendaftaran->nama_pendaftar}}</h1>
 
             <div class="bungkus">
                 <h2>PENGUMUMAN</h2>

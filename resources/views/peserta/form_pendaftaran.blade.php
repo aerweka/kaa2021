@@ -32,16 +32,16 @@
                 @endif
 
                     <input type="text" class="nama_pendaftar" id="nama_pendaftar"
-                    placeholder="Masukan Nama" name="nama_pendaftar" value="{{ old('nama_pendaftar') }}" required>
+                    placeholder="Masukan Nama" name="nama_pendaftar" value="{{ auth()->user()->pendaftaran->nama_pendaftar}}" required>
 
                     <input type="text" class="asal_daerah" id="asal_daerah"
                     placeholder="Masukan Asal Daerah" name="asal_daerah" value="{{ old('asal_daerah') }}" required>
 
                     <input type="text" class="asal_univ_pendaftar" id="asal_univ_pendaftar"
-                    placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar" value="{{ old('asal_univ_pendaftar') }}" required>
+                    placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar" value="{{ auth()->user()->pendaftaran->asal_univ_pendaftar}}" required>
 
                     <input type="email" class="email_pendaftar" id="email_pendaftar"
-                    placeholder="Masukan Email" name="email_pendaftar" value="{{ old('email_pendaftar') }}" required>
+                    placeholder="Masukan Email" name="email_pendaftar" value="{{ auth()->user()->pendaftaran->email_pendaftar}}" required>
 
                     <input type="number" class="no_telepon_pendaftar" id="no_telepon_pendaftar"
                     placeholder="Masukan Nomor Telepon" name="no_telepon_pendaftar" value="{{ old('no_telepon_pendaftar') }}" required>

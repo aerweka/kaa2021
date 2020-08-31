@@ -71,6 +71,7 @@
         </div><br>
       </div>
       <div class="float-right juara">
+          <h3 style="text-align: center; margin-bottom: 20px;"><b>Hadiah :</b></h3>
         <p><b>JUARA 1</b><br>
           Rp. 1.000.000 + E-Sertifikat + Piala Bergilir IAI<br>
           <b>JUARA 2</b><br>
