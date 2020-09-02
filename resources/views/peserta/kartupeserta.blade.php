@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/kartupeserta.css">
+    <!-- <link rel="stylesheet" href="/css/kartupeserta.css"> -->
 
     <style>
     .container2{
-        /* background: url(/img/Calculator-bro.svg);
-        background-repeat: no-repeat;
-        background-position-x: -130px;
-        background-position-y: 300px; */
         background-color: white;
         display: block;
         width: 500px;
@@ -20,27 +16,15 @@
     }
     .logo{
         display: block;
-        position: relative;
         height: 30%;
         width: 100%;
-        background-image: url(/img/1597722989485_logo_2-1-removebg-preview.png);
-        /* background-size: 100px; */
-        background-repeat: no-repeat;
-        /* background-position-x: center; */
-        background-position-y: 10px;
     }
     .judul{
         text-align: center;
-        font-size: 30px;
-        /* text-shadow: 2px 2px #8BBF99; */
+        font-size: 35px;
         color: #8BBF99;
+        margin-top: 20px;
         margin-bottom: 30px;
-    }
-    .background{
-        background: url(/img/Documents-amico.svg);
-        background-repeat: no-repeat;
-        background-position-x: 230px;
-        background-position-y: -40px;
     }
     .content{
         padding: 15px;
@@ -49,21 +33,13 @@
         text-align: center;
     }
     .content h4{
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 15px;
     }
     .content p{
         text-decoration: underline;
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 15px;
-    }
-    img{
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        left: 30%;
-        top: 90%;
-        z-index: -1;
     }
     </style>
 
@@ -72,16 +48,19 @@
 <body>
     <div class="container2">
 
-        <div class="logo"></div>
+        <div class="logo">
+        <img src="C:\xampp\htdocs\kaadaftar-master\public\img\1597722989485_logo_2-1-removebg-preview.png" 
+        style="width:300px;height:300px;left:40%;position:absolute;">
+        </div>
 
         <div class="judul"><b>Kompetisi Akuntansi Airlangga</b></div>
 
         <div class="background">
             <div class="content">
                 <p>Nama :</p>
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h4>{{ auth()->user()->pendaftaran->nama_pendaftar}}</h4>
                 <p>Universitas :</p>
-                <h4>Lorem ipsum dolor sit amet</h4>
+                <h4>{{ auth()->user()->pendaftaran->asal_univ_pendaftar}}</h4>
                 <p>Username :</p>
                 <h4>Lorem ipsum dolor sit amet</h4>
                 <p>Password :</p>

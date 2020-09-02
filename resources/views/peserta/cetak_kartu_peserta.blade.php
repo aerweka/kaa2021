@@ -20,7 +20,6 @@
         <div class="conten">
                 <div class="bungkus">
                 <h2>CETAK KARTU PESERTA</h2>
-                <a class="btn" href="/peserta/kartupeserta">Open</a>
                 <a type="submit" class="btn" href="/exportpdf">Print</a>
             </div>
         </div>

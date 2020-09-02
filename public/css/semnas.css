@@ -34,8 +34,13 @@ body, html{
     padding: 10px;
     text-align: center;
     font-size: 19px;
-}
+}   
 .persyaratan{
+    background: url(/flaticon/document.svg);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position-x: 100%;
+    background-position-y: 90%;
     width: 40%;
     height: auto;
     padding: 20px;
@@ -45,6 +50,8 @@ body, html{
 .persyaratan p{
   font-size: 18px;
   margin-top: 20px;
+  background-color:  rgb(255, 255, 255, 0.6);
+  border-radius: 10px;
 }
 .flex{
     display: flex;
@@ -64,6 +71,11 @@ body, html{
 }
 /* ===============================================================timeline================================================== */
 .timeline {
+    background: url(/flaticon/timeline.svg);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position-x: 20%;
+    background-position-y: 90%;
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
@@ -160,6 +172,11 @@ body, html{
     height: auto;
 }
 .fasilitas{
+    background: url(/flaticon/certificate.svg);
+    background-repeat: no-repeat;
+    background-size: 160px;
+    background-position-x: 90%;
+    background-position-y: 90%;
     margin: 20px;
     padding: 20px;
     text-align: center;
@@ -168,9 +185,18 @@ body, html{
     flex: 1;
 }
 .mekanisme{
+    background: url(/flaticon/name.svg);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position-x: 90%;
+    background-position-y: 60%;
     padding: 20px;
     margin: 20px;
     flex: 1;
+}
+.mekanisme p{
+  background-color:  rgb(255, 255, 255, 0.8);
+  border-radius: 10px;
 }
  /* ===============================================================contact================================================== */
 .flex4{
