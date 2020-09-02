@@ -46,8 +46,8 @@ class PesertaController extends Controller
         $pembayaran->status_pembayaran = 0;
 
         $namafile = 'bukti_pembayaran-'.Auth::user()->id_pendaftaran.'.'.$request->file('bukti_pembayaran')->extension();
-        $path = Storage::putFileAs(
-            'public/bukti_pembayaran',$request->file('bukti_pembayaran'),$namafile,'public'
+        $path = Storage::disk('public')->putFileAs(
+            '/bukti_pembayaran',$request->file('bukti_pembayaran'),$namafile,'public'
         );
         $pembayaran->bukti_pembayaran = 'bukti_pembayaran/'.$namafile;
         
@@ -89,17 +89,17 @@ class PesertaController extends Controller
 
         if($request->file('scan_suket_aktif') != null){
             $namafilescansuket = 'scan_suket_aktif-'.Auth::user()->id_pendaftaran.'.'.$request->file('scan_suket_aktif')->extension();
-            Storage::putFileAs(
-                'public/scan_suket_aktif',$request->file('scan_suket_aktif'),$namafilescansuket,'public'
+            Storage::disk('public')->putFileAs(
+                '/scan_suket_aktif',$request->file('scan_suket_aktif'),$namafilescansuket,'public'
             );
             $pendaftaran->scan_suket_aktif = 'scan_suket_aktif/'.$namafilescansuket;
         }
 
-        Storage::putFileAs(
-            'public/scan_ktm',$request->file('scan_ktm'),$namafilescanktm,'public'
+        Storage::disk('public')->putFileAs(
+            '/scan_ktm',$request->file('scan_ktm'),$namafilescanktm,'public'
         );
-        Storage::putFileAs(
-            'public/pas_foto',$request->file('pas_foto'),$namafilefoto,'public'
+        Storage::disk('public')->putFileAs(
+            '/pas_foto',$request->file('pas_foto'),$namafilefoto,'public'
         );
 
         $pendaftaran->scan_ktm = 'scan_ktm/'.$namafilescanktm;
