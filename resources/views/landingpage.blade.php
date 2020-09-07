@@ -88,7 +88,7 @@
   <div class="container3 left">
     <div class="content">
       <h3>Pendaftaran</h3>
-      <p>24 Agustus - 13 Oktober 2020</p>
+      <p>14 September - 14 Oktober 2020</p>
     </div>
   </div>
   <div class="container3 right">
@@ -131,14 +131,14 @@
         <div class="float-left mekanisme">
           <h3 style="text-align: center; margin-bottom: 20px;"><b>Mekanisme Pendaftaran :</b></h3>
           <p style="background-color: rgb(255, 255, 255, 0.6); border-radius: 10px;">1. Peserta di wajibkan mendaftarkan akun.<br>
-            2. Peserta melakukan pembayaran via bank BRI 6291-01-016958-53-9 a/n Jeni Dwi Fitriana lalu upload bukti pembayaran (.jpg).<br>
+            2. Peserta melakukan pembayaran via bank BRI Syari’ah: 1039830651 a/n Hikmatus Saadah lalu upload bukti pembayaran (.jpg).<br>
             3. Peserta mengisi formulir yang telah disediakan.<br>
             4. Melakukan verifikasi dengan mengupload berkas (.jpg) :<br>
             - Scan Kartu Tanda Mahasiswa.<br>
             - Pas foto berukuran 3x4.<br>
-            - Scan keterangan aktif dari fakultas untuk angkatan 2015 keatas.<br>
+            - Scan keterangan aktif dari fakultas untuk angkatan 2016 keatas.<br>
             5. Data yang masukan adalah data yang sebenar-benarnya, jika sudah selesai submit data.<br>
-            6. Peserta mendownload kartu peserta.<br>
+            6. Setelah itu peserta dapat mengunduh kartu peserta. Pada kartu peserta terdapat username dan password yang akan digunakan untuk login saat pengerjaan preliminary round dan main event.<br>
             7. Peserta dinyatakan telah terdaftar apabila telah mendapat konfirmasi.</p>
           </div><br>
         </div>
@@ -147,8 +147,10 @@
         <p style="background-color: rgb(255, 255, 255, 0.6); border-radius: 10px;"><b>PRELIMINARY :</b><br>
           <b>GEL. 1</b><br>
           Rp. 50.000<br>
+          (14 September - 29 September 2020)<br>
           <b>GEL. 2</b><br>
           Rp. 60.000<br>
+          (30 September - 14 Oktober 2020)<br>
           <br>
           <b> Main Event :</b><br>
           FREE</p>
@@ -228,11 +230,11 @@
           <div class="card">
             <img src="" alt="" style="width:100%">
             <div class="container4">
-              <h2>Jeni Dwi</h2>
+              <h2>Ishyarotul Robahniya</h2>
               <p class="title2">No.Telp :</p>
-              <p>085645122792</p>
+              <p>087860825309</p>
               <p class="title2">Line :</p>
-              <p>jenny.yaa</p>
+              <p>icha1n9</p>
             </div>
           </div>
         </div>
@@ -243,9 +245,9 @@
             <div class="container4">
               <h2>Official Account</h2>
               <p class="title2">Line :</p>
-              <p><p>KAA 2019</p></p>
+              <p><p>@vmu7594p</p></p>
               <p class="title2">Instagram :</p>
-              <p>Kompetisiakuntansiairlangga</p>
+              <p>@KAASemnas2020</p>
             </div>
           </div>
         </div>
@@ -254,11 +256,11 @@
           <div class="card">
             <img src="" alt="" style="width:100%">
             <div class="container4">
-              <h2>Eltin Mahdani</h2>
+              <h2>Diva Rahmadhani N</h2>
               <p class="title2">No.Telp :</p>
-              <p>085236191648</p>
+              <p>081357214048</p>
               <p class="title2">Line :</p>
-              <p>eltinmahdani</p>
+              <p>diva_rahmadhani</p>
             </div>
           </div>
         </div>
