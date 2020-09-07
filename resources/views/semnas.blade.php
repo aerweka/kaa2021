@@ -67,7 +67,7 @@
       <div class="container3 left">
         <div class="content">
           <h3>Pendaftaran</h3>
-          <p>31 Agustus - 10 Oktober 2020</p>
+          <p>14 September - 22 Oktober 2020</p>
         </div>
       </div>
       <div class="container3 right">
@@ -98,7 +98,7 @@
             <h3 style="text-align: center; margin-bottom: 15px;"><b>Mekanisme Pendaftaran :</b></h3>
             <p>1.	Peserta mengisi formulir di web bit.ly/SEMNASAKSO2020 atau scan kode qr di poster.<br>
                 2.	Peserta menyiapkan scan KTP/KTM yang nantinya akan diupload di google form.<br>
-                3.	Peserta akan mendapatkan link zoom untuk seminar ketika H-3 melalui email yang digunakan di dalam pengisian google form, sehingga diharapkan peserta mengisi google formulir dengan benar dan mengecek kembali data agar tidak terjadi kesalahan
+                3.	Setelah mengisi form, peserta akan diundang ke WhatsApp grup yang berisikan informasi lebih lanjut mengenai seminar, sehingga diharapkan peserta mengisi google formulir dengan benar dan mengecek kembali data agar tidak terjadi kesalahan
                 </p>
         </div>
     </div>
@@ -112,11 +112,11 @@
           <div class="card">
             <img src="" alt="" style="width:100%">
             <div class="container4">
-              <h2>Alfian Darmawan</h2>
+              <h2>Shafa Inta Nabila</h2>
               <p class="title2">No.Telp :</p>
-              <p>082121215830</p>
+              <p>085703430076</p>
               <p class="title2">Line :</p>
-              <p>alfiandarma</p>
+              <p><p>shafaafaa</p></p>
             </div>
           </div>
         </div>
@@ -125,11 +125,11 @@
           <div class="card">
             <img src="" alt="" style="width:100%">
             <div class="container4">
-              <h2>Official Account</h2>
+              <h2>Salsabilla Cahyaningtyas</h2>
+              <p class="title2">No.Telp :</p>
+              <p>0895631483223</p>
               <p class="title2">Line :</p>
-              <p><p>Semnas 2020</p></p>
-              <p class="title2">Instagram :</p>
-              <p>kaasemnasairlangga</p>
+              <p><p>illatyas_</p></p>
             </div>
           </div>
         </div>
