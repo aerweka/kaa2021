@@ -14,6 +14,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Response;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PembayaranDiterimaMail;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -94,9 +95,9 @@ class AdminController extends Controller
     	$pembayaran->status_pembayaran = 1;
     	$pembayaran->save();
 
-        $link = url().'/peserta/form_pendaftaran';
-        $pendaftar = Pendaftaran::find(Auth::user()->id_pendaftaran);
-        Mail::to(Auth::user()->email)->send(new PembayaranDiterimaMail($pendaftar,$link));
+        $link = url('/peserta/form_pendaftaran');
+        $pendaftar = Pendaftaran::find($pembayaran->id_pendaftaran);
+        Mail::to($pendaftar->email_pendaftar)->send(new PembayaranDiterimaMail($pendaftar,$link));
 
     	return response()->json(['success' => true]);
     }

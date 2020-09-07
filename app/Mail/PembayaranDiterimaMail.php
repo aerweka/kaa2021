@@ -11,14 +11,16 @@ class PembayaranDiterimaMail extends Mailable
 {
     use Queueable, SerializesModels;
     protected $user;
+    protected $link;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($user,$link)
     {
         $this->user = $user;
+        $this->link = $link;
     }
 
     /**
@@ -33,6 +35,7 @@ class PembayaranDiterimaMail extends Mailable
             ->markdown('emails.verifikasiditerima')
             ->with([
                 'user' => $this->user,
+                'link' => $this->link,
             ]);
     }
 }
