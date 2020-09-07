@@ -12,6 +12,8 @@ use App\Exports\PesertaExport;
 use App\Exports\PendaftarExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Response;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PembayaranDiterimaMail;
 
 class AdminController extends Controller
 {
@@ -91,6 +93,10 @@ class AdminController extends Controller
     	$pembayaran = Pembayaran::find($id);
     	$pembayaran->status_pembayaran = 1;
     	$pembayaran->save();
+
+        $link = url().'/peserta/form_pendaftaran';
+        $pendaftar = Pendaftaran::find(Auth::user()->id_pendaftaran);
+        Mail::to(Auth::user()->email)->send(new PembayaranDiterimaMail($pendaftar,$link));
 
     	return response()->json(['success' => true]);
     }

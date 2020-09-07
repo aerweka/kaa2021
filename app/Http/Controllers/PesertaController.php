@@ -9,6 +9,9 @@ use App\Pembayaran;
 use Auth;
 use Storage;
 use PDF;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\KonfirmasiDiterimaMail;
+
 
 class PesertaController extends Controller
 {
@@ -54,6 +57,11 @@ class PesertaController extends Controller
         $pembayaran->save();
 
         session()->flash('success', 'Data Berhasil Di Tambahkan!');
+
+        $pendaftar = Pendaftaran::find(Auth::user()->id_pendaftaran);
+
+        Mail::to(Auth::user()->email)->send(new KonfirmasiDiterimaMail($pendaftar));
+
         return redirect('/peserta/konfirmasi_pembayaran');
     }
 
