@@ -61,6 +61,11 @@ body{
     margin-top: 90px;
     margin-left: 650px;
 } */
+h1{
+    margin: 50px 40px 50px 40px;
+    font-size: 30px;
+    text-align: center;
+}
 h2{
     text-align: center;
     width: auto;
@@ -355,6 +360,11 @@ label{
         text-align: center;
     }
     p{
+        font-size: 14px;
+    }
+    h1{
+        margin: 50px 40px 50px 40px;
+        text-align: center;
         font-size: 14px;
     }
   }
