@@ -9,23 +9,40 @@ use App\Pembayaran;
 use Auth;
 use Storage;
 use PDF;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\KonfirmasiDiterimaMail;
+
 
 class PesertaController extends Controller
 {
     public function dashboard_user()
     {
-        return view('peserta/dashboard_user');
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/dashboard_user', compact('bayar2'));
     }
 
     public function alur_pembayaran()
     {
-        return view('peserta/alur_pembayaran');
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/alur_pembayaran', compact('bayar2'));
     }
 
     public function konfirmasi_pembayaran()
     {
-        return view('peserta/konfirmasi_pembayaran');
+        // sudah bayar tapi belum dikonfirmasi
+        $bayar = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')->first();
+        
+        // sudah bayar dan sudah dikonfirmasi
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/konfirmasi_pembayaran', compact('bayar', 'bayar2'));
     }
+
     public function store_pembayaran(Request $request)
     {
         
@@ -46,20 +63,26 @@ class PesertaController extends Controller
         $pembayaran->status_pembayaran = 0;
 
         $namafile = 'bukti_pembayaran-'.Auth::user()->id_pendaftaran.'.'.$request->file('bukti_pembayaran')->extension();
-        $path = Storage::putFileAs(
-            'public/bukti_pembayaran',$request->file('bukti_pembayaran'),$namafile,'public'
+        $path = Storage::disk('public')->putFileAs(
+            '/bukti_pembayaran',$request->file('bukti_pembayaran'),$namafile,'public'
         );
         $pembayaran->bukti_pembayaran = 'bukti_pembayaran/'.$namafile;
         
         $pembayaran->save();
 
         session()->flash('success', 'Data Berhasil Di Tambahkan!');
+
+        $pendaftar = Pendaftaran::find(Auth::user()->id_pendaftaran);
+
+        Mail::to(Auth::user()->email)->send(new KonfirmasiDiterimaMail($pendaftar));
+
         return redirect('/peserta/konfirmasi_pembayaran');
     }
 
     public function form_pendaftaran()
     {
-        return view('peserta/form_pendaftaran');
+        $daftar = Pendaftaran::where('status_pendaftaran', '=', '1')->first();
+        return view('peserta/form_pendaftaran', compact('daftar'));
     }
     public function store_pendaftaran(Request $request)
     {
@@ -89,17 +112,17 @@ class PesertaController extends Controller
 
         if($request->file('scan_suket_aktif') != null){
             $namafilescansuket = 'scan_suket_aktif-'.Auth::user()->id_pendaftaran.'.'.$request->file('scan_suket_aktif')->extension();
-            Storage::putFileAs(
-                'public/scan_suket_aktif',$request->file('scan_suket_aktif'),$namafilescansuket,'public'
+            Storage::disk('public')->putFileAs(
+                '/scan_suket_aktif',$request->file('scan_suket_aktif'),$namafilescansuket,'public'
             );
             $pendaftaran->scan_suket_aktif = 'scan_suket_aktif/'.$namafilescansuket;
         }
 
-        Storage::putFileAs(
-            'public/scan_ktm',$request->file('scan_ktm'),$namafilescanktm,'public'
+        Storage::disk('public')->putFileAs(
+            '/scan_ktm',$request->file('scan_ktm'),$namafilescanktm,'public'
         );
-        Storage::putFileAs(
-            'public/pas_foto',$request->file('pas_foto'),$namafilefoto,'public'
+        Storage::disk('public')->putFileAs(
+            '/pas_foto',$request->file('pas_foto'),$namafilefoto,'public'
         );
 
         $pendaftaran->scan_ktm = 'scan_ktm/'.$namafilescanktm;
@@ -112,7 +135,10 @@ class PesertaController extends Controller
 
     public function cetak_kartu_peserta()
     {
-        return view('peserta/cetak_kartu_peserta');
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/cetak_kartu_peserta', compact('bayar2'));
     }
 
     public function kartupeserta()
