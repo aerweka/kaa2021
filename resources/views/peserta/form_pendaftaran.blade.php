@@ -22,6 +22,12 @@
         <div class="conten">
             <div class="bungkus">
                 <h2>FORM PENDAFTARAN</h2>
+
+                @if ($daftar)
+                <h1>
+                 Pendaftaranmu telah diterima. Silahkan mencetak kartu peserta </h1>
+
+                @else
                 <form method="post" action="/peserta/form_pendaftaran" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 
@@ -60,6 +66,8 @@
 
                     <button type="submit" class="btn">Submit</button>
                 </form>
+                @endif
+
             </div>
             <!-- <div class="telpon">Phone Number</div> -->
         </div>
