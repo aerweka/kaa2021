@@ -17,18 +17,32 @@ class PesertaController extends Controller
 {
     public function dashboard_user()
     {
-        return view('peserta/dashboard_user');
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/dashboard_user', compact('bayar2'));
     }
 
     public function alur_pembayaran()
     {
-        return view('peserta/alur_pembayaran');
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/alur_pembayaran', compact('bayar2'));
     }
 
     public function konfirmasi_pembayaran()
     {
-        return view('peserta/konfirmasi_pembayaran');
+        // sudah bayar tapi belum dikonfirmasi
+        $bayar = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')->first();
+        
+        // sudah bayar dan sudah dikonfirmasi
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/konfirmasi_pembayaran', compact('bayar', 'bayar2'));
     }
+
     public function store_pembayaran(Request $request)
     {
         
@@ -67,7 +81,8 @@ class PesertaController extends Controller
 
     public function form_pendaftaran()
     {
-        return view('peserta/form_pendaftaran');
+        $daftar = Pendaftaran::where('status_pendaftaran', '=', '1')->first();
+        return view('peserta/form_pendaftaran', compact('daftar'));
     }
     public function store_pendaftaran(Request $request)
     {
@@ -120,7 +135,10 @@ class PesertaController extends Controller
 
     public function cetak_kartu_peserta()
     {
-        return view('peserta/cetak_kartu_peserta');
+        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
+                            ->where('p.status_pembayaran', '=', '1')->first();
+        
+        return view('peserta/cetak_kartu_peserta', compact('bayar2'));
     }
 
     public function kartupeserta()

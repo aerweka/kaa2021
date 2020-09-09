@@ -96,10 +96,11 @@
         </div>
         <div class="mekanisme">
             <h3 style="text-align: center; margin-bottom: 15px;"><b>Mekanisme Pendaftaran :</b></h3>
-            <p>1.	Peserta mengisi formulir di web bit.ly/SEMNASAKSO2020 atau scan kode qr di poster.<br>
+            <p>1.	Peserta mengisi formulir di web bit.ly/SEMNASAKSO2020.<br>
                 2.	Peserta menyiapkan scan KTP/KTM yang nantinya akan diupload di google form.<br>
                 3.	Setelah mengisi form, peserta akan diundang ke WhatsApp grup yang berisikan informasi lebih lanjut mengenai seminar, sehingga diharapkan peserta mengisi google formulir dengan benar dan mengecek kembali data agar tidak terjadi kesalahan
                 </p>
+            <a class="daftar" href="#">DAFTAR</a>
         </div>
     </div>
     <!-- END SHAFASILITAS + MEKANISMEPE -->

@@ -13,7 +13,15 @@
                 <a href="/peserta/dashboard_user" class="menu1">Dashboard</a>
                 <a href="/peserta/alur_pembayaran" class="menu2">Alur Pembayaran</a>
                 <a href="/peserta/konfirmasi_pembayaran" class="menu3">Konfirmasi Pembayaran</a>
+
+                @if ($bayar2)
+                <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
                 <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
+                @else
+                <!-- form pendaftaran hilang karena belum bayar -->
+                <a href="/peserta/form_pendaftaran" class="menu4" style="display:none;">Form Pendaftaran</a>
+                @endif
+
                 <a href="/peserta/cetak_kartu_peserta" class="menu5">Cetak Kartu Peserta</a>
             </tr>
         </div>
@@ -21,12 +29,12 @@
             <div class="bungkus">
                 <h2>ALUR PEMBAYARAN</h2>
                     <p>1. Peserta di wajibkan mendaftarkan akun.</p>
-                    <p>2. Peserta melakukan pembayaran via bank <b style="color: red;">BRI 6291-01-016958-53-9 a/n Jeni Dwi Fitriana lalu upload bukti pembayaran (.jpg)</b>.</p>
+                    <p>2. Peserta melakukan pembayaran via bank <b style="color: red;">bank BRI Syari’ah: 1039830651 a/n Hikmatus Saadah lalu upload bukti pembayaran (.jpg)</b>.</p>
                     <p>3. Peserta menungu pihak panitia untuk memvalidasi pembayaran yang sudah dilakukan.</p>
                     <p>4. Peserta mengisi formulir yang telah disediakan, termasuk :
                     <br>- Scan Kartu Tanda Mahasiswa.
                     <br>- Pas foto berukuran 3x4.
-                    <br>- Scan keterangan aktif dari fakultas untuk angkatan 2015 keatas.</p>
+                    <br>- Scan keterangan aktif dari fakultas untuk angkatan 2016 keatas.</p>
                     <p>5. Data yang inputkan harus data yang sebenar - benarnya.</p>
                     <p>6. Setelah itu peserta dapat mendownload kartu peserta.</p>
             </div>
