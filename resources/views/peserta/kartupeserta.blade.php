@@ -49,7 +49,7 @@
     <div class="container2">
 
         <div class="logo">
-        <img src="C:\xampp\htdocs\kaadaftar-master\public\img\1597722989485_logo_2-1-removebg-preview.png" 
+        <img src="{{ asset("img\1597722989485_logo_2-1-removebg-preview.png") }}" 
         style="width:300px;height:300px;left:40%;position:absolute;">
         </div>
 
