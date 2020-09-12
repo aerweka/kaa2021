@@ -12,19 +12,6 @@
 				<h1 id="welcometext">Welcome Back, Dea!</h1>
 				<h3 id="welcomemenu">Verifikasi Pembayaran</h3>
 			</div>
-			<!-- <div class="col-3">
-				<div class="card card-body" id="card-jam">
-					<div class="row px-2">
-						<div class="col-4">
-							<div class="row px-1" id="hari">Sun,</div>
-							<div class="row px-1" id="tgl">20 Aug</div>
-						</div>
-						<div class="col-8 p-0">
-							<h1 id="jam" class="text-center align-middle">13:45</h1>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</div>
 </div>

@@ -20,19 +20,6 @@
 				<h1 id="welcometext">Welcome Back, Dea!</h1>
 				<h3 id="welcomemenu">Dashboard</h3>
 			</div>
-			<!-- <div class="col-3">
-				<div class="card card-body" id="card-jam">
-					<div class="row px-2">
-						<div class="col-4">
-							<div class="row px-1" id="hari">Sun,</div>
-							<div class="row px-1" id="tgl">20 Aug</div>
-						</div>
-						<div class="col-8 p-0">
-							<h1 id="jam" class="text-center align-middle">13:45</h1>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</div>
 </div>
@@ -43,11 +30,6 @@
 				<div class="row">
 					<h1 class="judulcard" id="graphic-title">Data User</h1>
 				</div>
-				<!-- <div class="row align-items-center">
-					<span class="dot mr-2" id="dot1"></span>
-					<span class="mr-3 captgraph-card align-middle">Pendaftar</span>
-					<span class="dot mr-2" id="dot2"></span><span class="captgraph-card align-middle">Peserta</span>
-				</div> -->
 				<div class="row">
 					<div style="height: auto;min-height:340px ;width: 100%;">
 						<canvas id="canvas"></canvas>
@@ -145,22 +127,6 @@
 			
 		</div>
 	</div>
-	<!-- <div class="col-12 col-xl-3 p-0 mt-3 d-block d-sm-none d-xl-none">
-		<div class="card p-0" id="card-peserta">
-			<div class="card-body px-5">
-				<div class="row p-0">
-					<div class="col-6 col-xl-12 pr-5 pl-0" id="peserta">
-						<h1 class="judulcard">Jumlah Peserta</h1>
-						<h3 id="capt-peserta"><i>Pendaftar yang telah mengisi data dengan lengkap.</i></h3>
-						<h2 class="angka">{{$datacard[0]}}</h2>
-						<h2 class="orang">orang</h2>
-						<button class="btn text-right download-btn mt-2" id="download-dash-btn-mobile"><img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}"><span class="btn-text">Unduh Data</span></button>
-					</div>
-					<img class="d-xl-none col-6 p-0 card-img-top-mobile" src="{{asset('/assets/icons/peserta.svg')}}" height="50%" width="50%">
-				</div>
-			</div>
-		</div>
-	</div> -->
 	
 </div>
 <div class="row mx-1 mt-4 justify-content-between">
@@ -288,7 +254,7 @@
 	var jumlahPendaftar = <?php echo json_encode($datagraphic); ?>;
 	console.log(jumlahPendaftar);
 		var lineChartData = {
-			labels: ['23 Agustus', '26 Agustus', '29 Agustus','1 September', '4 September','7 September','10 September','13 September'],
+			labels: ['14 September', '21 September', '28 September','29 September', '30 September','4 Oktober','8 Oktober','14 Oktober'],
 			datasets: [{
 				label: 'Pendaftar',
 				borderColor: window.chartColors.red,

@@ -12,6 +12,7 @@
 	@yield('links-admin')
 	<link rel="stylesheet" type="text/css" href="{{asset('/styles/admin_styles.css')}}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="icon" href="{{ URL::asset('/favicon.ico') }}"/>
 @endsection
 
 @section('nav')
@@ -45,22 +46,6 @@
 			</ul>
 		</div>
 		<ul class="navbar-nav mr-2 ml-auto">
-				<!-- <li class="nav-item mr-4">
-					<a data-toggle="collapse" href="#isiNotif" role="button" aria-expanded="false" aria-controls="isiNotif" id="notifbtn">
-						<span class="right-icon notif-icon"></span>
-					</a>
-					<div class="collapse notifcard" id="isiNotif">
-					  <div class="p-2" id="notifContainer">
-					  	<div class="card card-notif card-body unread mx-1 my-2 p-3" id="notif1">
-					  		Notif 1
-					  	</div>
-					  	<div class="card card-notif card-body read mx-1 my-2 p-3" id="notif2">
-					  		Notif 2
-					  	</div>
-					  	<span id="markread">Mark All As Read</span>
-					  </div>
-					</div>
-				</li> -->
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#profilec" role="button" aria-expanded="false" aria-controls="profilec" id="profilebtn">
 						<span class="right-icon profile-icon"></span>

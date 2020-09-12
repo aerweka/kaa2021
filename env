@@ -1,17 +1,17 @@
 APP_NAME=KAA
-APP_ENV=local
-APP_KEY=base64:V0uMrSZT1R79Xc0p4iBN7kjbEL9YyYBOk38egi6x8qw=
+APP_ENV=production
+APP_KEY=base64:AshLoo1pzCNDioH+NF78hvsAK5FrBYFQUgSqbGAF5vo=
 APP_DEBUG=true
-APP_URL=http://localhost
+APP_URL=https://kaasemnasunair.com/
 
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=kaadaftar
-DB_USERNAME=root
-DB_PASSWORD=
+DB_DATABASE=u9139336_kaadaftar
+DB_USERNAME=u9139336_kaadaftar
+DB_PASSWORD=databasekaa1
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file

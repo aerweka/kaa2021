@@ -19,15 +19,15 @@ use Auth;
 class AdminController extends Controller
 {
     public function home(){
-        $dateMin1 = date("Y-m-d",strtotime("2020-08-23"));
-        $dateMax1 = date("Y-m-d",strtotime("2020-08-25"));
-        $dateMax2 = date("Y-m-d",strtotime("2020-08-28"));
-        $dateMax3 = date("Y-m-d",strtotime("2020-08-31"));
-        $dateMax4 = date("Y-m-d",strtotime("2020-09-03"));
-        $dateMax5 = date("Y-m-d",strtotime("2020-09-06"));
-        $dateMax6 = date("Y-m-d",strtotime("2020-09-09"));
-        $dateMax7 = date("Y-m-d",strtotime("2020-09-12"));
-        $dateMax8 = date("Y-m-d",strtotime("2020-09-13"));
+        $dateMin1 = date("Y-m-d",strtotime("2020-09-14"));
+        $dateMax1 = date("Y-m-d",strtotime("2020-09-14"));
+        $dateMax2 = date("Y-m-d",strtotime("2020-09-21"));
+        $dateMax3 = date("Y-m-d",strtotime("2020-09-28"));
+        $dateMax4 = date("Y-m-d",strtotime("2020-09-29"));
+        $dateMax5 = date("Y-m-d",strtotime("2020-09-30"));
+        $dateMax6 = date("Y-m-d",strtotime("2020-10-04"));
+        $dateMax7 = date("Y-m-d",strtotime("2020-10-08"));
+        $dateMax8 = date("Y-m-d",strtotime("2020-10-14"));
 
     	$peserta = Pendaftaran::where('status_pendaftaran','=',1)->count();
     	$pendaftar = Pendaftaran::count();
