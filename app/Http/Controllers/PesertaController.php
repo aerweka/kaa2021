@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Pendaftaran;
-use App\Pembayaran;
+use App\Models\Pendaftaran;
+use App\Models\Pembayaran;
 use Auth;
 use Storage;
 use PDF;
@@ -74,10 +74,7 @@ class PesertaController extends Controller
     public function store_pendaftaran(Request $request)
     {
         $this->validate($request, [
-            //'nama_pendaftar' => 'required|max:30',
             'asal_daerah' => 'required|max:30',
-            //'asal_univ_pendaftar' => 'required|max:40',
-            //'email_pendaftar' => 'required|email:rfc|max:50',
             'no_telepon_pendaftar' => 'required|numeric',
             'id_line_pendaftar' => 'max:25',
             'scan_ktm' => 'required|file|max:2048|mimes:pdf,jpeg,png,jpg',
@@ -86,10 +83,7 @@ class PesertaController extends Controller
         ]);
 
         $pendaftaran = Pendaftaran::find(Auth::user()->id_pendaftaran);
-        $pendaftaran->nama_pendaftar = $request->nama_pendaftar;
         $pendaftaran->asal_daerah = $request->asal_daerah;
-        $pendaftaran->asal_univ_pendaftar = $request->asal_univ_pendaftar;
-        $pendaftaran->email_pendaftar = $request->email_pendaftar;
         $pendaftaran->no_telepon_pendaftar = $request->no_telepon_pendaftar;
         $pendaftaran->id_line_pendaftar = $request->id_line_pendaftar;
         $pendaftaran->status_pendaftaran = 1;

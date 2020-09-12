@@ -10,6 +10,7 @@
       color:#333
     }
     </style>
+    <title>Verifikasi Email</title>
 </head>
 <body>
     <div class="container-fluid">
