@@ -13,15 +13,14 @@
                 <a href="/peserta/dashboard_user" class="menu1">Dashboard</a>
                 <a href="/peserta/alur_pembayaran" class="menu2">Alur Pembayaran</a>
                 <a href="/peserta/konfirmasi_pembayaran" class="menu3">Konfirmasi Pembayaran</a>
-
-                @if ($bayar2)
-                <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
-                <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
-                @else
-                <!-- form pendaftaran hilang karena belum bayar -->
-                <a href="/peserta/form_pendaftaran" class="menu4" style="display:none;">Form Pendaftaran</a>
+                
+                @if(Auth::user()->pendaftaran->pembayarans != null)
+                    @if(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
+                    <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
+                    <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
+                    @endif
                 @endif
-
+                
                 <a href="/peserta/cetak_kartu_peserta" class="menu5">Cetak Kartu Peserta</a>
             </tr>
         </div>
@@ -77,9 +76,11 @@
             <div class="bungkus">
                 <h2>PENGUMUMAN</h2>
 
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum eveniet laudantium distinctio, porro molestiae et sit suscipit provident totam repudiandae ducimus obcaecati? Nam, voluptas consectetur cum sequi mollitia dicta vero nisi molestiae optio libero, est architecto eos quo inventore accusantium sunt in vitae qui expedita laborum ducimus asperiores. Iure adipisci ipsam optio placeat, maiores corporis voluptatem, assumenda quae pariatur ipsum voluptatum cupiditate ad molestias nihil alias beatae accusamus dignissimos hic labore doloremque soluta praesentium facere. Quo soluta, perferendis autem delectus sunt nostrum magnam fugit vero perspiciatis, accusamus minima facilis! Porro dignissimos impedit corrupti facilis ut itaque eum deserunt sit repellendus?
-                    </p>
+                    <p style="text-align: center;">
+
+						Pengumuman lolos preliminary belum tersedia
+					
+					</p>
 
             </div>
         </div>

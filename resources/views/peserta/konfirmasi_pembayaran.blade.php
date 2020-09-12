@@ -13,13 +13,12 @@
                 <a href="/peserta/dashboard_user" class="menu1">Dashboard</a>
                 <a href="/peserta/alur_pembayaran" class="menu2">Alur Pembayaran</a>
                 <a href="/peserta/konfirmasi_pembayaran" class="menu3">Konfirmasi Pembayaran</a>
-
-                @if ($bayar2)
-                <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
-                <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
-                @else
-                <!-- form pendaftaran hilang karena belum bayar -->
-                <a href="/peserta/form_pendaftaran" class="menu4" style="display:none;">Form Pendaftaran</a>
+                
+                @if(Auth::user()->pendaftaran->pembayarans != null)
+                    @if(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
+                    <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
+                    <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
+                    @endif
                 @endif
 
                 <a href="/peserta/cetak_kartu_peserta" class="menu5">Cetak Kartu Peserta</a>
@@ -28,13 +27,12 @@
         <div class="conten">
             <div class="bungkus">
                 <h2>KONFIRMASI PEMBAYARAN</h2>
-                
-                @if ($bayar2)
-                <h1> Pembayaranmu telah diterima. Langkah selanjutnya yaitu melengkapi data pada form pendaftaran. </h1>
-                
-                @elseif ($bayar)
-                <h1> Pembayaranmu sedang dalam proses verifikasi. Mohon tunggu email selanjutnya dan cek website secara berkala. </h1>
-
+                @if(Auth::user()->pendaftaran->pembayarans != null)
+                    @if(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
+                    <h3> Pembayaranmu telah diterima. Langkah selanjutnya yaitu melengkapi data pada form pendaftaran. </h3>
+                    @else
+                    <h3> Pembayaranmu sedang dalam proses verifikasi. Mohon tunggu email selanjutnya dan cek website secara berkala. </h3>
+                    @endif
                 @else
                 <form method="post" action="/peserta/konfirmasi_pembayaran" enctype="multipart/form-data">
                 {{ csrf_field() }}

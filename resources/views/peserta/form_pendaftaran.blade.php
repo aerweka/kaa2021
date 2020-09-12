@@ -22,12 +22,12 @@
         <div class="conten">
             <div class="bungkus">
                 <h2>FORM PENDAFTARAN</h2>
+                
+                @if(Auth::user()->pendaftaran->status_pendaftaran == 1 && Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
+                <h3>
+                 Pendaftaranmu telah diterima. Silahkan mencetak kartu peserta </h3>
 
-                @if ($daftar)
-                <h1>
-                 Pendaftaranmu telah diterima. Silahkan mencetak kartu peserta </h1>
-
-                @else
+                @elseif(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
                 <form method="post" action="/peserta/form_pendaftaran" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 
@@ -38,16 +38,16 @@
                 @endif
 
                     <input type="text" class="nama_pendaftar" id="nama_pendaftar"
-                    placeholder="Masukan Nama" name="nama_pendaftar" value="{{ auth()->user()->pendaftaran->nama_pendaftar}}" required>
+                    placeholder="Masukan Nama" name="nama_pendaftar" value="{{ auth()->user()->pendaftaran->nama_pendaftar}}" disabled required>
 
                     <input type="text" class="asal_daerah" id="asal_daerah"
                     placeholder="Masukan Asal Daerah" name="asal_daerah" value="{{ old('asal_daerah') }}" required>
 
                     <input type="text" class="asal_univ_pendaftar" id="asal_univ_pendaftar"
-                    placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar" value="{{ auth()->user()->pendaftaran->asal_univ_pendaftar}}" required>
+                    placeholder="Masukan Asal Universitas" name="asal_univ_pendaftar" value="{{ auth()->user()->pendaftaran->asal_univ_pendaftar}}" disabled required>
 
                     <input type="email" class="email_pendaftar" id="email_pendaftar"
-                    placeholder="Masukan Email" name="email_pendaftar" value="{{ auth()->user()->pendaftaran->email_pendaftar}}" required>
+                    placeholder="Masukan Email" name="email_pendaftar" value="{{ auth()->user()->pendaftaran->email_pendaftar}}" disabled required>
 
                     <input type="number" class="no_telepon_pendaftar" id="no_telepon_pendaftar"
                     placeholder="Masukan Nomor Telepon" name="no_telepon_pendaftar" value="{{ old('no_telepon_pendaftar') }}" required>

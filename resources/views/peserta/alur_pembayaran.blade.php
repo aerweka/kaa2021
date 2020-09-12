@@ -14,12 +14,11 @@
                 <a href="/peserta/alur_pembayaran" class="menu2">Alur Pembayaran</a>
                 <a href="/peserta/konfirmasi_pembayaran" class="menu3">Konfirmasi Pembayaran</a>
 
-                @if ($bayar2)
-                <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
-                <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
-                @else
-                <!-- form pendaftaran hilang karena belum bayar -->
-                <a href="/peserta/form_pendaftaran" class="menu4" style="display:none;">Form Pendaftaran</a>
+                @if(Auth::user()->pendaftaran->pembayarans != null)
+                    @if(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
+                    <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
+                    <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
+                    @endif
                 @endif
 
                 <a href="/peserta/cetak_kartu_peserta" class="menu5">Cetak Kartu Peserta</a>
