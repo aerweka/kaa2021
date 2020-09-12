@@ -32,6 +32,22 @@ class PenggunaTableSeeder extends Seeder
                 'status_user' => 1,
                 'email' => ''
             ),
+            2 => 
+            array (
+                'id_role' => '1',
+                'username' => 'hikmatus',
+                'password' => bcrypt("hikmatus"),
+                'status_user' => 1,
+                'email' => ''
+            ),
+            3 => 
+            array (
+                'id_role' => '1',
+                'username' => 'ajengayu',
+                'password' => bcrypt("ajengayu"),
+                'status_user' => 1,
+                'email' => ''
+            ),
         ));
     }
 }
