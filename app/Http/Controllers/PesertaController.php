@@ -17,30 +17,17 @@ class PesertaController extends Controller
 {
     public function dashboard_user()
     {
-        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
-                            ->where('p.status_pembayaran', '=', '1')->first();
-        
-        return view('peserta/dashboard_user', compact('bayar2'));
+        return view('peserta/dashboard_user');
     }
 
     public function alur_pembayaran()
     {
-        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
-                            ->where('p.status_pembayaran', '=', '1')->first();
-        
-        return view('peserta/alur_pembayaran', compact('bayar2'));
+        return view('peserta/alur_pembayaran');
     }
 
     public function konfirmasi_pembayaran()
     {
-        // sudah bayar tapi belum dikonfirmasi
-        $bayar = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')->first();
-        
-        // sudah bayar dan sudah dikonfirmasi
-        $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran','=', 'pendaftaran.id_pendaftaran')
-                            ->where('p.status_pembayaran', '=', '1')->first();
-        
-        return view('peserta/konfirmasi_pembayaran', compact('bayar', 'bayar2'));
+        return view('peserta/konfirmasi_pembayaran');
     }
 
     public function store_pembayaran(Request $request)
@@ -87,10 +74,10 @@ class PesertaController extends Controller
     public function store_pendaftaran(Request $request)
     {
         $this->validate($request, [
-            'nama_pendaftar' => 'required|max:30',
+            //'nama_pendaftar' => 'required|max:30',
             'asal_daerah' => 'required|max:30',
-            'asal_univ_pendaftar' => 'required|max:40',
-            'email_pendaftar' => 'required|email:rfc|max:50',
+            //'asal_univ_pendaftar' => 'required|max:40',
+            //'email_pendaftar' => 'required|email:rfc|max:50',
             'no_telepon_pendaftar' => 'required|numeric',
             'id_line_pendaftar' => 'max:25',
             'scan_ktm' => 'required|file|max:2048|mimes:pdf,jpeg,png,jpg',
