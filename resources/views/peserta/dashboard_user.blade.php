@@ -76,9 +76,11 @@
             <div class="bungkus">
                 <h2>PENGUMUMAN</h2>
 
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum eveniet laudantium distinctio, porro molestiae et sit suscipit provident totam repudiandae ducimus obcaecati? Nam, voluptas consectetur cum sequi mollitia dicta vero nisi molestiae optio libero, est architecto eos quo inventore accusantium sunt in vitae qui expedita laborum ducimus asperiores. Iure adipisci ipsam optio placeat, maiores corporis voluptatem, assumenda quae pariatur ipsum voluptatum cupiditate ad molestias nihil alias beatae accusamus dignissimos hic labore doloremque soluta praesentium facere. Quo soluta, perferendis autem delectus sunt nostrum magnam fugit vero perspiciatis, accusamus minima facilis! Porro dignissimos impedit corrupti facilis ut itaque eum deserunt sit repellendus?
-                    </p>
+                    <p style="text-align: center;">
+
+						Pengumuman lolos preliminary belum tersedia
+					
+					</p>
 
             </div>
         </div>

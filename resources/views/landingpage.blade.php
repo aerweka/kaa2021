@@ -65,7 +65,7 @@
       <div class="flex1">
         <div class="float-left persyaratan">
           <h3 style="text-align: center; margin-bottom: 20px;"><b>Persyaratan :</b></h3>
-        <p style="background-color: rgb(255, 255, 255, 0.8); border-radius: 10px;">1. Mahasiswa D3, D4 atau S1 dari Universitas, Sekolah Tinggi maupun Politeknik di Indonesia yang mendaftar dan dinyatakan terdaftar<br>
+        <p style="background-color: rgb(255, 255, 255, 0.8); border-radius: 10px;">1. Mahasiswa D3, D4 atau S1 dari Perguruan Tinggi di Indonesia yang mendaftar dan dinyatakan terdaftar<br>
           2. Tercatat sebagai mahasiswa yang masih aktif berkuliah pada saat mengikuti kompetisi</p>
           <a class="download" href="">Download Booklet</a>
         </div><br>
@@ -131,7 +131,10 @@
         <div class="float-left mekanisme">
           <h3 style="text-align: center; margin-bottom: 20px;"><b>Mekanisme Pendaftaran :</b></h3>
           <p style="background-color: rgb(255, 255, 255, 0.6); border-radius: 10px;">1. Peserta di wajibkan mendaftarkan akun.<br>
-            2. Peserta melakukan pembayaran via bank BRI Syari’ah: 1039830651 a/n Hikmatus Saadah lalu upload bukti pembayaran (.jpg).<br>
+            2. Peserta melakukan pembayaran melalui rekening :<br>
+            - Mandiri : 142-00-1857432-6 a/n Ajeng Ayu Nurfitri.<br>
+            - BRI Syari’ah : 1039830651 a/n Hikmatus Saadah.<br>
+            setelah itu upload bukti pembayaran (.jpg).<br>
             3. Peserta mengisi formulir yang telah disediakan.<br>
             4. Melakukan verifikasi dengan mengupload berkas (.jpg) :<br>
             - Scan Kartu Tanda Mahasiswa.<br>
@@ -147,10 +150,10 @@
         <p style="background-color: rgb(255, 255, 255, 0.6); border-radius: 10px;"><b>PRELIMINARY :</b><br>
           <b>GEL. 1</b><br>
           Rp. 50.000<br>
-          (14 September - 29 September 2020)<br>
+          (14 September - 27 September 2020)<br>
           <b>GEL. 2</b><br>
           Rp. 60.000<br>
-          (30 September - 14 Oktober 2020)<br>
+          (28 September - 14 Oktober 2020)<br>
           <br>
           <b> Main Event :</b><br>
           FREE</p>

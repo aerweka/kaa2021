@@ -48,17 +48,9 @@ body{
     background-size: 40px;
     background-position: center;
 }
-
-/* .conten{
-    background: url(/flaticon/user.svg);
-    background-size: 40px;
-    background-repeat: no-repeat;
-    background-position-y: 15px;
-    background-position-x: 785px;
-    background-color: rgb(187, 255, 118);
+.conten{
     flex: 3;
-    z-index: 1;
-} */
+}
 .bungkus{
     background-color: rgb(238, 238, 238, 0.7);
     height: auto;
