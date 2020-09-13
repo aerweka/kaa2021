@@ -151,7 +151,7 @@
 					@endif">
 				</div>
 				<div class="col-3"><span class="nama">{{$d->nama_pendaftar}}</span></div>
-				<div class="col-3 col-xs-2"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-3 col-xs-2"><span class="total">Rp {{number_format($d->total_pembayaran,0,',','.')}}</span></div>
 				<div class="col col-xl-4 col-lg-4 col-md-4 col-sm-4 text-right"><span class="badge
 					@if($d->status_pembayaran)badge-success
 					@else

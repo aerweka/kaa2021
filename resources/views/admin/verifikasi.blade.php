@@ -55,7 +55,7 @@
 				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{number_format($d->total_pembayaran,0,',','.')}}</span></div>
 				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
@@ -193,7 +193,7 @@
 				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{number_format($d->total_pembayaran,0,',','.')}}</span></div>
 				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge
@@ -335,7 +335,7 @@
 				<div class="col-2 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">{{$d->id_pendaftaran}}</span></div>
 				<div class="col-3"><span class="nama searchable" id="nama-{{$d->id_pendaftaran}}">{{$d->nama_pendaftar}}</span></div>
 				<div class="col-2 d-none d-xl-block"><span class="univ searchable" id="univ-{{$d->id_pendaftaran}}">{{$d->asal_univ_pendaftar}}</span></div>
-				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{$d->total_pembayaran}}</span></div>
+				<div class="col-2 col-lg-2 col-md-3 col-sm-3 d-none d-xl-block d-lg-block d-md-block d-sm-block"><span class="total">Rp {{number_format($d->total_pembayaran,0,',','.')}}</span></div>
 				<div class="col-2 col-lg-2 col-md-3 col-sm-3">
 					<div class="row mb-2 ">
 						<span class="badge

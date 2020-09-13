@@ -43,8 +43,8 @@ class PesertaController extends Controller
 
         $pembayaran = new Pembayaran;
         $pembayaran->id_pendaftaran = Auth::user()->id_pendaftaran;
-        $pembayaran->atas_nama_rekening = $request->atas_nama_rekening;
-        $pembayaran->bank_asal = $request->bank_asal;
+        $pembayaran->atas_nama_rekening = ucwords($request->atas_nama_rekening);
+        $pembayaran->bank_asal = ucwords($request->bank_asal);
         $pembayaran->nomor_rekening = $request->nomor_rekening;
         $pembayaran->total_pembayaran = $request->total_pembayaran;
         $pembayaran->status_pembayaran = 0;
@@ -83,7 +83,7 @@ class PesertaController extends Controller
         ]);
 
         $pendaftaran = Pendaftaran::find(Auth::user()->id_pendaftaran);
-        $pendaftaran->asal_daerah = $request->asal_daerah;
+        $pendaftaran->asal_daerah = ucwords($request->asal_daerah);
         $pendaftaran->no_telepon_pendaftar = $request->no_telepon_pendaftar;
         $pendaftaran->id_line_pendaftar = $request->id_line_pendaftar;
         $pendaftaran->status_pendaftaran = 1;

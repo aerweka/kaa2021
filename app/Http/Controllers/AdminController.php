@@ -55,9 +55,9 @@ class AdminController extends Controller
     	$datagraphic8_p = Pendaftaran::where('status_pendaftaran','=','1')->whereBetween(DB::raw('DATE(tgl_pendaftaran)'),[$dateMin1,$dateMax8])->count();
     	$datagraphic_p = [$datagraphic1_p,$datagraphic2_p,$datagraphic3_p,$datagraphic4_p,$datagraphic5_p,$datagraphic6_p,$datagraphic7_p,$datagraphic8_p];
 
-    	$datakonfirmasi = Pembayaran::select('p.pas_foto','p.nama_pendaftar','total_pembayaran','status_pembayaran')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->take(3)->get();
+    	$datakonfirmasi = Pembayaran::select('p.pas_foto','p.nama_pendaftar','total_pembayaran','status_pembayaran')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->orderBy('p.tgl_pendaftaran','DESC')->take(3)->get();
 
-    	$datapendaftar = Pendaftaran::select('pendaftaran.pas_foto','pendaftaran.nama_pendaftar','pendaftaran.asal_univ_pendaftar','p.status_pembayaran','pendaftaran.status_pendaftaran')->leftJoin('pembayaran as p','p.id_pendaftaran','=','pendaftaran.id_pendaftaran')->take(3)->get();
+    	$datapendaftar = Pendaftaran::select('pendaftaran.pas_foto','pendaftaran.nama_pendaftar','pendaftaran.asal_univ_pendaftar','p.status_pembayaran','pendaftaran.status_pendaftaran')->leftJoin('pembayaran as p','p.id_pendaftaran','=','pendaftaran.id_pendaftaran')->orderBy('pendaftaran.tgl_pendaftaran','DESC')->take(3)->get();
 
     	return view('admin.dashboard',['datacard' => $datacard,'datagraphic' => $datagraphic,'datakonfirmasi' => $datakonfirmasi,'datapendaftar' => $datapendaftar,'datagraphic_p' => $datagraphic_p]);
     }
