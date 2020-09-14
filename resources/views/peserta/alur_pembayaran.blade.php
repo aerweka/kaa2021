@@ -28,7 +28,10 @@
             <div class="bungkus">
                 <h2>ALUR PEMBAYARAN</h2>
                     <p>1. Peserta di wajibkan mendaftarkan akun.</p>
-                    <p>2. Peserta melakukan pembayaran via bank <b style="color: red;">bank BRI Syari’ah: 1039830651 a/n Hikmatus Saadah lalu upload bukti pembayaran (.jpg)</b>.</p>
+                    <p>2. Peserta melakukan pembayaran via bank<br>
+                    <b style="color: red;">- Mandiri : 142-00-1857432-6 a/n Ajeng Ayu Nurfitri.<br>
+                    - BRI Syari’ah: 1039830651 a/n Hikmatus Saadah.<br></b>
+                    lalu upload bukti pembayaran (.jpg).</p>
                     <p>3. Peserta menungu pihak panitia untuk memvalidasi pembayaran yang sudah dilakukan.</p>
                     <p>4. Peserta mengisi formulir yang telah disediakan, termasuk :
                     <br>- Scan Kartu Tanda Mahasiswa.

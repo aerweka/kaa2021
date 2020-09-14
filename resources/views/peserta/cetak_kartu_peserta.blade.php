@@ -27,7 +27,8 @@
         <div class="conten">
                 <div class="bungkus">
                 <h2>CETAK KARTU PESERTA</h2>
-                <a type="submit" class="btn" href="{{ url('/exportpdf') }}">Print</a>
+                <h3>Untuk saat ini, kartu peserta belum tersedia. Kartu peserta bisa diunduh mulai H-7 preliminary event.</h3>
+                <!--<a type="submit" class="btn" href="{{ url('/exportpdf') }}">Print</a>-->
             </div>
         </div>
     </div>

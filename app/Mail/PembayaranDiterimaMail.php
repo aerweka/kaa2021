@@ -30,7 +30,7 @@ class PembayaranDiterimaMail extends Mailable
      */
     public function build()
     {
-        return $this->from('admin@deaamartya.masuk.id', 'Panitia KAA 2020')
+        return $this->from('panitia@kaasemnasunair.com', 'Panitia KAA 2020')
             ->subject('Pembayaranmu sudah diterima')
             ->markdown('emails.verifikasiditerima')
             ->with([

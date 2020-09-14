@@ -55,7 +55,7 @@
     <!-- KONTEN KEDUA KIRI -->
     <div class="persyaratan">
         <h3 style="text-align: center;"><b>Persyaratan Umum :</b></h3>
-        <p>1.	Mahasiswa D3, D4 atau S1 dari universitas, Sekolah <br>Tinggi maupun Politeknik di Indonesia yang<br> mendaftar dan dinyatakan terdaftar.<br>
+        <p>1.	Mahasiswa D3, D4 atau S1 dari Perguruan Tinggi di Indonesia yang mendaftar dan dinyatakan terdaftar.<br>
             2.	Peserta Umum.</p>
     </div>
     <!-- END KONTEN KEDUA KIRI -->
@@ -100,7 +100,7 @@
                 2.	Peserta menyiapkan scan KTP/KTM yang nantinya akan diupload di google form.<br>
                 3.	Setelah mengisi form, peserta akan diundang ke WhatsApp grup yang berisikan informasi lebih lanjut mengenai seminar, sehingga diharapkan peserta mengisi google formulir dengan benar dan mengecek kembali data agar tidak terjadi kesalahan
                 </p>
-            <a class="daftar" href="#">DAFTAR</a>
+            <a class="daftar" href="https://bit.ly/SEMNASAKSO2020">DAFTAR</a>
         </div>
     </div>
     <!-- END SHAFASILITAS + MEKANISMEPE -->

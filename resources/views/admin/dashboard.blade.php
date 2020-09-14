@@ -17,7 +17,7 @@
 	<div class="card card-body" id="card-atas">
 		<div class="row">
 			<div class="col-12 col-xl-9" id="welcome">
-				<h1 id="welcometext">Welcome Back, Dea!</h1>
+				<h1 id="welcometext">Welcome Back</h1>
 				<h3 id="welcomemenu">Dashboard</h3>
 			</div>
 		</div>

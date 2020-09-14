@@ -32,7 +32,7 @@ class ResetMail extends Mailable
      */
     public function build()
     {
-        return $this->from('admin@deaamartya.masuk.id', 'Panitia KAA 2020')
+        return $this->from('panitia@kaasemnasunair.com', 'Panitia KAA 2020')
             ->subject('Reset Password')
             ->markdown('emails.reset')
             ->with([
