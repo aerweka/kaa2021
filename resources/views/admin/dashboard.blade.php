@@ -28,7 +28,17 @@
 		<div class="row col mb-4 pr-sm-0 pr-md-0 pr-lg-0 mr-sm-0 mr-md-0 mr-lg-0">
 			<div class="card card-body px-5" id="card-graphic">
 				<div class="row">
-					<h1 class="judulcard" id="graphic-title">Data User</h1>
+					<div class="col-xl-8 col-12">
+						<h1 class="judulcard" id="graphic-title">Data User</h1>
+					</div>
+					<div class="col-xl-4 col-12 text-right">
+						<a href="{{url('admin/export/moodle-user')}}">
+						    <button class="btn download-btn px-4" id="download-dash-btn">
+						        <img class="align-top mr-2" src="{{asset('/assets/icons/download-icon.svg')}}">
+						        <span class="btn-text">Export Moodle User</span>
+						    </button>
+						</a>
+					</div>
 				</div>
 				<div class="row">
 					<div style="height: auto;min-height:340px ;width: 100%;">

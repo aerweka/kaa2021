@@ -10,11 +10,13 @@ use DB;
 use App\Exports\SemuaExport;
 use App\Exports\PesertaExport;
 use App\Exports\PendaftarExport;
+use App\Exports\MoodleExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Response;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PembayaranDiterimaMail;
 use Auth;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -88,6 +90,22 @@ class AdminController extends Controller
 
     public function exportPeserta(){
     	return Excel::download(new PesertaExport, 'Data Peserta.xlsx');
+    }
+
+    public function exportMoodleUser(){
+        
+        $user = Pengguna::select('username','p.nama_pendaftar','id_user')->join('pendaftaran as p','p.id_pendaftaran','=','pengguna.id_pendaftaran')->where('id_role','=',2)->where('status_pendaftaran','=',1)->get();
+
+        foreach($user as $s){
+            $password = Str::random(10);
+
+            DB::table('akun_moodle')->insertOrIgnore([
+                'id_user' => $s->id_user,
+                'password_moodle' => $password,
+            ]);
+        }
+
+        return Excel::download(new MoodleExport, 'Data User Moodle.csv');
     }
 
     public function verifikasiTrue($id){

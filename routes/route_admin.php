@@ -11,6 +11,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 	Route::get('/export/semua','AdminController@exportSemua');
 	Route::get('/verifikasi/true{id}','AdminController@verifikasiTrue');
 	Route::get('/verifikasi/false{id}','AdminController@verifikasiFalse');
+	Route::get('/export/moodle-user','AdminController@exportMoodleUser');
 
 	Route::get('/changepassword',function(){
 		return view('admin.gantipassword');
