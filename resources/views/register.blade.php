@@ -66,6 +66,11 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $('#username').on('keypress', function(e) {
+            if (e.which == 32){
+                return false;
+            }
+        });
         $("#username").on("input",function(){
             $("#username").val($("#username").val().toLowerCase());
             if($("#username").val().length >= 5){
