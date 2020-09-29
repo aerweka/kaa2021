@@ -21,20 +21,34 @@ class AuthController extends Controller
     
     public function postregister(Request $request)
     {
+        $request->validate([
+            'nama_pendaftar' => 'required',
+            'asal_univ_pendaftar' => 'required',
+            'email_pendaftar' => 'required|email|unique:pengguna,email',
+            'username' => 'required|unique:pengguna,username',
+            'password_user' => 'required'
+        ]);
+
+        $username = explode(' ',trim($request->username))[0];
 
         $pendaftaran = Pendaftaran::create([
-            'nama_pendaftar' => ucwords($request->nama_pendaftar),
+            'nama_pendaftar' => ucwords(strtolower($request->nama_pendaftar)),
             'asal_univ_pendaftar' => ucwords($request->asal_univ_pendaftar),
             'email_pendaftar' => strtolower($request->email_pendaftar),
             'status_pendaftaran' => 0
             ]);
         
-        $id_daftar = Pendaftaran::select('id_pendaftaran')->orderBy('id_pendaftaran','DESC')->first();
+        $id_daftar = Pendaftaran::select('id_pendaftaran')->where([
+            'nama_pendaftar' => ucwords(strtolower($request->nama_pendaftar)),
+            'asal_univ_pendaftar' => ucwords($request->asal_univ_pendaftar),
+            'email_pendaftar' => strtolower($request->email_pendaftar),
+            'status_pendaftaran' => 0
+        ])->orderBy('id_pendaftaran','DESC')->first();
         
         $pengguna = Pengguna::create([
             'id_role' => 2,
             'id_pendaftaran' => $id_daftar->id_pendaftaran,
-            'username' => strtolower($request->username),
+            'username' => strtolower($username),
             'password' => bcrypt($request->password_user),
             'status_user' => 1,
             'email' => strtolower($request->email_pendaftar)
