@@ -25,54 +25,56 @@ class AuthController extends Controller
             'nama_pendaftar' => 'required',
             'asal_univ_pendaftar' => 'required',
             'email_pendaftar' => 'required|email|unique:pengguna,email',
-            'username' => 'required|unique:pengguna,username',
+            'username' => 'required|unique:pengguna,username|regex:/^\S*$/u',
             'password_user' => 'required'
         ]);
-
-        $username = explode(' ',trim($request->username))[0];
-
-        $pendaftaran = Pendaftaran::create([
-            'nama_pendaftar' => ucwords(strtolower($request->nama_pendaftar)),
-            'asal_univ_pendaftar' => ucwords($request->asal_univ_pendaftar),
-            'email_pendaftar' => strtolower($request->email_pendaftar),
-            'status_pendaftaran' => 0
+        
+        DB::transaction(function() use ($request){
+    
+            $pendaftaran = Pendaftaran::create([
+                'nama_pendaftar' => ucwords(strtolower($request->nama_pendaftar)),
+                'asal_univ_pendaftar' => ucwords($request->asal_univ_pendaftar),
+                'email_pendaftar' => strtolower($request->email_pendaftar),
+                'status_pendaftaran' => 0
+                ]);
+            
+            $id_daftar = Pendaftaran::select('id_pendaftaran')->where([
+                'nama_pendaftar' => ucwords(strtolower($request->nama_pendaftar)),
+                'asal_univ_pendaftar' => ucwords($request->asal_univ_pendaftar),
+                'email_pendaftar' => strtolower($request->email_pendaftar),
+                'status_pendaftaran' => 0
+            ])->orderBy('id_pendaftaran','DESC')->first();
+            
+            $pengguna = Pengguna::create([
+                'id_role' => 2,
+                'id_pendaftaran' => $id_daftar->id_pendaftaran,
+                'username' => strtolower($username),
+                'password' => bcrypt($request->password_user),
+                'status_user' => 1,
+                'email' => strtolower($request->email_pendaftar)
             ]);
-        
-        $id_daftar = Pendaftaran::select('id_pendaftaran')->where([
-            'nama_pendaftar' => ucwords(strtolower($request->nama_pendaftar)),
-            'asal_univ_pendaftar' => ucwords($request->asal_univ_pendaftar),
-            'email_pendaftar' => strtolower($request->email_pendaftar),
-            'status_pendaftaran' => 0
-        ])->orderBy('id_pendaftaran','DESC')->first();
-        
-        $pengguna = Pengguna::create([
-            'id_role' => 2,
-            'id_pendaftaran' => $id_daftar->id_pendaftaran,
-            'username' => strtolower($username),
-            'password' => bcrypt($request->password_user),
-            'status_user' => 1,
-            'email' => strtolower($request->email_pendaftar)
-        ]);
-
-        $datapendaftar = Pengguna::select('p.nama_pendaftar','p.email_pendaftar','username')
-        ->join('pendaftaran as p','p.id_pendaftaran','=','pengguna.id_pendaftaran')
-        ->where('username','=',strtolower($request->username))
-        ->first();
-        
-        $pengguna = Pengguna::where('username','=',strtolower($request->username))->first();
-
-        $token = sha1(time());
-
-        $link = url('/email/verify/'.$pengguna->id_user.'/'.$token);
-
-        $verifyUser = VerifyUser::create([
-            'id_user' => $pengguna->id_user,
-            'token' => $token
-        ]);
-
-        Mail::to($datapendaftar->email_pendaftar)->send(new VerifyMail($datapendaftar,$link));
-
-        Auth::login($pengguna);
+    
+            $datapendaftar = Pengguna::select('p.nama_pendaftar','p.email_pendaftar','username')
+            ->join('pendaftaran as p','p.id_pendaftaran','=','pengguna.id_pendaftaran')
+            ->where('username','=',strtolower($request->username))
+            ->first();
+            
+            $pengguna = Pengguna::where('username','=',strtolower($request->username))->first();
+    
+            $token = sha1(time());
+    
+            $link = url('/email/verify/'.$pengguna->id_user.'/'.$token);
+    
+            $verifyUser = VerifyUser::create([
+                'id_user' => $pengguna->id_user,
+                'token' => $token
+            ]);
+    
+            Mail::to($datapendaftar->email_pendaftar)->send(new VerifyMail($datapendaftar,$link));
+    
+            Auth::login($pengguna);
+            
+        });
 
         return redirect('/email/verify');
     }
