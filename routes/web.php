@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/maintenance', function (){
+    Artisan::call('down');
+    return redirect('/');
+});
+
 Route::get('/semnas', function () {
     return view('/semnas');
 });
