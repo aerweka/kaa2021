@@ -25,7 +25,7 @@ class AuthController extends Controller
             'nama_pendaftar' => 'required',
             'asal_univ_pendaftar' => 'required',
             'email_pendaftar' => 'required|email|unique:pengguna,email',
-            'username' => 'required|unique:pengguna,username|regex:/^\S*$/u',
+            'username' => 'required|unique:pengguna,username|regex:/^\S*$/',
             'password_user' => 'required'
         ]);
         
@@ -48,7 +48,7 @@ class AuthController extends Controller
             $pengguna = Pengguna::create([
                 'id_role' => 2,
                 'id_pendaftaran' => $id_daftar->id_pendaftaran,
-                'username' => strtolower($username),
+                'username' => strtolower($request->username),
                 'password' => bcrypt($request->password_user),
                 'status_user' => 1,
                 'email' => strtolower($request->email_pendaftar)
