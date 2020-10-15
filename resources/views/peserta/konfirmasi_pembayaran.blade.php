@@ -27,17 +27,15 @@
         <div class="conten">
             <div class="bungkus">
                 <h2>KONFIRMASI PEMBAYARAN</h2>
-                @if(Auth::user()->pendaftaran->pembayarans != null)
-                    @if(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
+                @if(Auth::user()->pendaftaran->pembayarans != null && Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
                     <h3 style="text-align: center; padding: 10px;"> Pembayaranmu telah diterima. Langkah selanjutnya yaitu melengkapi data pada form pendaftaran. </h3>
-                    @else
-                    <h3 style="text-align: center; padding: 10px;"> Pembayaranmu sedang dalam proses verifikasi. Mohon tunggu email selanjutnya dan cek website secara berkala. </h3>
-                    @endif
+                @elseif(Auth::user()->pendaftaran->pembayarans != null && Auth::user()->pendaftaran->pembayarans->status_pembayaran == 0)
+                <h3 style="text-align: center; padding: 10px;"> Pembayaranmu sedang dalam proses verifikasi. Mohon tunggu email selanjutnya dan cek website secara berkala. </h3>
                 @elseif(session()->has('success'))
                 <div style="text-align:center; border-radius:20px" class="alert alert-success alert-dismissible">
                 <strong>{{ session('success') }}</strong>
                 </div>
-                @elseif(Auth::user()->pendaftaran->pembayarans == null)
+                @elseif(Auth::user()->pendaftaran->pembayarans == null || Auth::user()->pendaftaran->pembayarans->status_pembayaran == 2)
                 <form method="post" action="{{ url('/peserta/konfirmasi_pembayaran')}}" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
