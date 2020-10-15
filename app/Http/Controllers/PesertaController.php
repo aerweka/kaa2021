@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pendaftaran;
 use App\Models\Pembayaran;
+use App\Models\Pengguna;
 use Auth;
 use Storage;
 use PDF;
@@ -35,7 +36,7 @@ class PesertaController extends Controller
         
         $request->validate([
             'bukti_pembayaran' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-            'atas_nama_rekening' => 'required|string|max:30',
+            'atas_nama_rekening' => 'required|string|max:50',
             'bank_asal' => 'required|string|max:25',
             'nomor_rekening' => 'required|numeric',
             'total_pembayaran' => 'required|numeric',
@@ -127,7 +128,8 @@ class PesertaController extends Controller
 
     public function kartupeserta()
     {
-        return view('peserta/kartupeserta');
+        $pengguna = Pengguna::All();
+        return view('peserta/kartupeserta', compact('pengguna'));
     }
 
     public function exportpdf() //mencetak kartu peserta menjadi pdf

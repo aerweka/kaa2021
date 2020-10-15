@@ -62,9 +62,9 @@
                 <p>Universitas :</p>
                 <h4>{{ auth()->user()->pendaftaran->asal_univ_pendaftar}}</h4>
                 <p>Username :</p>
-                <h4>Lorem ipsum dolor sit amet</h4>
+                <h4>{{ $pengguna->penggunas->username }}</h4>
                 <p>Password :</p>
-                <h4>Lorem ipsum dolor sit amet</h4>
+                <h4>{{ $pengguna->penggunas->password_moodle }}</h4>
             </div>
         </div>
 
