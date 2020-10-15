@@ -29,25 +29,23 @@
                 <h2>KONFIRMASI PEMBAYARAN</h2>
                 @if(Auth::user()->pendaftaran->pembayarans != null)
                     @if(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
-                    <h3> Pembayaranmu telah diterima. Langkah selanjutnya yaitu melengkapi data pada form pendaftaran. </h3>
+                    <h3 style="text-align: center; padding: 10px;"> Pembayaranmu telah diterima. Langkah selanjutnya yaitu melengkapi data pada form pendaftaran. </h3>
                     @else
-                    <h3> Pembayaranmu sedang dalam proses verifikasi. Mohon tunggu email selanjutnya dan cek website secara berkala. </h3>
+                    <h3 style="text-align: center; padding: 10px;"> Pembayaranmu sedang dalam proses verifikasi. Mohon tunggu email selanjutnya dan cek website secara berkala. </h3>
                     @endif
-                @else
-                <form method="post" action="{{ url('/peserta/konfirmasi_pembayaran')}}" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                
-                @if(session()->has('success'))
+                @elseif(session()->has('success'))
                 <div style="text-align:center; border-radius:20px" class="alert alert-success alert-dismissible">
                 <strong>{{ session('success') }}</strong>
                 </div>
-                @endif
+                @elseif(Auth::user()->pendaftaran->pembayarans == null)
+                <form method="post" action="{{ url('/peserta/konfirmasi_pembayaran')}}" enctype="multipart/form-data">
+                {{ csrf_field() }}
 
                     <input type="text" class="atas_nama_rekening" id="atas_nama_rekening"
-                    placeholder="Masukan Atas Nama Rekening" name="atas_nama_rekening" value="{{ old('atas_nama_rekening') }}" required>
+                    placeholder="Masukan Atas Nama Rekening" name="atas_nama_rekening" value="{{ old('atas_nama_rekening') }}" required maxlength="50">
 
                     <input type="text" class="bank_asal" id="bank_asal"
-                    placeholder="Masukan Bank Asal" name="bank_asal" value="{{ old('bank_asal') }}" required>
+                    placeholder="Masukan Bank Asal" name="bank_asal" value="{{ old('bank_asal') }}" required maxlength="25">
 
                     <input type="number" class="nomor_rekening" id="nomor_rekening"
                     placeholder="Masukan Nomor Rekening" name="nomor_rekening" value="{{ old('nomor_rekening') }}" required>
