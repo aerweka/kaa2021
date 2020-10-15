@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/css/kartupeserta.css"> -->
-
+    
     <style>
     .container2{
         background-color: white;
@@ -42,14 +41,12 @@
         margin-bottom: 15px;
     }
     </style>
-
-    <title>Document</title>
 </head>
 <body>
     <div class="container2">
 
         <div class="logo">
-        <img src="{{ asset("img\1597722989485_logo_2-1-removebg-preview.png") }}" 
+        <img src="{{ asset("assets/images/logo.png") }}" 
         style="width:300px;height:300px;left:40%;position:absolute;">
         </div>
 

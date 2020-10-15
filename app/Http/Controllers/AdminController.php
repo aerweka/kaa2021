@@ -91,20 +91,8 @@ class AdminController extends Controller
     public function exportPeserta(){
     	return Excel::download(new PesertaExport, 'Data Peserta.xlsx');
     }
-
+    
     public function exportMoodleUser(){
-        
-        $user = Pengguna::select('username','p.nama_pendaftar','id_user')->join('pendaftaran as p','p.id_pendaftaran','=','pengguna.id_pendaftaran')->where('id_role','=',2)->where('status_pendaftaran','=',1)->get();
-
-        foreach($user as $s){
-            $password = Str::random(10);
-
-            DB::table('akun_moodle')->insertOrIgnore([
-                'id_user' => $s->id_user,
-                'password_moodle' => $password,
-            ]);
-        }
-
         return Excel::download(new MoodleExport, 'Data User Moodle.csv');
     }
 

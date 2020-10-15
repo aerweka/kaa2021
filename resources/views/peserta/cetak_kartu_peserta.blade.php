@@ -27,8 +27,11 @@
         <div class="conten">
                 <div class="bungkus">
                 <h2>CETAK KARTU PESERTA</h2>
-                <--<h3>Untuk saat ini, kartu peserta belum tersedia. Kartu peserta bisa diunduh mulai H-7 preliminary event.</h3>-->
+                @if(Auth::user()->pendaftaran->status_pendaftaran == 1)
                 <a type="submit" class="btn" href="{{ url('/exportpdf') }}">Print</a>
+                @else
+                <h3 style="text-align: center; padding: 10px;">Untuk saat ini kartu peserta belum bisa dilihat karena data pendaftaran Anda belum lengkap. Silahkan isi form pendaftaran.</h3>
+                @endif
             </div>
         </div>
     </div>
