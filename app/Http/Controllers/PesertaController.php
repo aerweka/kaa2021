@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Pendaftaran;
 use App\Models\Pembayaran;
 use App\Models\Pengguna;
+use App\Models\Akun_Moodle;
 use Auth;
 use Storage;
 use PDF;
@@ -128,13 +129,14 @@ class PesertaController extends Controller
 
     public function kartupeserta()
     {
-        $pengguna = Pengguna::All();
-        return view('peserta/kartupeserta', compact('pengguna'));
+        return view('peserta/kartupeserta');
     }
 
     public function exportpdf() //mencetak kartu peserta menjadi pdf
     {
-        $pdf = \PDF::loadView('peserta/kartupeserta');
+		$id = auth()->user()->id_user;
+		$akun = Akun_Moodle::select(DB::raw("COALESCE('password_moodle',0) AS password_moodle"))->where('id_user','=',$id)->first();
+        $pdf = \PDF::loadView('peserta/kartupeserta', compact('akun'));
         return $pdf->stream('kartu_peserta.pdf');
     }
 }
