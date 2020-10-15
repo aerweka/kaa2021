@@ -29,12 +29,26 @@ Route::get('/home', 'HomeController@index');
 //route untuk logout
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-// Auth::routes(["verify" => true]);
-Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+// route untuk verifikasi email
+Route::get('email/verify', 'VerifyEmailController@show')->name('verification.notice');
+Route::get('email/verify/{id}/{token}', 'VerifyEmailController@verify')->name('verification.verify');
+Route::post('email/resend', 'VerifyEmailController@resend')->name('verification.resend');
 
-Route::middleware('peserta')->group(function () {
+// route untuk verifikasi email
+
+//input email
+Route::get('password/reset', 'ResetPasswordController@show')->name('reset.notice');
+
+//kirim email
+Route::post('password/sendmail', 'ResetPasswordController@sendmail');
+
+//input password
+Route::get('password/reset/{token}', 'ResetPasswordController@insertPassword');
+
+//reset password
+Route::post('password/reset', 'ResetPasswordController@changePass')->name('reset.password');
+
+Route::middleware(['peserta','verified'])->group(function () {
 	Route::get('/peserta',function(){
 		return redirect('/peserta/dashboard_user');
 	});

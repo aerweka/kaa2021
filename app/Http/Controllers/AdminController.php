@@ -10,21 +10,26 @@ use DB;
 use App\Exports\SemuaExport;
 use App\Exports\PesertaExport;
 use App\Exports\PendaftarExport;
+use App\Exports\MoodleExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Response;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PembayaranDiterimaMail;
+use Auth;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
     public function home(){
-        $dateMin1 = date("Y-m-d",strtotime("2020-08-23"));
-        $dateMax1 = date("Y-m-d",strtotime("2020-08-25"));
-        $dateMax2 = date("Y-m-d",strtotime("2020-08-28"));
-        $dateMax3 = date("Y-m-d",strtotime("2020-08-31"));
-        $dateMax4 = date("Y-m-d",strtotime("2020-09-03"));
-        $dateMax5 = date("Y-m-d",strtotime("2020-09-06"));
-        $dateMax6 = date("Y-m-d",strtotime("2020-09-09"));
-        $dateMax7 = date("Y-m-d",strtotime("2020-09-12"));
-        $dateMax8 = date("Y-m-d",strtotime("2020-09-13"));
+        $dateMin1 = date("Y-m-d",strtotime("2020-09-14"));
+        $dateMax1 = date("Y-m-d",strtotime("2020-09-14"));
+        $dateMax2 = date("Y-m-d",strtotime("2020-09-21"));
+        $dateMax3 = date("Y-m-d",strtotime("2020-09-28"));
+        $dateMax4 = date("Y-m-d",strtotime("2020-09-29"));
+        $dateMax5 = date("Y-m-d",strtotime("2020-09-30"));
+        $dateMax6 = date("Y-m-d",strtotime("2020-10-04"));
+        $dateMax7 = date("Y-m-d",strtotime("2020-10-08"));
+        $dateMax8 = date("Y-m-d",strtotime("2020-10-14"));
 
     	$peserta = Pendaftaran::where('status_pendaftaran','=',1)->count();
     	$pendaftar = Pendaftaran::count();
@@ -52,9 +57,9 @@ class AdminController extends Controller
     	$datagraphic8_p = Pendaftaran::where('status_pendaftaran','=','1')->whereBetween(DB::raw('DATE(tgl_pendaftaran)'),[$dateMin1,$dateMax8])->count();
     	$datagraphic_p = [$datagraphic1_p,$datagraphic2_p,$datagraphic3_p,$datagraphic4_p,$datagraphic5_p,$datagraphic6_p,$datagraphic7_p,$datagraphic8_p];
 
-    	$datakonfirmasi = Pembayaran::select('p.pas_foto','p.nama_pendaftar','total_pembayaran','status_pembayaran')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->take(3)->get();
+    	$datakonfirmasi = Pembayaran::select('p.pas_foto','p.nama_pendaftar','total_pembayaran','status_pembayaran')->join('pendaftaran as p','p.id_pendaftaran','=','pembayaran.id_pendaftaran')->orderBy('p.tgl_pendaftaran','DESC')->take(3)->get();
 
-    	$datapendaftar = Pendaftaran::select('pendaftaran.pas_foto','pendaftaran.nama_pendaftar','pendaftaran.asal_univ_pendaftar','p.status_pembayaran','pendaftaran.status_pendaftaran')->leftJoin('pembayaran as p','p.id_pendaftaran','=','pendaftaran.id_pendaftaran')->take(3)->get();
+    	$datapendaftar = Pendaftaran::select('pendaftaran.pas_foto','pendaftaran.nama_pendaftar','pendaftaran.asal_univ_pendaftar','p.status_pembayaran','pendaftaran.status_pendaftaran')->leftJoin('pembayaran as p','p.id_pendaftaran','=','pendaftaran.id_pendaftaran')->orderBy('pendaftaran.tgl_pendaftaran','DESC')->take(3)->get();
 
     	return view('admin.dashboard',['datacard' => $datacard,'datagraphic' => $datagraphic,'datakonfirmasi' => $datakonfirmasi,'datapendaftar' => $datapendaftar,'datagraphic_p' => $datagraphic_p]);
     }
@@ -87,10 +92,30 @@ class AdminController extends Controller
     	return Excel::download(new PesertaExport, 'Data Peserta.xlsx');
     }
 
+    public function exportMoodleUser(){
+        
+        $user = Pengguna::select('username','p.nama_pendaftar','id_user')->join('pendaftaran as p','p.id_pendaftaran','=','pengguna.id_pendaftaran')->where('id_role','=',2)->where('status_pendaftaran','=',1)->get();
+
+        foreach($user as $s){
+            $password = Str::random(10);
+
+            DB::table('akun_moodle')->insertOrIgnore([
+                'id_user' => $s->id_user,
+                'password_moodle' => $password,
+            ]);
+        }
+
+        return Excel::download(new MoodleExport, 'Data User Moodle.csv');
+    }
+
     public function verifikasiTrue($id){
     	$pembayaran = Pembayaran::find($id);
     	$pembayaran->status_pembayaran = 1;
     	$pembayaran->save();
+
+        $link = url('/peserta/form_pendaftaran');
+        $pendaftar = Pendaftaran::find($pembayaran->id_pendaftaran);
+        Mail::to($pendaftar->email_pendaftar)->send(new PembayaranDiterimaMail($pendaftar,$link));
 
     	return response()->json(['success' => true]);
     }

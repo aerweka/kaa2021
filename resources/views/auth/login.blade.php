@@ -7,11 +7,15 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/css/login.css')}}">
 </head>
 <body>
-
     <div class="flex">
         <div class="background"></div>
         <div class="container">
             <form method="POST" action="{{ route('login') }}">
+                    @if(session('reset'))
+                    <div class="alert alert-success" role="alert">
+                        Reset Password berhasil. Silahkan login dengan password baru.
+                    </div>
+                    @endif
                     <h2 class="signin">Login</h2>
                     {{ csrf_field() }}
                     <table style="margin: auto;">
@@ -36,7 +40,7 @@
                     </table>
                     
             </form>
-            <a href="{{ url('/forgotpassword') }}"><p>Lupa Password?</p></a>
+            <a href="{{ url('/password/reset') }}"><p>Lupa Password?</p></a>
             <p>Tidak punya akun?    <a href="{{ url('/register') }}">Daftar disini.</a></p>
         </div>
     </div>
@@ -48,24 +52,22 @@
     $(document).ready(function(){
         $("#username").on("input",function(){
             $("#username").val($("#username").val().toLowerCase());
-            if($("#username").val().length > 5){
-                if($("#username").val().length < 8){
-                    $("#text-username").html("Minimal 8 karakter");
-                }
-                else{
-                    $.ajax({
-                        type: 'GET',
-                        url: "{{url('/cekusername/')}}"+"/"+$("#username").val(),
-                        success: function (results) {
-                            if (results.success === true) {
-                                $("#text-username").html("Username ditemukan");
-                            }
-                            else{
-                                $("#text-username").html("Username tidak ditemukan");
-                            }
+            if($("#username").val().length >= 5){
+                $.ajax({
+                    type: 'GET',
+                    url: "{{url('/cekusername/')}}"+"/"+$("#username").val(),
+                    success: function (results) {
+                        if (results.success === true) {
+                            $("#text-username").html("Username ditemukan");
                         }
-                    });
-                }
+                        else{
+                            $("#text-username").html("Username tidak ditemukan");
+                        }
+                    }
+                });
+            }
+            else{
+                $("#text-username").html("Minimal 5 karakter");
             }
         });
         $("#password_user").on("input",function(){

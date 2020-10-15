@@ -1,5 +1,5 @@
 @extends('admin.master_admin')
-
+@section('judul','Ganti Password')
 @section('style-admin')
 <style type="text/css">
 a, a:hover{

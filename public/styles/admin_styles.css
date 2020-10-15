@@ -1,3 +1,4 @@
+
 .nav-item.active{
 	background-color: #8BBF99;
 	border-radius: 20px;
@@ -5,7 +6,7 @@
 	padding-right: 10px;
 }
 .nav-item a{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 1rem;
@@ -118,7 +119,7 @@
 }
 
 .card-notif{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-size: 0.75rem;
 	line-height: 22px;
@@ -136,7 +137,7 @@
 }
 #markread{
 	color: white;
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 0.8rem;
@@ -186,7 +187,7 @@
 
 #welcome h1,
 #welcome h3{
-	font-family: Montserrat;
+	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 600;
 	color: white;
@@ -204,7 +205,7 @@
 #card-jam{
 	background-color: #DFE8D5;
 	border-radius: 20px;
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	padding-top: 0.5rem;
@@ -220,7 +221,7 @@
 }
 
 body{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	background: #F5F6FA !important;
@@ -240,7 +241,7 @@ body{
 }
 
 .btn-text{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 0.9rem;
@@ -248,21 +249,21 @@ body{
 }
 
 .judulcard{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 1.45rem;
 	color: #000000;
 }
 .judulhalaman{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 2.5rem;
 	color: #000000;
 }
 #capt-peserta{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: italic;
 	font-weight: 500;
 	font-size: 14px;
@@ -272,7 +273,7 @@ body{
 }
 
 .angka{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 64px;
@@ -281,7 +282,7 @@ body{
 	color: #000000;
 }
 .angka-kecil{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 3rem;
@@ -292,7 +293,7 @@ body{
 
 
 .orang{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 24px;
@@ -302,7 +303,7 @@ body{
 	color: #000000;
 }
 .orang-kecil{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 1rem;
@@ -348,7 +349,7 @@ body{
 }
 
 .captgraph-card{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 0.75rem;
@@ -387,7 +388,7 @@ body{
 }
 
 .viewall{
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 1rem;
@@ -428,7 +429,7 @@ body{
 	padding-left: 10px !important;
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 	letter-spacing: 1px !important;
 	font-size: 0.7rem !important;
 	font-weight: 500 !important;

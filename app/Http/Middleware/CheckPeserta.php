@@ -24,10 +24,8 @@ class CheckPeserta
         if (Auth::user()->id_role == 1) {
             return redirect('/admin');
         }
-
-        //peserta
-        if (Auth::user()->id_role == 2) {
-            return $next($request);
-        }
+            
+        return $next($request);
+        
     }
 }

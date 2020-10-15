@@ -1,18 +1,19 @@
+
 #nav-data-pendaftar .nav-item.nav-link{
 	color: #8BBF99 !important;
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 500 !important;
 }
 #nav-data-pendaftar .nav-item{
 	border-radius: 20px 20px 0px 0px !important;
 	padding: 10px 20px !important;
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 500 !important;
 }
 #nav-data-pendaftar .nav-item.nav-link:hover,
 #nav-data-pendaftar .nav-item.nav-link:focus{
 	color: #8BBF99 !important;
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 500 !important;
 }
 div .tab-content{
@@ -26,7 +27,7 @@ div .tab-content{
 #table-home-header{
 	background: #8BBF99;
 	color: white;
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 	border-radius: 20px;
 }
 
@@ -75,7 +76,7 @@ input{
 }
 
 .dropdata{
-	font-family: Roboto !important;
+	font-family: 'Roboto', sans-serif !important;
 	font-style: normal !important;
 	font-weight: 400 !important;
 	font-size: 1rem !important;
@@ -83,7 +84,7 @@ input{
 }
 
 .drop-nopendaftar{
-	font-family: Montserrat !important;
+	font-family: 'Montserrat', sans-serif !important;
 	font-style: normal !important;
 	font-weight: 500 !important;
 	font-size: 1.75rem !important;
@@ -161,13 +162,13 @@ input{
 
 .btn{
 	border-color: transparent !important;
-	font-family: Montserrat !important;
+	font-family: 'Montserrat', sans-serif !important;
 	font-size: 0.75rem !important;
 	font-weight: 500 !important;
 }
 
 .pertanyaan-text{
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
     max-width: 80%;
     font-size: 1.2em;
 }

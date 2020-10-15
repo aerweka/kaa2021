@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="/css/dashboard_user.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/dashboard_user.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="header">
             <tr>
-                <a href="/peserta/dashboard_user" class="menu1">Dashboard</a>
-                <a href="/peserta/alur_pembayaran" class="menu2">Alur Pembayaran</a>
-                <a href="/peserta/konfirmasi_pembayaran" class="menu3">Konfirmasi Pembayaran</a>
+                <a href="{{ url('/peserta/dashboard_user') }}" class="menu1">Dashboard</a>
+                <a href="{{ url('/peserta/alur_pembayaran') }}" class="menu2">Alur Pembayaran</a>
+                <a href="{{ url('/peserta/konfirmasi_pembayaran') }}" class="menu3">Konfirmasi Pembayaran</a>
                 
                 @if(Auth::user()->pendaftaran->pembayarans != null)
                     @if(Auth::user()->pendaftaran->pembayarans->status_pembayaran == 1)
                     <!-- form pendaftaran muncul karena sudah bayar tapi belum dikonfirmasi -->
-                    <a href="/peserta/form_pendaftaran" class="menu4">Form Pendaftaran</a>
+                    <a href="{{ url('/peserta/form_pendaftaran') }}" class="menu4">Form Pendaftaran</a>
                     @endif
                 @endif
                 
-                <a href="/peserta/cetak_kartu_peserta" class="menu5">Cetak Kartu Peserta</a>
+                <a href="{{ url('/peserta/cetak_kartu_peserta') }}" class="menu5">Cetak Kartu Peserta</a>
             </tr>
         </div>
         <div class="conten">
@@ -31,7 +31,7 @@
                 <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
                         <a onclick="openForm()">Profile</a>
-                        <a href="/logout">Logout</a>
+                        <a href="{{ url('/logout') }}">Logout</a>
                     </div>
             </div>
 

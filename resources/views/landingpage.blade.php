@@ -67,7 +67,7 @@
           <h3 style="text-align: center; margin-bottom: 20px;"><b>Persyaratan :</b></h3>
         <p style="background-color: rgb(255, 255, 255, 0.8); border-radius: 10px;">1. Mahasiswa D3, D4 atau S1 dari Perguruan Tinggi di Indonesia yang mendaftar dan dinyatakan terdaftar<br>
           2. Tercatat sebagai mahasiswa yang masih aktif berkuliah pada saat mengikuti kompetisi</p>
-          <a class="download" href="">Download Booklet</a>
+          <a class="download" href="https://drive.google.com/file/d/1mIm2NpRkSACYmDRwFA8rNakYTvUVu2NB/view">Download Booklet</a>
         </div><br>
       </div>
       <div class="float-right juara">
@@ -164,35 +164,94 @@
 
     <!-- GALERY -->
     <h2 id="gl" style="text-align: center; text-decoration: underline; margin-top: 60px;"><b>Gallery</b></h2>
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+        
     <div class="container2">
     <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-      <img src="" style="width:100%">
+      <div class="numbertext" style="color: #000000;">1 / 17</div>
+      <img src="{{asset('assets/gallery/1.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-      <img src="" style="width:100%">
+      <div class="numbertext" style="color: #000000;">2 / 17</div>
+      <img src="{{asset('assets/gallery/2.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-      <img src="" style="width:100%">
+      <div class="numbertext" style="color: #000000;">3 / 17</div>
+      <img src="{{asset('assets/gallery/3.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
     </div>
       
     <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-      <img src="" style="width:100%">
+      <div class="numbertext" style="color: #000000;">4 / 17</div>
+      <img src="{{asset('assets/gallery/4.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">5 / 6</div>
-      <img src="" style="width:100%">
+      <div class="numbertext" style="color: #000000;">5 / 17</div>
+      <img src="{{asset('assets/gallery/5.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
     </div>
       
     <div class="mySlides">
-      <div class="numbertext">6 / 6</div>
-      <img src="" style="width:100%">
+      <div class="numbertext" style="color: #000000;">6 / 17</div>
+      <img src="{{asset('assets/gallery/6.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">7 / 17</div>
+      <img src="{{asset('assets/gallery/7.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">8 / 17</div>
+      <img src="{{asset('assets/gallery/8.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">9 / 17</div>
+      <img src="{{asset('assets/gallery/9.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">10 / 17</div>
+      <img src="{{asset('assets/gallery/10.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">11 / 17</div>
+      <img src="{{asset('assets/gallery/11.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">12 / 17</div>
+      <img src="{{asset('assets/gallery/12.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">13 / 17</div>
+      <img src="{{asset('assets/gallery/13.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">14 / 17</div>
+      <img src="{{asset('assets/gallery/14.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">15 / 17</div>
+      <img src="{{asset('assets/gallery/15.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">16 / 17</div>
+      <img src="{{asset('assets/gallery/16.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext" style="color: #000000;">17 / 17</div>
+      <img src="{{asset('assets/gallery/17.jpg')}}" style="display: block;margin-left: auto;margin-right: auto;width: 90%;border: 5px solid #222;">
     </div>
       
     <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -204,22 +263,55 @@
 
     <div class="row">
       <div class="column">
-        <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(1)" alt="">
+        <img class="demo cursor" src="{{asset('assets/gallery/1.jpg')}}" style="width:100%" onclick="currentSlide(1)" alt="">
       </div>
       <div class="column">
-        <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(2)" alt="">
+        <img class="demo cursor" src="{{asset('assets/gallery/2.jpg')}}" style="width:100%" onclick="currentSlide(2)" alt="">
       </div>
       <div class="column">
-        <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(3)" alt="">
+        <img class="demo cursor" src="{{asset('assets/gallery/3.jpg')}}" style="width:100%" onclick="currentSlide(3)" alt="">
       </div>
       <div class="column">
-        <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(4)" alt="">
+        <img class="demo cursor" src="{{asset('assets/gallery/4.jpg')}}" style="width:100%" onclick="currentSlide(4)" alt="">
       </div>
       <div class="column">
-        <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(5)" alt="">
+        <img class="demo cursor" src="{{asset('assets/gallery/5.jpg')}}" style="width:100%" onclick="currentSlide(5)" alt="">
       </div>    
       <div class="column">
-        <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(6)" alt="">
+        <img class="demo cursor" src="{{asset('assets/gallery/6.jpg')}}" style="width:100%" onclick="currentSlide(6)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/7.jpg')}}" style="width:100%" onclick="currentSlide(7)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/8.jpg')}}" style="width:100%" onclick="currentSlide(8)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/9.jpg')}}" style="width:100%" onclick="currentSlide(9)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/10.jpg')}}" style="width:100%" onclick="currentSlide(10)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/11.jpg')}}" style="width:100%" onclick="currentSlide(11)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/12.jpg')}}" style="width:100%" onclick="currentSlide(12)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/13.jpg')}}" style="width:100%" onclick="currentSlide(13)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/14.jpg')}}" style="width:100%" onclick="currentSlide(14)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/15.jpg')}}" style="width:100%" onclick="currentSlide(15)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/16.jpg')}}" style="width:100%" onclick="currentSlide(16)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="{{asset('assets/gallery/17.jpg')}}" style="width:100%" onclick="currentSlide(17)" alt="">
       </div>
     </div>
   </div>
