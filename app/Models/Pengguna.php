@@ -62,4 +62,8 @@ class Pengguna extends Authenticatable implements MustVerifyEmail
 	{
 	  return $this->hasOne(VerifyUser::class);
 	}
+	public function kartu()
+	{
+		return $this->hasOne(Akun_Moodle::class, 'id_user');
+	}
 }

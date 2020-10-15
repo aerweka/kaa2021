@@ -26,7 +26,8 @@ class Akun_Moodle extends Model
 	public $incrementing = false;
 	public $timestamps = false;
 
-	public function penggunas()
+
+	public function pengguna()
 	{
 		return $this->belongsTo(Pengguna::class, 'id_user');
 	}
