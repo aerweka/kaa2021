@@ -78,7 +78,21 @@
 
                     <p style="text-align: center;">
 
-						Pengumuman lolos preliminary belum tersedia
+						<b>
+						    Setelah pembuatan akun berhasil, silahkan mengirim konfirmasi kepada panitia dengan format : Nama_Asal Universitas<br><br>
+						    Contact Person :<br>
+						    Ishyarotul Robahniya<br>
+						    WhatsApp : 087860825309<br>
+						    ID Line : icha1n9
+						</b>
+						
+						<br>
+						<br>
+						
+						<b>Untuk menuju tempat kompetisi, silahkan tekan tombol dibawah</b>
+						<a class="btn" href="https://kompetisi.kaasemnasunair.com">Click here</a>
+						
+						
 					
 					</p>
 
