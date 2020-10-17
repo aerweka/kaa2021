@@ -78,21 +78,23 @@
 
                     <p style="text-align: center;">
 
-						<b>
+						<!-- <b>
 						    Setelah pembuatan akun berhasil, silahkan mengirim konfirmasi kepada panitia dengan format : Nama_Asal Universitas<br><br>
 						    Contact Person :<br>
 						    Ishyarotul Robahniya<br>
 						    WhatsApp : 087860825309<br>
 						    ID Line : icha1n9
-						</b>
+						</b> -->
 						
-						<br>
-						<br>
-						
-						<b>Untuk menuju tempat kompetisi, silahkan tekan tombol dibawah</b>
-						<a class="btn" href="https://kompetisi.kaasemnasunair.com">Click here</a>
-						
-						
+						<!-- <br>
+						<br> -->
+                        @if($lolos)
+                        <b> Selamat, Anda lolos ke tahap selanjutnya! </b>
+                        <b>Untuk menuju tempat kompetisi, silahkan tekan tombol dibawah</b>
+                        <a class="btn" href="https://kompetisi.kaasemnasunair.com">Click here</a>
+                        @else
+                        <b> Mohon Maaf, Anda tidak lolos ke tahap selanjutnya. Semangat!</b>
+						@endif
 					
 					</p>
 

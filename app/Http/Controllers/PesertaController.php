@@ -19,7 +19,9 @@ class PesertaController extends Controller
 {
     public function dashboard_user()
     {
-        return view('peserta/dashboard_user');
+        $lolos = DB::table('lolos_preliminary')->where('email','=',Auth::user()->email)->whereNotNull('email')->exists();
+
+        return view('peserta/dashboard_user',compact("lolos"));
     }
 
     public function alur_pembayaran()
