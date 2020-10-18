@@ -82,7 +82,7 @@
                         <b style="font-size: 20px;">Selamat! Anda <span style="color: blue; font-weight: bold; font-size: 22px;" >LOLOS</span>  
 						ke tahap 50 besar Main Event Kompetisi Akuntansi Airlangga 2020. Berikut jadwal untuk acara selanjutnya:<br><br>
 						
-						SEMINAR NASIONAL<br>
+						<span style="font-size: 16px;">SEMINAR NASIONAL<br>
 						Sabtu, 24 Oktober 2020<br>
 						Pukul 08.00 - 11.00 WIB<br><br>
 						
@@ -92,12 +92,14 @@
 
 						MAIN EVENT<br>
 						Minggu, 25 Oktober 2020<br>
-						Pukul 07.30 - 16.00 WIB<br><br>
+						Pukul 07.30 - 16.00 WIB</span><br><br>
+
+						<span style="font-size: 18px;">Tekan tombol di bawah ini untuk mengikuti Main Event Kompetisi Akuntansi Airlangga 2020. Semoga sukses!</span></b>
 
 						Tekan tombol di bawah ini untuk mengikuti Main Event Kompetisi Akuntansi Airlangga 2020. Semoga sukses!</b>
 						<a class="btn" href="https://kompetisi.kaasemnasunair.com">Click here</a>
-                        @else
-                        <b style="font-size: 20px;">Mohon maaf Anda <span style="color: red; font-weight: bold; font-size: 22px;" >TIDAK LOLOS</span> 
+            @else
+            <b style="font-size: 20px;">Mohon maaf Anda <span style="color: red; font-weight: bold; font-size: 22px;" >TIDAK LOLOS</span> 
 						ke tahap 50 besar Main Event Kompetisi Akuntansi Airlangga 2020. 
 						Tetap semangat dan sampai jumpa di KAA 2021!</b>
 						@endif
