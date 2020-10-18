@@ -77,11 +77,6 @@
                 <h2>PENGUMUMAN</h2>
 
                     <p style="text-align: center;">
-
-						<b style="font-size: 20px;">Mohon maaf Anda <span style="color: red; font-weight: bold; font-size: 22px;" >TIDAK LOLOS</span> 
-						ke tahap 50 besar Main Event Kompetisi Akuntansi Airlangga 2020. 
-						Tetap semangat dan sampai jumpa di KAA 2021!</b>
-						
 						
                         @if($lolos)
                         <b style="font-size: 20px;">Selamat! Anda <span style="color: blue; font-weight: bold; font-size: 22px;" >LOLOS</span>  
