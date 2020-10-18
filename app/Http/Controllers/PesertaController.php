@@ -19,7 +19,9 @@ class PesertaController extends Controller
 {
     public function dashboard_user()
     {
-        return view('peserta/dashboard_user');
+        $lolos = DB::table('lolos_preliminary')->where('email','=',Auth::user()->email)->whereNotNull('email')->exists();
+
+        return view('peserta/dashboard_user',compact("lolos"));
     }
 
     public function alur_pembayaran()
@@ -114,6 +116,14 @@ class PesertaController extends Controller
             $pendaftaran->pas_foto = 'pas_foto/'.$namafilefoto;
             
             $pendaftaran->save();
+            
+            $password = Str::random(10);
+
+            DB::table('akun_moodle')->insertOrIgnore([
+                'id_user' => Auth::user()->id_user,
+                'password_moodle' => $password,
+            ]);
+            
             session()->flash('success', 'Data Berhasil Di Tambahkan!');
         });
         return redirect('/peserta/form_pendaftaran');
@@ -127,16 +137,10 @@ class PesertaController extends Controller
         return view('peserta/cetak_kartu_peserta', compact('bayar2'));
     }
 
-    public function kartupeserta()
-    {
-        return view('peserta/kartupeserta');
-    }
-
     public function exportpdf() //mencetak kartu peserta menjadi pdf
     {
-		$id = auth()->user()->id_user;
-		$akun = Akun_Moodle::select(DB::raw("COALESCE('password_moodle',0) AS password_moodle"))->where('id_user','=',$id)->first();
-        $pdf = \PDF::loadView('peserta/kartupeserta', compact('akun'));
-        return $pdf->stream('kartu_peserta.pdf');
+        $id = Auth::user()->id_user;
+		$akun = Akun_Moodle::select("password_moodle")->where('id_user','=',$id)->first();
+        return PDF::loadView('peserta/kartupeserta', compact('akun'))->download('kartu_peserta.pdf');
     }
 }
