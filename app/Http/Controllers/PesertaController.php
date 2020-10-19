@@ -13,6 +13,7 @@ use Storage;
 use PDF;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\KonfirmasiDiterimaMail;
+use Illuminate\Support\Carbon;
 
 
 class PesertaController extends Controller
@@ -20,8 +21,10 @@ class PesertaController extends Controller
     public function dashboard_user()
     {
         $lolos = DB::table('lolos_preliminary')->where('email','=',Auth::user()->email)->whereNotNull('email')->exists();
+        $now = Carbon::now('Asia/Jakarta');
+        $open = Carbon::create(2020, 10, 19, 10, 00, 00, 'Asia/Jakarta');
 
-        return view('peserta/dashboard_user',compact("lolos"));
+        return view('peserta/dashboard_user',compact("lolos","now","open"));
     }
 
     public function alur_pembayaran()

@@ -78,30 +78,34 @@
 
                     <p style="text-align: center;">
 						
-                        @if($lolos)
-                        <b style="font-size: 20px;">Selamat! Anda <span style="color: blue; font-weight: bold; font-size: 22px;" >LOLOS</span>  
-						ke tahap 50 besar Main Event Kompetisi Akuntansi Airlangga 2020. Berikut jadwal untuk acara selanjutnya:<br><br>
-						
-						<span style="font-size: 16px;">SEMINAR NASIONAL<br>
-						Sabtu, 24 Oktober 2020<br>
-						Pukul 08.00 - 11.00 WIB<br><br>
-						
-						TECHNICAL MEETING<br>
-						Sabtu, 24 Oktober 2020<br>
-						Pukul 13.00 - 15.30 WIB<br><br>
+                        @if($now->greaterThanOrEqualTo($open))
+                            @if($lolos)
+                            <b style="font-size: 20px;">Selamat! Anda <span style="color: blue; font-weight: bold; font-size: 22px;" >LOLOS</span>  
+    						ke tahap 50 besar Main Event Kompetisi Akuntansi Airlangga 2020. Berikut jadwal untuk acara selanjutnya:<br><br>
+    						
+    						<span style="font-size: 16px;">SEMINAR NASIONAL<br>
+    						Sabtu, 24 Oktober 2020<br>
+    						Pukul 08.00 - 11.00 WIB<br><br>
+    						
+    						TECHNICAL MEETING<br>
+    						Sabtu, 24 Oktober 2020<br>
+    						Pukul 13.00 - 15.30 WIB<br><br>
 
-						MAIN EVENT<br>
-						Minggu, 25 Oktober 2020<br>
-						Pukul 07.30 - 16.00 WIB</span><br><br>
+    						MAIN EVENT<br>
+    						Minggu, 25 Oktober 2020<br>
+    						Pukul 07.30 - 16.00 WIB</span><br><br>
 
-						<span style="font-size: 18px;">Tekan tombol di bawah ini untuk mengikuti Main Event Kompetisi Akuntansi Airlangga 2020. Semoga sukses!</span></b>
+    						<span style="font-size: 18px;">Tekan tombol di bawah ini untuk mengikuti Main Event Kompetisi Akuntansi Airlangga 2020. Semoga sukses!</span></b>
 
-						<a class="btn" href="https://kompetisi.kaasemnasunair.com">Click here</a>
+    						<a class="btn" href="https://kompetisi.kaasemnasunair.com">Click here</a>
+                            @else
+                            <b style="font-size: 20px;">Mohon maaf Anda <span style="color: red; font-weight: bold; font-size: 22px;" >TIDAK LOLOS</span> 
+    						ke tahap 50 besar Main Event Kompetisi Akuntansi Airlangga 2020. 
+    						Tetap semangat dan sampai jumpa di KAA 2021!</b>
+    						@endif
                         @else
-                        <b style="font-size: 20px;">Mohon maaf Anda <span style="color: red; font-weight: bold; font-size: 22px;" >TIDAK LOLOS</span> 
-						ke tahap 50 besar Main Event Kompetisi Akuntansi Airlangga 2020. 
-						Tetap semangat dan sampai jumpa di KAA 2021!</b>
-						@endif
+                        Pengumuman akan dibuka pukul 10.00 WIB
+                        @endif
 					
 					</p>
 
