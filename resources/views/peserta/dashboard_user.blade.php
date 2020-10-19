@@ -94,8 +94,6 @@
 						Minggu, 25 Oktober 2020<br>
 						Pukul 07.30 - 16.00 WIB</span><br><br>
 
-						<span style="font-size: 18px;">Tekan tombol di bawah ini untuk mengikuti Main Event Kompetisi Akuntansi Airlangga 2020. Semoga sukses!</span></b>
-
 						Tekan tombol di bawah ini untuk mengikuti Main Event Kompetisi Akuntansi Airlangga 2020. Semoga sukses!</b>
 						<a class="btn" href="https://kompetisi.kaasemnasunair.com">Click here</a>
                         @else
