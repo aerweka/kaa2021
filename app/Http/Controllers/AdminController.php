@@ -22,25 +22,25 @@ class AdminController extends Controller
 {
   public function home()
   {
-    // $dateMin1 = date("Y-m-d", strtotime("2021-08-31"));
-    // $dateMax1 = date("Y-m-d", strtotime("2021-08-31"));
-    // $dateMax2 = date("Y-m-d", strtotime("2021-09-7"));
-    // $dateMax3 = date("Y-m-d", strtotime("2021-09-14"));
-    // $dateMax4 = date("Y-m-d", strtotime("2021-09-21"));
-    // $dateMax5 = date("Y-m-d", strtotime("2021-09-28"));
-    // $dateMax6 = date("Y-m-d", strtotime("2021-10-5"));
-    // $dateMax7 = date("Y-m-d", strtotime("2021-10-12"));
-    // $dateMax8 = date("Y-m-d", strtotime("2021-10-19"));
+    $dateMin1 = date("Y-m-d", strtotime("2021-08-31"));
+    $dateMax1 = date("Y-m-d", strtotime("2021-08-31"));
+    $dateMax2 = date("Y-m-d", strtotime("2021-09-7"));
+    $dateMax3 = date("Y-m-d", strtotime("2021-09-14"));
+    $dateMax4 = date("Y-m-d", strtotime("2021-09-21"));
+    $dateMax5 = date("Y-m-d", strtotime("2021-09-28"));
+    $dateMax6 = date("Y-m-d", strtotime("2021-10-5"));
+    $dateMax7 = date("Y-m-d", strtotime("2021-10-12"));
+    $dateMax8 = date("Y-m-d", strtotime("2021-10-19"));
 
-    $dateMin1 = date("Y-m-d", strtotime("2020-09-14"));
-    $dateMax1 = date("Y-m-d", strtotime("2020-09-14"));
-    $dateMax2 = date("Y-m-d", strtotime("2020-09-21"));
-    $dateMax3 = date("Y-m-d", strtotime("2020-09-28"));
-    $dateMax4 = date("Y-m-d", strtotime("2020-09-29"));
-    $dateMax5 = date("Y-m-d", strtotime("2020-09-30"));
-    $dateMax6 = date("Y-m-d", strtotime("2020-10-04"));
-    $dateMax7 = date("Y-m-d", strtotime("2020-10-08"));
-    $dateMax8 = date("Y-m-d", strtotime("2020-10-14"));
+    // $dateMin1 = date("Y-m-d", strtotime("2020-09-14"));
+    // $dateMax1 = date("Y-m-d", strtotime("2020-09-14"));
+    // $dateMax2 = date("Y-m-d", strtotime("2020-09-21"));
+    // $dateMax3 = date("Y-m-d", strtotime("2020-09-28"));
+    // $dateMax4 = date("Y-m-d", strtotime("2020-09-29"));
+    // $dateMax5 = date("Y-m-d", strtotime("2020-09-30"));
+    // $dateMax6 = date("Y-m-d", strtotime("2020-10-04"));
+    // $dateMax7 = date("Y-m-d", strtotime("2020-10-08"));
+    // $dateMax8 = date("Y-m-d", strtotime("2020-10-14"));
 
     $peserta = Pendaftaran::where('status_pendaftaran', '=', 1)->count();
     $pendaftar = Pendaftaran::count();

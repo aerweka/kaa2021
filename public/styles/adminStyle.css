@@ -8,13 +8,25 @@
         display: none;
         visibility: hidden;
     }
+}
 
+@media (max-width: 1125px) {
+    #addOnSpace{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #nav-date-desktop {
+        display: none;
+        visibility: hidden;
+    }
     #nav-date-mobile{
         display:table-row;
         position: block;
-        color: white;
-        font-weight: bold;
+        color: whitesmoke;
+        font-weight: 600;
         visibility: visible;
+        font-size: medium;
     }
-
 }

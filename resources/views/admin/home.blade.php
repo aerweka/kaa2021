@@ -13,12 +13,12 @@
       <div class="card-body" style="height: 100px;">
         <div class="row">
           <div class="col">
-            <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Peserta</h5>
+            <h5 class="card-title text-uppercase text-muted mb-0">Jumlah <span id="addOnSpace" style="visibility: hidden;">---</span> Peserta</h5>
             <span class="h2 font-weight-bold mb-0">{{$datacard[0]?? ''}}</span>
           </div>
           <div class="col-auto">
             <div class="icon icon-shape bg-gradient-primary text-white rounded-circle shadow" id="home-card-icon">
-              <i class="ni ni-active-40"></i>
+              <i class="ni ni-single-02"></i>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
           </div>
           <div class="col-auto">
             <div class="icon icon-shape bg-gradient-primary text-white rounded-circle shadow">
-              <i class="ni ni-chart-pie-35"></i>
+              <i class="ni ni-single-copy-04"></i>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
           </div>
           <div class="col-auto">
             <div class="icon icon-shape bg-gradient-primary text-white rounded-circle shadow">
-              <i class="ni ni-chart-bar-32"></i>
+              <i class="ni ni-check-bold"></i>
             </div>
           </div>
         </div>
@@ -113,9 +113,10 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <!-- <div style="height: auto;min-height:340px ;width: 100%;"> -->
-          <div>
-            <canvas id="canvas"></canvas>
+          <div style="width: 100%;">
+            <div class="chart">
+              <canvas id="chartPesertaPendaftar" class="chart-canvas"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -269,14 +270,23 @@
 </div>
 @endsection
 
-@section('extendsScript')
+@section('extendsScripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   var jumlahPeserta = <?php echo json_encode($datagraphic_p); ?>;
   var jumlahPendaftar = <?php echo json_encode($datagraphic); ?>;
-  console.log(jumlahPendaftar);
+  console.log(jumlahPeserta);
   var lineChartData = {
-    labels: ['31 Agustus', '7 September', '14 September', '21 September', '28 September', '5 Oktober', '12 Oktober', '19 Oktober'],
+    labels: [
+      '31 Agustus',
+      '7 September',
+      '14 September',
+      '21 September',
+      '28 September',
+      '5 Oktober',
+      '12 Oktober',
+      '19 Oktober'
+    ],
     datasets: [{
         label: 'Pendaftar',
         fill: false,
@@ -291,7 +301,7 @@
           jumlahPendaftar[7]
         ],
         borderColor: 'rgba(255, 72, 72, 1)',
-        backgroundColor: 'rgba(255, 72, 72, 1)',
+        backgroundColor: 'rgba(255, 72, 72, .5)',
       },
       {
         label: 'Peserta',
@@ -307,13 +317,15 @@
           jumlahPeserta[7]
         ],
         borderColor: 'rgba(119, 172, 241, 1)',
-        backgroundColor: 'rgba(119, 172, 241, 1)',
+        backgroundColor: 'rgba(119, 172, 241, .5)',
       }
     ]
   };
 
   window.onload = function() {
-    var ctx = document.getElementById('canvas').getContext('2d');
+    // var ctx = $('#chartPesertaPendaftar');
+    startTime();
+    var ctx = document.getElementById('chartPesertaPendaftar').getContext('2d');
     window.myLine = new Chart(ctx, {
       type: 'bar',
       data: lineChartData,
@@ -322,10 +334,6 @@
         maintainAspectRatio: false,
         hoverMode: 'index',
         stacked: false,
-        title: {
-          display: false,
-          text: 'Chart.js Line Chart - Multi Axis'
-        },
         scales: {
           yAxes: [{
             type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
@@ -342,7 +350,7 @@
               drawOnChartArea: false, // only want the grid lines for one axis to show up
             },
           }],
-        }
+        },
       }
     });
   };
