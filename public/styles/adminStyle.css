@@ -1,0 +1,20 @@
+#nav-date-mobile {
+    display: none;
+    visibility: hidden;
+}
+
+@media (max-width: 576px) {
+    #nav-date-desktop {
+        display: none;
+        visibility: hidden;
+    }
+
+    #nav-date-mobile{
+        display:table-row;
+        position: block;
+        color: white;
+        font-weight: bold;
+        visibility: visible;
+    }
+
+}

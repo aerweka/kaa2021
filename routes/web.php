@@ -1,18 +1,31 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/maintenance', function (){
-    Artisan::call('down');
-    return redirect('/');
+Route::get('/maintenance', function () {
+	Artisan::call('down');
+	return redirect('/');
 });
 
 Route::get('/semnas', function () {
-    return view('/semnas');
+	return view('/semnas');
 });
+// route uji layout baru
+Route::get('/test', 'AdminController@home');
 
+Route::get('/testVerif', 'AdminController@verifikasi');
+
+Route::get('/testPendaftar', 'AdminController@pendaftar');
+
+Route::get('/testUbah', 'AdminController@ubahSandi');
+
+Route::get('/getSemua/{id}', 'AdminController@getSemuaById');
+Route::get('/getPendaftar/{id}', 'AdminController@getPendaftarById');
+Route::get('/getPeserta/{id}', 'AdminController@getPesertaById');
+// end 
 Route::get('/', function () {
-    return view('/landingpage');
+	return view('/landingpage');
 });
 Route::get('/cekusername/{uname}', 'AuthController@cekUsername');
 
@@ -48,11 +61,11 @@ Route::get('password/reset/{token}', 'ResetPasswordController@insertPassword');
 //reset password
 Route::post('password/reset', 'ResetPasswordController@changePass')->name('reset.password');
 
-Route::middleware(['peserta','verified'])->group(function () {
-	Route::get('/peserta',function(){
+Route::middleware(['peserta', 'verified'])->group(function () {
+	Route::get('/peserta', function () {
 		return redirect('/peserta/dashboard_user');
 	});
-    Route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
+	Route::get('/peserta/dashboard_user', 'PesertaController@dashboard_user');
 	Route::get('/peserta/alur_pembayaran', 'PesertaController@alur_pembayaran');
 	Route::get('/peserta/konfirmasi_pembayaran', 'PesertaController@konfirmasi_pembayaran');
 	Route::get('/peserta/form_pendaftaran', 'PesertaController@form_pendaftaran');

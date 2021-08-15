@@ -6,7 +6,7 @@
 	padding-right: 10px;
 }
 .nav-item a{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif; 
 	font-style: normal;
 	font-weight: 500;
 	font-size: 1rem;
@@ -178,7 +178,7 @@
 }
 
 #card-atas{
-	background-color: #8BBF99;
+	background-color: #010425;
 	border-radius: 20px;
 	padding-left: 30px;
 	padding-right: 30px;
@@ -224,7 +224,7 @@ body{
 	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	background: #F5F6FA !important;
+	background: #8f9ad8 !important;
 }
 
 #card-peserta{
