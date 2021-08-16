@@ -59,7 +59,7 @@
                   </div>
                   <!-- search bar -->
                   <form action="" id="search-all">
-                    <input type="text" class="form-control" name="search-all" id="searchall" aria-describedby="basic-addon1" placeholder="Cari Data">
+                    <input type="text" class="form-control" name="search-all" id="searchAll" aria-describedby="basic-addon1" placeholder="Cari Data">
                   </form>
                 </div>
               </div>
@@ -82,16 +82,16 @@
                       <tbody class="list">
                         @foreach($all as $d)
                         <tr class="data-semua" id="datasemua-{{$d->id_pendaftaran}}">
-                          <th scope="row" class="data-peserta nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">
+                          <th scope="row" class="data-semua nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">
                             {{$d->id_pendaftaran}}
                           </th>
                           <td class="data-semua nama searchable" id="nama-{{$d->id_pendaftaran}}">
                             {{$d->nama_pendaftar}}
                           </td>
-                          <td class="data-peserta univ searchable" id="univ-{{$d->id_pendaftaran}}">
+                          <td class="data-semua univ searchable" id="univ-{{$d->id_pendaftaran}}">
                             {{$d->asal_univ_pendaftar}}
                           </td>
-                          <td class="data-peserta email searchable" id="email-{{$d->id_pendaftaran}}">
+                          <td class="data-semua email searchable" id="email-{{$d->id_pendaftaran}}">
                             {{$d->email_pendaftar}}
                           </td>
                           <td>
@@ -166,7 +166,7 @@
                   </div>
                   <!-- search bar -->
                   <form action="" id="search-all">
-                    <input type="text" class="form-control" name="search-all" id="searchall" aria-describedby="basic-addon1" placeholder="Cari Data">
+                    <input type="text" class="form-control" name="search-all" id="searchPendaftar" aria-describedby="basic-addon1" placeholder="Cari Data">
                   </form>
                 </div>
               </div>
@@ -257,10 +257,10 @@
               </div>
             </div>
             <div class="row justify-content-center" id="nodatasemua">
-              <h5 class="text-center mt-3">Data tidak ditemukan.</h5>
+              <h5 class="text-center mt-3" id="nodatapendaftar">Data tidak ditemukan.</h5>
             </div>
             <div class="row justify-content-end">
-              {{ $all->links() }}
+              {{ $pendaftar->links() }}
             </div>
           </div>
           <!-- third tab -->
@@ -273,7 +273,7 @@
                   </div>
                   <!-- search bar -->
                   <form action="" id="search-all">
-                    <input type="text" class="form-control" name="search-all" id="searchall" aria-describedby="basic-addon1" placeholder="Cari Data">
+                    <input type="text" class="form-control" name="search-all" id="searchPeserta" aria-describedby="basic-addon1" placeholder="Cari Data">
                   </form>
                 </div>
               </div>
@@ -295,11 +295,11 @@
                       </thead>
                       <tbody class="list">
                         @foreach($peserta as $d)
-                        <tr class="data-semua" id="datasemua-{{$d->id_pendaftaran}}">
+                        <tr class="data-peserta" id="datapeserta-{{$d->id_pendaftaran}}">
                           <th scope="row" class="data-peserta nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">
                             {{$d->id_pendaftaran}}
                           </th>
-                          <td class="data-semua nama searchable" id="nama-{{$d->id_pendaftaran}}">
+                          <td class="data-peserta nama searchable" id="nama-{{$d->id_pendaftaran}}">
                             {{$d->nama_pendaftar}}
                           </td>
                           <td class="data-peserta univ searchable" id="univ-{{$d->id_pendaftaran}}">
@@ -364,10 +364,10 @@
               </div>
             </div>
             <div class="row justify-content-center" id="nodatasemua">
-              <h5 class="text-center mt-3">Data tidak ditemukan.</h5>
+              <h5 class="text-center mt-3" id="nodatapeserta">Data tidak ditemukan.</h5>
             </div>
             <div class="row justify-content-end">
-              {{ $all->links() }}
+              {{ $peserta->links() }}
             </div>
           </div>
           <!-- main mobal -->
@@ -549,6 +549,83 @@
   function tabThree() {
     $('#btnDownload a').attr('href', "{{url('/admin/export/peserta')}}").attr('title', 'Unduh Data Peserta');
   }
+</script>
+<script>
+  $("#nodatasemua").hide();
+  $("#nodatapendaftar").hide();
+  $("#nodatapeserta").hide();
+
+  $("#searchAll").on('input', function() {
+    let found = false;
+    if ($(this).val().length > 2) {
+      $(".data-semua").hide();
+      let searchterm = $(this).val().toLowerCase();
+      $(".data-semua .searchable").each(function(index) {
+        if ($(this).html().toLowerCase().includes(searchterm)) {
+          let id = $(this).attr('id').slice(-5);
+          $("#datasemua-" + id).show();
+          $("#datasemua-" + id + " .data-semua").show();
+          $("#dividersemua-" + id).show();
+          found = true;
+          $("#nodatasemua").hide();
+        }
+      });
+      if (!found) {
+        $("#nodatasemua").show();
+      }
+    } else {
+      $(".data-semua").show();
+      $("#nodatasemua").hide();
+    }
+  });
+
+  $("#searchPendaftar").on('input', function() {
+    let found = false;
+    if ($(this).val().length > 2) {
+      $(".data-pendaftar").hide();
+      let searchterm = $(this).val().toLowerCase();
+      $(".data-pendaftar .searchable").each(function(index) {
+        if ($(this).html().toLowerCase().includes(searchterm)) {
+          let id = $(this).attr('id').slice(-5);
+          $("#datapendaftar-" + id).show();
+          $("#datapendaftar-" + id + " .data-pendaftar").show();
+          $("#dividerpendaftar-" + id).show();
+          found = true;
+          $("#nodatapendaftar").hide();
+        }
+      });
+      if (!found) {
+        $("#nodatapendaftar").show();
+      }
+    } else {
+      $(".data-pendaftar").show();
+      $("#nodatapendaftar").hide();
+    }
+  });
+
+  $("#searchPeserta").on('input', function() {
+    let found = false;
+    if ($(this).val().length > 2) {
+      $(".data-peserta").hide();
+      let searchterm = $(this).val().toLowerCase();
+      $(".data-peserta .searchable").each(function(index) {
+        if ($(this).html().toLowerCase().includes(searchterm)) {
+          let id = $(this).attr('id').slice(-5);
+          $("#datapeserta-" + id).show();
+          $("#datapeserta-" + id + " .data-peserta").show();
+          $("#dividerpeserta-" + id).show();
+          found = true;
+          $("#nodatapeserta").hide();
+        }
+      });
+      if (!found) {
+        $("#nodatapeserta").show();
+      }
+    } else {
+      $(".data-peserta").show();
+      $("#nodatapeserta").hide();
+    }
+  });
 </script>
 <script>
   $('[data-toggle=modal]').on('click', function() {
