@@ -271,7 +271,6 @@
 @endsection
 
 @section('extendsScripts')
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   var jumlahPeserta = <?php echo json_encode($datagraphic_p); ?>;
   var jumlahPendaftar = <?php echo json_encode($datagraphic); ?>;
@@ -323,7 +322,6 @@
   };
 
   window.onload = function() {
-    // var ctx = $('#chartPesertaPendaftar');
     startTime();
     var ctx = document.getElementById('chartPesertaPendaftar').getContext('2d');
     window.myLine = new Chart(ctx, {
