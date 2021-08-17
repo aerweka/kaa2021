@@ -21,7 +21,7 @@
           <div class="form-group">
             <label for="oldPassword">Sandi Lama</label>
             <div class="input-group">
-              <input type="password" name="oldPW" class="form-control" id="oldPassword" placeholder="name@example.com" required>
+              <input type="password" name="oldPW" class="form-control" id="oldPassword" placeholder="*****" required>
               <div class="input-group-prepend" style="cursor: pointer;">
                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
               </div>
@@ -31,7 +31,7 @@
           <div class="form-group">
             <label for="newPassword">Sandi Baru</label>
             <div class="input-group">
-              <input type="password" name="newPW" class="form-control" id="newPassword" placeholder="name@example.com" required>
+              <input type="password" name="newPW" class="form-control" id="newPassword" placeholder="*****" required>
               <div class="input-group-prepend" style="cursor: pointer;">
                 <span class="input-group-text" id="basic-addon2"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
               </div>
@@ -41,7 +41,7 @@
           <div class="form-group">
             <label for="confirmPassword">Konfirmasi Sandi</label>
             <div class="input-group">
-              <input type="password" name="confirmPW" class="form-control" id="confirmPassword" placeholder="name@example.com" required>
+              <input type="password" name="confirmPW" class="form-control" id="confirmPassword" placeholder="*****" required>
               <div class="input-group-prepend" style="cursor: pointer;">
                 <span class="input-group-text" id="basic-addon3"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
               </div>

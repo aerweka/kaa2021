@@ -38,14 +38,31 @@ class AdminController extends Controller
     $bayarDiterima = Pembayaran::where('status_pembayaran', '=', 1)->count();
     $datacard = [$peserta, $pendaftar, $konfirmasi, $bayarDiterima];
 
-    $datagraphic1 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax1])->count();
-    $datagraphic2 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax2])->count();
-    $datagraphic3 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax3])->count();
-    $datagraphic4 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax4])->count();
-    $datagraphic5 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax5])->count();
-    $datagraphic6 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax6])->count();
-    $datagraphic7 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax7])->count();
-    $datagraphic8 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax8])->count();
+    // $datagraphic1 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax1])->count();
+    // $datagraphic2 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax2])->count();
+    // $datagraphic3 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax3])->count();
+    // $datagraphic4 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax4])->count();
+    // $datagraphic5 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax5])->count();
+    // $datagraphic6 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax6])->count();
+    // $datagraphic7 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax7])->count();
+    // $datagraphic8 = Pendaftaran::whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax8])->count();
+
+    $datagraphic1 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax1])->count();
+    $datagraphic2 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax2])->count();
+    $datagraphic3 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax3])->count();
+    $datagraphic4 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax4])->count();
+    $datagraphic5 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax5])->count();
+    $datagraphic6 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax6])->count();
+    $datagraphic7 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax7])->count();
+    $datagraphic8 = Pendaftaran::where('status_pendaftaran', '=', '0')
+      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax8])->count();
     $datagraphic = [$datagraphic1, $datagraphic2, $datagraphic3, $datagraphic4, $datagraphic5, $datagraphic6, $datagraphic7, $datagraphic8];
 
     $datagraphic2_p = Pendaftaran::where('status_pendaftaran', '=', '1')

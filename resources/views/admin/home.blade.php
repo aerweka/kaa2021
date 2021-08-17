@@ -149,14 +149,14 @@
             <tr>
               <th scope="row">
                 <div class="media align-items-center">
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="
+                  <!-- <a href="#"> -->
+                  <img class="avatar avatar-sm rounded-circle" alt="Foto User" src="
                     @if($d->pas_foto != null)
                     {{url('storage/'.$d->pas_foto)}}
 					          @else
 					          {{asset('/assets/images/defaultphoto.png')}}
 					          @endif">
-                  </a>
+                  <!-- </a> -->
                 </div>
               </th>
               <th>
@@ -208,14 +208,14 @@
             <tr>
               <td scope="row">
                 <div class="media align-items-center">
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="
+                  <!-- <a href="#"> -->
+                  <img class="avatar avatar-sm rounded-circle" alt="Foto User" src="
                     @if($d->pas_foto != null)
                     {{url('storage/'.$d->pas_foto)}}
                     @else
                     {{asset('/assets/images/defaultphoto.png')}}
                     @endif">
-                  </a>
+                  <!-- </a> -->
                 </div>
               </td>
               <td>
