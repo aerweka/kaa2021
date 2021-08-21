@@ -148,22 +148,10 @@ class AdminController extends Controller
     );
   }
 
-  public function getSemuaById($id)
+  public function getPendaftarAtauPesertaById($id)
   {
     $semuaData = Pendaftaran::find($id);
     echo json_encode($semuaData);
-  }
-
-  public function getPendaftarById($id)
-  {
-    $dataPendaftar = Pendaftaran::find($id);
-    echo json_encode($dataPendaftar);
-  }
-
-  public function getPesertaById($id)
-  {
-    $dataPeserta = Pendaftaran::find($id);
-    echo json_encode($dataPeserta);
   }
 
   public function verifikasi()
@@ -193,6 +181,19 @@ class AdminController extends Controller
         'sidebar' => 'verifikasi'
       ]
     );
+  }
+
+  public function getPembayaranById($id)
+  {
+
+    $semuaData = Pendaftaran::find($id);
+    $dataBayarSemua = Pembayaran::where('id_pembayaran', 'B0001')->get();
+    $datasemua = Pembayaran::select('pembayaran.*', 'p.*')
+      ->join('pendaftaran as p', 'p.id_pendaftaran', '=', 'pembayaran.id_pendaftaran')
+      ->where('p.id_pendaftaran', '=', $id)
+      ->get();
+
+    echo json_encode($datasemua[0]);
   }
 
   public function ubahSandi()
@@ -228,7 +229,7 @@ class AdminController extends Controller
 
     $link = url('/peserta/form_pendaftaran');
     $pendaftar = Pendaftaran::find($pembayaran->id_pendaftaran);
-    Mail::to($pendaftar->email_pendaftar)->send(new PembayaranDiterimaMail($pendaftar, $link));
+    // Mail::to($pendaftar->email_pendaftar)->send(new PembayaranDiterimaMail($pendaftar, $link));
 
     return response()->json(['success' => true]);
   }

@@ -20,9 +20,10 @@ Route::get('/testPendaftar', 'AdminController@pendaftar');
 
 Route::get('/testUbah', 'AdminController@ubahSandi');
 
-Route::get('/getSemua/{id}', 'AdminController@getSemuaById');
-Route::get('/getPendaftar/{id}', 'AdminController@getPendaftarById');
-Route::get('/getPeserta/{id}', 'AdminController@getPesertaById');
+Route::get('/getPendaftarAtauPeserta/{id}', 'AdminController@getPendaftarAtauPesertaById');
+Route::get('/getPembayaran/{id}', 'AdminController@getPembayaranById');
+// Route::get('/getPendaftar/{id}', 'AdminController@getPendaftarById');
+// Route::get('/getPeserta/{id}', 'AdminController@getPesertaById');
 // end 
 Route::get('/', function () {
 	return view('/landingpage');

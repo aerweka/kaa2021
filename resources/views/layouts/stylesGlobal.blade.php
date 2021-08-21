@@ -1,5 +1,5 @@
 <!-- Favicon -->
-<link rel="icon" href=".{{ asset('/favicon.ico') }}">
+<link rel="icon" href="{{ asset('/favicon.ico') }}">
 <!-- Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
 <!-- Icons -->
@@ -11,4 +11,6 @@
 <link rel="stylesheet" href="{{ asset('/styles/argon.css?v=1.2.0') }}" type="text/css">
 <!-- my style -->
 <link rel="stylesheet" href="{{ asset('/styles/adminStyle.css') }}">
+<!-- sweetalert -->
+<link rel="stylesheet" href="{{ asset('/css/sweetalert2/sweetalert2.min.css') }}">
 @yield('extendsStyles')

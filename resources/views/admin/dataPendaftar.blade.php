@@ -42,7 +42,7 @@
             </div>
           </div>
           <!-- donwload button -->
-          <div class="col=lg-1 d-flex justify-content-end align-items-center " id="btnDownload">
+          <div class="col-lg-1 d-flex justify-content-end align-items-center " id="btnDownload">
             <a href="{{url('/admin/export/semua')}}" type="button" class="btn btn-icon btn-primary" type="button" title="Unduh Semua Data">
               <span class="btn-inner--icon"><i class="ni ni-cloud-download-95 text-white"></i></span>
             </a>
@@ -630,14 +630,14 @@
 <script>
   $('[data-toggle=modal]').on('click', function() {
     const id = $(this).data('id')
-    var url = `http://127.0.0.1:8000/getSemua/${id}`;
-    if ($(this).data('tab') === 'pendaftar') {
-      url = `http://127.0.0.1:8000/getPendaftar/${id}`
-    } else if ($(this).data('tab') === 'peserta') {
-      url = `http://127.0.0.1:8000/getPeserta/${id}`
-    } else {
-      console.log('semua');
-    }
+    var url = `http://127.0.0.1:8000/getPendaftarAtauPeserta/${id}`;
+    // if ($(this).data('tab') === 'pendaftar') {
+    //   url = `http://127.0.0.1:8000/getPendaftar/${id}`
+    // } else if ($(this).data('tab') === 'peserta') {
+    //   url = `http://127.0.0.1:8000/getPeserta/${id}`
+    // } else {
+    //   console.log('semua');
+    // }
     $.ajax({
       url: url,
       data: {

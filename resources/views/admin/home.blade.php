@@ -135,7 +135,7 @@
             <h3 class="mb-0">Verifikasi Pembayaran</h3>
           </div>
           <div class="col text-right">
-            <a href="{{url('/admin/pendaftar')}}" class="btn btn-sm btn-primary">See all</a>
+            <a href="{{url('/admin/verifikasi')}}" class="btn btn-sm btn-primary">See all</a>
           </div>
         </div>
       </div>
