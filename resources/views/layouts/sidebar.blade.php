@@ -10,16 +10,16 @@
     <div class="navbar-inner">
       <!-- Collapse -->
       <h6 class="navbar-heading p-0 mt-4 text-muted">
-        <span class="docs-normal">Selamat Datang, ... !</span>
+        <span class="docs-normal">Selamat Datang, {{$user??''}} !</span>
       </h6>
       <div class="collapse navbar-collapse" id="sidenav-collapse-main">
         <!-- Nav items -->
         <ul class="navbar-nav">
           <li class="nav-item">
             @if($sidebar == 'home')
-            <a class="nav-link active" href="/test">
+            <a class="nav-link active" href="/admin">
               @else
-              <a class="nav-link" href="/test">
+              <a class="nav-link" href="/admin">
                 @endif
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
@@ -27,9 +27,9 @@
           </li>
           <li class="nav-item">
             @if($sidebar == 'pendaftar')
-            <a class="nav-link active" href="/testPendaftar">
+            <a class="nav-link active" href="/admin/pendaftar">
               @else
-              <a class="nav-link" href="/testPendaftar">
+              <a class="nav-link" href="/admin/pendaftar">
                 @endif
                 <i class="ni ni-chart-bar-32 text-primary"></i>
                 <span class="nav-link-text">Data Pendaftar</span>
@@ -37,9 +37,9 @@
           </li>
           <li class="nav-item">
             @if($sidebar == 'verifikasi')
-            <a class="nav-link active" href="/testVerif">
+            <a class="nav-link active" href="/admin/verifikasi">
               @else
-              <a class="nav-link" href="/testVerif">
+              <a class="nav-link" href="/admin/verifikasi">
                 @endif
                 <i class="ni ni-check-bold text-primary"></i>
                 <span class="nav-link-text">Verifikasi Pembayaran</span>
@@ -47,9 +47,9 @@
           </li>
           <li class="nav-item">
             @if($sidebar == 'ubahPW')
-            <a class="nav-link active" href="/testUbah">
+            <a class="nav-link active" href="/admin/ubah-sandi">
               @else
-              <a class="nav-link" href="/testUbah">
+              <a class="nav-link" href="/admin/ubah-sandi">
                 @endif
                 <i class="ni ni-settings-gear-65 text-primary"></i>
                 <span class="nav-link-text">Ubah Sandi</span>

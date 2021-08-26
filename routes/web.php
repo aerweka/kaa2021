@@ -11,20 +11,7 @@ Route::get('/maintenance', function () {
 Route::get('/semnas', function () {
 	return view('/semnas');
 });
-// route uji layout baru
-Route::get('/test', 'AdminController@home');
 
-Route::get('/testVerif', 'AdminController@verifikasi');
-
-Route::get('/testPendaftar', 'AdminController@pendaftar');
-
-Route::get('/testUbah', 'AdminController@ubahSandi');
-
-Route::get('/getPendaftarAtauPeserta/{id}', 'AdminController@getPendaftarAtauPesertaById');
-Route::get('/getPembayaran/{id}', 'AdminController@getPembayaranById');
-// Route::get('/getPendaftar/{id}', 'AdminController@getPendaftarById');
-// Route::get('/getPeserta/{id}', 'AdminController@getPesertaById');
-// end 
 Route::get('/', function () {
 	return view('/landingpage');
 });
@@ -62,6 +49,8 @@ Route::get('password/reset/{token}', 'ResetPasswordController@insertPassword');
 //reset password
 Route::post('password/reset', 'ResetPasswordController@changePass')->name('reset.password');
 
+
+
 Route::middleware(['peserta', 'verified'])->group(function () {
 	Route::get('/peserta', function () {
 		return redirect('/peserta/dashboard_user');
@@ -76,4 +65,7 @@ Route::middleware(['peserta', 'verified'])->group(function () {
 	Route::post('/peserta/form_pendaftaran', 'PesertaController@store_pendaftaran');
 	Route::post('/peserta/konfirmasi_pembayaran', 'PesertaController@store_pembayaran');
 	Route::post('/gantipassword', 'AuthController@changepass');
+	Route::get('/profile', function () {
+		return view('peserta.profile');
+	});
 });

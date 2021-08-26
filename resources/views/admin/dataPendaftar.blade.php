@@ -630,7 +630,7 @@
 <script>
   $('[data-toggle=modal]').on('click', function() {
     const id = $(this).data('id')
-    var url = `http://127.0.0.1:8000/getPendaftarAtauPeserta/${id}`;
+    var url = `http://127.0.0.1:8000/admin/getPendaftarAtauPeserta/${id}`;
     // if ($(this).data('tab') === 'pendaftar') {
     //   url = `http://127.0.0.1:8000/getPendaftar/${id}`
     // } else if ($(this).data('tab') === 'peserta') {
@@ -639,6 +639,7 @@
     //   console.log('semua');
     // }
     $.ajax({
+      method: 'GET',
       url: url,
       data: {
         id: id

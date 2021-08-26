@@ -151,11 +151,11 @@
                 <div class="media align-items-center">
                   <!-- <a href="#"> -->
                   <img class="avatar avatar-sm rounded-circle" alt="Foto User" src="
-                    @if($d->pas_foto != null)
-                    {{url('storage/'.$d->pas_foto)}}
-					          @else
-					          {{asset('/assets/images/defaultphoto.png')}}
-					          @endif">
+                  @if($d->pas_foto != null)
+                  {{url('storage/'.$d->pas_foto)}}
+                  @else
+                  {{asset('/assets/images/defaultphoto.png')}}
+                  @endif">
                   <!-- </a> -->
                 </div>
               </th>
@@ -167,9 +167,9 @@
               </td>
               <td>
                 <span class="badge 
-                @if($d->status_pembayaran) badge-success
-					      @else badge-danger
-					      @endif">
+              @if($d->status_pembayaran) badge-success
+              @else badge-danger
+              @endif">
                   @if($d->status_pembayaran)Diterima
                   @else
                   Belum Diverifikasi

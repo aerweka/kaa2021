@@ -105,6 +105,8 @@ class AdminController extends Controller
       ->take(3)
       ->get();
 
+    $user = Auth::user()->username;
+
     return view(
       'admin.home',
       [
@@ -113,7 +115,8 @@ class AdminController extends Controller
         'datakonfirmasi' => $datakonfirmasi,
         'datapendaftar' => $datapendaftar,
         'datagraphic_p' => $datagraphic_p,
-        'sidebar' => 'home'
+        'sidebar' => 'home',
+        'user' => $user
       ]
     );
   }
@@ -137,13 +140,16 @@ class AdminController extends Controller
       ->orderBy('pendaftaran.tgl_pendaftaran', 'DESC')
       ->paginate(10);
 
+    $user = Auth::user()->username;
+
     return view(
       'admin.dataPendaftar',
       [
         'all' => $seluruhdata,
         'peserta' => $datapeserta,
         'pendaftar' => $datapendaftar,
-        'sidebar' => 'pendaftar'
+        'sidebar' => 'pendaftar',
+        'user' => $user
       ]
     );
   }
@@ -172,13 +178,16 @@ class AdminController extends Controller
       ->orderBy('pembayaran.tanggal_pembayaran', 'DESC')
       ->paginate(10);
 
+    $user = Auth::user()->username;
+
     return view(
       'admin.verifBayar',
       [
         'datasemua' => $datasemua,
         'databelum' => $databelum,
         'datasudah' => $datasudah,
-        'sidebar' => 'verifikasi'
+        'sidebar' => 'verifikasi',
+        'user' => $user
       ]
     );
   }
@@ -198,7 +207,11 @@ class AdminController extends Controller
 
   public function ubahSandi()
   {
-    return view('admin.ubahSandi', ['sidebar' => 'ubahPW']);
+    $user = Auth::user()->username;
+    return view('admin.ubahSandi', [
+      'sidebar' => 'ubahPW',
+      'user' => $user
+    ]);
   }
 
   public function exportSemua()
@@ -224,15 +237,17 @@ class AdminController extends Controller
   public function verifikasiTrue($id)
   {
     $pembayaran = Pembayaran::find($id);
+    var_dump($id);
     $pembayaran->status_pembayaran = 1;
     $pembayaran->save();
 
     $link = url('/peserta/form_pendaftaran');
     $pendaftar = Pendaftaran::find($pembayaran->id_pendaftaran);
-    // Mail::to($pendaftar->email_pendaftar)->send(new PembayaranDiterimaMail($pendaftar, $link));
+    Mail::to($pendaftar->email_pendaftar)->send(new PembayaranDiterimaMail($pendaftar, $link));
 
     return response()->json(['success' => true]);
   }
+
   public function verifikasiFalse($id)
   {
     $pembayaran = Pembayaran::find($id);

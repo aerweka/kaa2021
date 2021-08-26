@@ -17,7 +17,7 @@
     <div class="card bg-white">
       <div class="card-body container-fluid mt--3 mb--3 ">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col">
             <div class="nav-wrapper mb-1">
               <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
                 <li class="nav-item">
@@ -74,7 +74,7 @@
                           <th scope="col" class="sort" data-sort="action"></th>
                         </tr>
                       </thead>
-                      <tbody class="list">
+                      <tbody class="list" id="datasemua">
                         @foreach($datasemua as $d)
                         <tr class="data-semua" id="datasemua-{{$d->id_pendaftaran}}">
                           <th scope="row" class="data-semua nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">
@@ -117,19 +117,6 @@
                                 @endif
                               </span>
                             </div>
-                            <!-- <div class="mt-1">
-                              <span class="badge @if($d->status_pendaftaran == 1)
-                              badge-success
-                              @else
-                              badge-danger
-                              @endif statusdata">
-                                @if($d->status_pendaftaran)
-                                Data Lengkap
-                                @else
-                                Data belum lengkap
-                                @endif
-                              </span>
-                            </div> -->
                           </td>
                           <td>
                             <a type="button" class="btn btn-sm btn-icon-only text-light" data-toggle="modal" data-target="#mainModal" data-id='{{$d->id_pendaftaran}}' data-tab='semua'>
@@ -140,10 +127,12 @@
                       </tbody>
                       @endforeach
                     </table>
+                    <!-- <img src="{{url('storage/bukti_pembayaran/bukti_pembayaran-P0002.jpeg')}}" alt=""> -->
                   </div>
                 </div>
               </div>
             </div>
+            <!-- <img src="{{asset('assets/images/140615.jpg')}}" alt=""> -->
             <div class="row justify-content-center" id="nodatasemua">
               <h5 class="text-center mt-3">Data tidak ditemukan.</h5>
             </div>
@@ -159,7 +148,9 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
                   </div>
-                  <input type="text" class="form-control" name="search-all" id="searchBlmVerif" aria-describedby="basic-addon1" placeholder="Cari Data">
+                  <form action="" id="">
+                    <input type="text" class="form-control" name="search-blm" id="searchBlmVerif" aria-describedby="basic-addon1" placeholder="Cari Data">
+                  </form>
                 </div>
               </div>
             </div>
@@ -175,27 +166,71 @@
                           <th scope="col" class="sort" data-sort="instansi">Nama Instansi</th>
                           <th scope="col" class="sort" data-sort="total">Total</th>
                           <th scope="col" class="sort" data-sort="status">Status</th>
+                          <th scope="col" class="sort" data-sort="action"></th>
                         </tr>
                       </thead>
-                      <tbody class="list">
-                        <tr>
-                          <th scope="row">
+                      <tbody class="list" id="databelum">
+                        @foreach($databelum as $d)
+                        <tr class="data-blm-verif" id="dataBlmVerif-{{$d->id_pendaftaran}}">
+                          <th scope="row" class="data-blm-verif nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">
+                            {{$d->id_pendaftaran}}
                           </th>
-                          <td class="budget">
-                            $2500 USD
+                          <td class="data-blm-verif nama searchable" id="nama-{{$d->id_pendaftaran}}">
+                            {{$d->nama_pendaftar}}
+                          </td>
+                          <td class="data-blm-verif univ searchable" id="univ-{{$d->id_pendaftaran}}">
+                            {{$d->asal_univ_pendaftar}}
+                          </td>
+                          <td class="data-blm-verif total" id="email-{{$d->id_pendaftaran}}">
+                            Rp {{number_format($d->total_pembayaran,0,',','.')}}
                           </td>
                           <td>
-                            <span class="badge badge-dot mr-4">
-                              <i class="bg-warning"></i>
-                              <span class="status">pending</span>
-                            </span>
+                            <div>
+                              <span class="badge 
+                            @if($d->status_pembayaran >= 0)
+                            @if($d->status_pembayaran == 1)
+                            badge-success
+                            @elseif($d->status_pembayaran == 2)
+                            badge-danger
+                            @else
+                            badge-danger
+                            @endif
+                            @else
+                            badge-danger
+                            @endif
+                            statuspembayaran" id="status_pembayaran{{$d->id_pembayaran}}">
+                                @if($d->status_pembayaran >= 0)
+                                @if($d->status_pembayaran == 1)
+                                Diterima
+                                @elseif($d->status_pembayaran == 2)
+                                Ditolak
+                                @elseif($d->status_pembayaran == 0)
+                                Menunggu Verifikasi
+                                @endif
+                                @else
+                                Belum Konfirmasi
+                                @endif
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <a type="button" class="btn btn-sm btn-icon-only text-light" data-toggle="modal" data-target="#mainModal" data-id='{{$d->id_pendaftaran}}' data-tab='semua'>
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
                           </td>
                         </tr>
                       </tbody>
+                      @endforeach
                     </table>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="row justify-content-center" id="noDataBlmVerif">
+              <h5 class="text-center mt-3">Data tidak ditemukan.</h5>
+            </div>
+            <div class="row justify-content-end">
+              {{ $databelum->links() }}
             </div>
           </div>
           <!-- third tab -->
@@ -206,7 +241,9 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
                   </div>
-                  <input type="text" class="form-control" name="search-all" id="searchSdhVerif" aria-describedby="basic-addon1" placeholder="Cari Data">
+                  <form action="" method="">
+                    <input type="text" class="form-control" name="search-all" id="searchSdhVerif" aria-describedby="basic-addon1" placeholder="Cari Data">
+                  </form>
                 </div>
               </div>
             </div>
@@ -222,27 +259,71 @@
                           <th scope="col" class="sort" data-sort="instansi">Nama Instansi</th>
                           <th scope="col" class="sort" data-sort="total">Total</th>
                           <th scope="col" class="sort" data-sort="status">Status</th>
+                          <th scope="col" class="sort" data-sort="action"></th>
                         </tr>
                       </thead>
-                      <tbody class="list">
-                        <tr>
-                          <th scope="row">
+                      <tbody class="list" id="datasudah">
+                        @foreach($datasudah as $d)
+                        <tr class="data-sdh-verif" id="dataSdhVerif-{{$d->id_pendaftaran}}">
+                          <th scope="row" class="data-sdh-verif nopendaftaran searchable" id="nopendaftaran-{{$d->id_pendaftaran}}">
+                            {{$d->id_pendaftaran}}
                           </th>
-                          <td class="budget">
-                            $2500 USD
+                          <td class="data-sdh-verif nama searchable" id="nama-{{$d->id_pendaftaran}}">
+                            {{$d->nama_pendaftar}}
+                          </td>
+                          <td class="data-sdh-verif univ searchable" id="univ-{{$d->id_pendaftaran}}">
+                            {{$d->asal_univ_pendaftar}}
+                          </td>
+                          <td class="data-sdh-verif total" id="email-{{$d->id_pendaftaran}}">
+                            Rp {{number_format($d->total_pembayaran,0,',','.')}}
                           </td>
                           <td>
-                            <span class="badge badge-dot mr-4">
-                              <i class="bg-warning"></i>
-                              <span class="status">pending</span>
-                            </span>
+                            <div>
+                              <span class="badge 
+                            @if($d->status_pembayaran >= 0)
+                            @if($d->status_pembayaran == 1)
+                            badge-success
+                            @elseif($d->status_pembayaran == 2)
+                            badge-danger
+                            @else
+                            badge-danger
+                            @endif
+                            @else
+                            badge-danger
+                            @endif
+                            statuspembayaran" id="status_pembayaran{{$d->id_pembayaran}}">
+                                @if($d->status_pembayaran >= 0)
+                                @if($d->status_pembayaran == 1)
+                                Diterima
+                                @elseif($d->status_pembayaran == 2)
+                                Ditolak
+                                @elseif($d->status_pembayaran == 0)
+                                Menunggu Verifikasi
+                                @endif
+                                @else
+                                Belum Konfirmasi
+                                @endif
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <a type="button" class="btn btn-sm btn-icon-only text-light" data-toggle="modal" data-target="#mainModal" data-id='{{$d->id_pendaftaran}}' data-tab='semua'>
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
                           </td>
                         </tr>
                       </tbody>
+                      @endforeach
                     </table>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="row justify-content-center" id="noDataSdhVerif">
+              <h5 class="text-center mt-3">Data tidak ditemukan.</h5>
+            </div>
+            <div class="row justify-content-end">
+              {{ $datasudah->links() }}
             </div>
           </div>
           <!-- main modal -->
@@ -256,6 +337,7 @@
                     <div class="col-sm-3">
                       <p>Id</p>
                     </div>
+                    <span style="display: none;" class="id_pembayaran"></span>
                     <div class="col-sm-1">
                       <span>:</span>
                     </div>
@@ -388,7 +470,7 @@
                   <div class="row mb-4">
                     <div class="col" id="bukti_tf">
                       <label for="buktiTF">Bukti Transfer</label>
-                      <img src="{{asset('assets/images/140615.jpg')}}" alt="" style="width: 100%; border: solid 1px rgba(178, 177, 185, .7); border-radius: 3%;">
+                      <img src="{{url('storage/bukti_pembayaran/bukti_pembayaran-P0002.jpeg')}}" alt="" style="width: 100%; border: solid 1px rgba(178, 177, 185, .7); border-radius: 3%;">
                     </div>
                   </div>
                   <div class="card card-body" style="border: solid 1px rgba(178, 177, 185, .7)" id="card_confirmation">
@@ -486,9 +568,12 @@
 
 @section('extendsScripts')
 <script>
-  $("#nodatasemua").hide();
-  $("#nodatapendaftar").hide();
-  $("#nodatapeserta").hide();
+  $(document).ready(function() {
+    $("#nodatasemua").hide();
+    $("#noDataBlmVerif").hide();
+    $("#noDataSdhVerif").hide();
+  })
+
 
   $("#searchAll").on('input', function() {
     let found = false;
@@ -517,56 +602,57 @@
   $("#searchBlmVerif").on('input', function() {
     let found = false;
     if ($(this).val().length > 2) {
-      $(".data-pendaftar").hide();
+      $(".data-blm-verif").hide();
       let searchterm = $(this).val().toLowerCase();
-      $(".data-pendaftar .searchable").each(function(index) {
+      $(".data-blm-verif .searchable").each(function(index) {
         if ($(this).html().toLowerCase().includes(searchterm)) {
           let id = $(this).attr('id').slice(-5);
-          $("#datapendaftar-" + id).show();
-          $("#datapendaftar-" + id + " .data-pendaftar").show();
-          $("#dividerpendaftar-" + id).show();
+          $("#dataBlmVerif-" + id).show();
+          $("#dataBlmVerif-" + id + " .data-blm-verif").show();
+          // $("#dividerpendaftar-" + id).show();
           found = true;
-          $("#nodatapendaftar").hide();
+          $("#noDataBlmVerif").hide();
         }
       });
       if (!found) {
-        $("#nodatapendaftar").show();
+        $("#noDataBlmVerif").show();
       }
     } else {
-      $(".data-pendaftar").show();
-      $("#nodatapendaftar").hide();
+      $(".data-blm-verif").show();
+      $("#noDataBlmVerif").hide();
     }
   });
 
   $("#searchSdhVerif").on('input', function() {
     let found = false;
     if ($(this).val().length > 2) {
-      $(".data-peserta").hide();
+      $(".data-sdh-verif").hide();
       let searchterm = $(this).val().toLowerCase();
-      $(".data-peserta .searchable").each(function(index) {
+      $(".data-sdh-verif .searchable").each(function(index) {
         if ($(this).html().toLowerCase().includes(searchterm)) {
           let id = $(this).attr('id').slice(-5);
-          $("#datapeserta-" + id).show();
-          $("#datapeserta-" + id + " .data-peserta").show();
+          $("#dataSdhVerif-" + id).show();
+          $("#dataSdhVerif-" + id + " .data-sdh-verif").show();
           $("#dividerpeserta-" + id).show();
           found = true;
-          $("#nodatapeserta").hide();
+          $("#noDataSdhVerif").hide();
         }
       });
       if (!found) {
-        $("#nodatapeserta").show();
+        $("#noDataSdhVerif").show();
       }
     } else {
-      $(".data-peserta").show();
-      $("#nodatapeserta").hide();
+      $(".data-sdh-verif").show();
+      $("#noDataSdhVerif").hide();
     }
   });
 </script>
 <script>
   $('[data-toggle=modal]').on('click', function() {
     const id = $(this).data('id')
-    var url = `http://127.0.0.1:8000/getPembayaran/${id}`;
+    var url = `http://127.0.0.1:8000/admin/getPembayaran/${id}`;
     $.ajax({
+      method: 'GET',
       url: url,
       data: {
         id: id
@@ -575,6 +661,7 @@
       success: function(data) {
         console.log(data);
         $('.id_pendaftaran').html(data.id_pendaftaran)
+        $('.id_pembayaran').html(data.id_pembayaran)
         // $('.btn-ya').attr('id', "ya-" + data.id_pendaftaran)
         // $('.btn-tidak').attr('id', "tidak-" + data.id_pendaftaran)
         $('.nama_pendaftar').html(data.nama_pendaftar)
@@ -598,7 +685,7 @@
         $('.bank_asal').html(data.bank_asal)
         $('.an_rekening').html(data.atas_nama_rekening)
         $('.no_rekening').html(data.nomor_rekening)
-        $('#bukti_tf img').attr('src', "{{url('storage/')}}" + data.bukti_pembayaran)
+        $('#bukti_tf img').attr('src', "{{url('storage')}}" + '/' + data.bukti_pembayaran)
         if (data.status_pembayaran === 1) {
           $('#card_confirmation').hide();
         } else {
@@ -611,7 +698,7 @@
 
 <script>
   $(".btn-ya").click(function() {
-    let id = $('.id_pendaftaran').text();
+    let id = $('.id_pembayaran').text();
     Swal.fire({
       title: 'Apakah anda yakin menerima pembayaran ini?',
       text: "Aksi ini tidak dapat dikembalikan!",
@@ -625,7 +712,8 @@
       if (e.value === true) {
         $.ajax({
           type: 'GET',
-          url: "{{url('/admin/verifikasi/true/')}}" + id,
+          url: `http://127.0.0.1:8000/admin/verifikasi/true/${id}`,
+          // "{{url('/admin/verifikasi/true/')}}" + id,
           success: function(results) {
             if (results.success) {
               Swal.fire(
@@ -655,7 +743,7 @@
   });
 
   $(".btn-tidak").click(function() {
-    let id = $(this).attr('id').slice(-5);
+    let id = $('.id_pembayaran').text();
     Swal.fire({
       title: 'Apakah anda yakin menolak pembayaran ini?',
       text: "Aksi ini tidak dapat dikembalikan!",
@@ -670,7 +758,8 @@
 
         $.ajax({
           type: 'GET',
-          url: "{{url('/admin/verifikasi/false/')}}" + id,
+          url: `http://127.0.0.1:8000/admin/verifikasi/false/${id}`,
+          // "{{url('/admin/verifikasi/false/')}}" + id,
           success: function(results) {
             if (results.success === true) {
               Swal.fire(

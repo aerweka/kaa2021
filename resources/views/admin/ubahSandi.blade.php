@@ -50,7 +50,7 @@
           <small id="confirmConfirmationPW" class="form-text text-red mb-3 mt--3" style="color: red">Mohon Isi Konfirmasi Sandi!</small>
           <small id="konfirmasi" class="form-text text-red mb-3 mt--3" style="color: red">Sandi Baru dan Konfirmasi Sandi Baru tidak sama.</small>
           <!-- <input type="button" class="btn btn-primary" value="Ubah" id="submit-btn"> -->
-          <button type="button" class="btn btn-primary" id="submit-btn">Ubah</button>
+          <input type="submit" class="btn btn-primary" id="submit-btn" value="Ubah">
         </form>
       </div>
     </div>

@@ -43,7 +43,7 @@ class LoginController extends Controller
     {
         return 'username';
     }
-  
+
     public function logout(Request $request)
     {
         $this->guard()->logout();
@@ -52,7 +52,6 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/login');
+        return redirect('/');
     }
-
 }

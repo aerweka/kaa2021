@@ -27,18 +27,15 @@
 
 <body>
   @yield('nav')
-  <div class="container-fluid" style="min-height: 1000px">
+  <div class="container-fluid" style="">
     @yield('body')
   </div>
   <!-- Start Footer -->
-  <footer class="footer pt-0 py-4">
-    <div class="row align-items-center justify-content-lg-between">
-      <div class="col-lg-12">
-        <!-- Start Copyright -->
-        <div class="copyright text-center text-lg-center">
-          &copy; 2020 Copyright <b><a href="https://www.instagram.com/himasi_ua/"> Himpunan Mahasiswa D3 Akuntansi Universitas Airlangga</a></b>
-        </div>
-        <!-- End Copyright -->
+  <!-- Footer-->
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-lg-start" style="color: #ffffff">Copyright &copy; Himasi Software House</div>
       </div>
     </div>
   </footer>
