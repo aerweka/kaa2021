@@ -27,7 +27,7 @@
 
 <body>
   @yield('nav')
-  <div class="container-fluid" style="">
+  <div class="container-fluid">
     @yield('body')
   </div>
   <!-- Start Footer -->
