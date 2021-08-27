@@ -11,6 +11,7 @@ use App\Models\Akun_Moodle;
 use Auth;
 use Storage;
 use PDF;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\KonfirmasiDiterimaMail;
 use Illuminate\Support\Carbon;
@@ -22,7 +23,7 @@ class PesertaController extends Controller
     {
         $lolos = DB::table('lolos_preliminary')->where('email', '=', Auth::user()->email)->whereNotNull('email')->exists();
         $now = Carbon::now('Asia/Jakarta');
-        $open = Carbon::create(2020, 10, 19, 10, 00, 00, 'Asia/Jakarta');
+        $open = Carbon::create(2021, 8, 29, 10, 00, 00, 'Asia/Jakarta');
 
         return view('peserta/dashboard_userv1', compact("lolos", "now", "open"));
     }
@@ -74,7 +75,7 @@ class PesertaController extends Controller
             Mail::to(Auth::user()->email)->send(new KonfirmasiDiterimaMail($pendaftar));
         });
 
-        return redirect('/peserta/konfirmasi_pembayaranv1');
+        return redirect('/peserta/konfirmasi_pembayaran');
     }
 
     public function form_pendaftaran()
@@ -141,7 +142,7 @@ class PesertaController extends Controller
 
             session()->flash('success', 'Data Berhasil Di Tambahkan!');
         });
-        return redirect('/peserta/form_pendaftaranv1');
+        return redirect('/peserta/form_pendaftaran');
     }
 
     public function cetak_kartu_peserta()

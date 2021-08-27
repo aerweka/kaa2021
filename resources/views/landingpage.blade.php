@@ -233,11 +233,11 @@
       </div>
       <div class="row text-center">
         <div class="col-md-6">
-          <h4 class="my-3 text-muted">Officiall Account</h4>
-          <a class="btn-dark btn-social mx-2" href="https://www.instagram.com/kaasemnas2020/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <h4 class="my-3 text-muted">Official Account</h4>
+          <a class="btn-dark btn-social mx-2 mt-4" href="https://www.instagram.com/kaasemnas2020/" target="_blank"><i class="fab fa-instagram"></i></a>
           <p class="text-muted">@KAASemnas2021</p>
-          <a class="btn-dark btn-social mx-2" href="line://ti/p/@vmu7594p" target="_blank"><i class="fab fa-line"></i></a>
-          <p class="text-muted">@vmu7594p</p>
+          <!-- <a class="btn-dark btn-social mx-2" href="line://ti/p/@vmu7594p" target="_blank"><i class="fab fa-line"></i></a>
+          <p class="text-muted">@vmu7594p</p> -->
         </div>
         <div class="col-md-6">
           <h4 class="my-3 text-muted">Contact Person</h4>

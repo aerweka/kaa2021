@@ -28,7 +28,7 @@ class KonfirmasiDiterimaMail extends Mailable
      */
     public function build()
     {
-        return $this->from('panitia@kaasemnasunair.com', 'Panitia KAA 2020')
+        return $this->from('panitia@kaasemnasunair.com', 'Panitia KAA 2021')
             ->subject('Pembayaranmu sedang kami proses')
             ->markdown('emails.konfirmasiditerima')
             ->with([
