@@ -235,12 +235,20 @@
                                             </div>
                                             <label for="customer_id">Scan KTM</label><br>
                                             <input type="file" class="scan_ktm" name="scan_ktm" id="scan_ktm" accept=".pdf,.jpeg,.png,.jpg" required><br><br>
+                                            <small>Max. &le; 2Mb</small>
+                                            <br>
+                                            <br>
 
                                             <label for="customer_id">Pas Foto</label><br>
                                             <input type="file" class="pas_foto" name="pas_foto" id="pas_foto" accept=".jpeg,.png,.jpg" required><br><br>
-
-                                            <label for="customer_id">Scan Surat Keterangan</label><br>
+                                            <small>Max. &le; 2Mb</small>
+                                            <br>
+                                            <br>
+                                            <!-- <label for="customer_id">Scan Surat Keterangan</label><br>
                                             <input type="file" class="scan_suket_aktif" name="scan_suket_aktif" id="scan_suket_aktif" accept=".pdf"><br><br>
+                                            <small>Max. &le; 2Mb</small>
+                                            <br>
+                                            <br> -->
 
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>

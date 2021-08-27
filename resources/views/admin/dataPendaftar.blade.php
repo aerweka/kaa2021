@@ -503,7 +503,7 @@
                       </div>
                     </div>
                     <!-- suket aktif -->
-                    <div class="row mt-3">
+                    <!-- <div class="row mt-3">
                       <div class="col-md-4">
                         <span>Scan Keterangan</span>
                       </div>
@@ -519,7 +519,7 @@
                           <i class="fas fa-cloud-download-alt"></i>
                         </a>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -684,15 +684,15 @@
         } else {
           $('.pas_foto').addClass('badge-success').html('Tersedia')
         }
-        if (data.scan_suket_aktif === null) {
-          $('.scan_suket_aktif').addClass('badge-danger').html('Belum Diupload')
-          $('.link_suket_aktif').css({
-            'pointer-events': 'none',
-            'opacity': .8
-          })
-        } else {
-          $('.scan_suket_aktif').addClass('badge-success').html('Tersedia')
-        }
+        // if (data.scan_suket_aktif === null) {
+        //   $('.scan_suket_aktif').addClass('badge-danger').html('Belum Diupload')
+        //   $('.link_suket_aktif').css({
+        //     'pointer-events': 'none',
+        //     'opacity': .8
+        //   })
+        // } else {
+        //   $('.scan_suket_aktif').addClass('badge-success').html('Tersedia')
+        // }
       }
     })
   })

@@ -92,7 +92,7 @@ class PesertaController extends Controller
             'id_line_pendaftar' => 'max:25',
             'scan_ktm' => 'required|file|max:2048|mimes:pdf,jpeg,png,jpg',
             'pas_foto' => 'required|file|mimes:jpeg,png,jpg|max:2048',
-            'scan_suket_aktif' => 'file|max:2048|mimes:pdf',
+            // 'scan_suket_aktif' => 'file|max:2048|mimes:pdf',
         ]);
         DB::transaction(function () use ($request) {
             $pendaftaran = Pendaftaran::find(Auth::user()->id_pendaftaran);
@@ -104,16 +104,16 @@ class PesertaController extends Controller
             $namafilescanktm = 'scan_ktm-' . Auth::user()->id_pendaftaran . '.' . $request->file('scan_ktm')->extension();
             $namafilefoto = 'pas_foto-' . Auth::user()->id_pendaftaran . '.' . $request->file('pas_foto')->extension();
 
-            if ($request->file('scan_suket_aktif') != null) {
-                $namafilescansuket = 'scan_suket_aktif-' . Auth::user()->id_pendaftaran . '.' . $request->file('scan_suket_aktif')->extension();
-                Storage::disk('public')->putFileAs(
-                    '/scan_suket_aktif',
-                    $request->file('scan_suket_aktif'),
-                    $namafilescansuket,
-                    'public'
-                );
-                $pendaftaran->scan_suket_aktif = 'scan_suket_aktif/' . $namafilescansuket;
-            }
+            // if ($request->file('scan_suket_aktif') != null) {
+            //     $namafilescansuket = 'scan_suket_aktif-' . Auth::user()->id_pendaftaran . '.' . $request->file('scan_suket_aktif')->extension();
+            //     Storage::disk('public')->putFileAs(
+            //         '/scan_suket_aktif',
+            //         $request->file('scan_suket_aktif'),
+            //         $namafilescansuket,
+            //         'public'
+            //     );
+            //     $pendaftaran->scan_suket_aktif = 'scan_suket_aktif/' . $namafilescansuket;
+            // }
 
             Storage::disk('public')->putFileAs(
                 '/scan_ktm',
