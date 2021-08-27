@@ -1,6 +1,6 @@
 @component('mail::message')
-Halo  **{{$user->nama_pendaftar}}** !   
-Terimakasih telah melakukan pendaftaran lomba KAA 2020.  
+Halo **{{$user->nama_pendaftar}}** !
+Terimakasih telah melakukan pendaftaran lomba KAA 2021.
 Klik dibawah untuk verifikasi email.
 
 @component('mail::button', ['url' => $link, 'color' => 'success'])

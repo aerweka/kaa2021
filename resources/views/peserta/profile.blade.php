@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
+  @include('layouts.stylesGlobal')
 </head>
 
 <body>
@@ -78,7 +79,7 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="media align-items-center">
                     <span class="avatar avatar-sm rounded-circle">
-                      <img alt="Image placeholder" src="../assets/img/brand/acc2.png">
+                      <img alt="Image placeholder" src="{{asset('/assets/images/acc2.png')}}">
                     </span>
                     <div class="media-body  ml-2  d-none d-lg-block">
                       <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->pendaftaran->nama_pendaftar}}</span>
@@ -105,7 +106,7 @@
     </nav>
     <!-- Header -->
     <!-- Header -->
-    <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(../assets/img/brand/img1.jpg); background-size: cover; background-position: center top;">
+    <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(../assets/images/img1.jpg); background-size: cover; background-position: center top;">
       <!-- Mask -->
       <!-- <span class="mask bg-gradient-default opacity-8"></span> -->
       <!-- Header container -->
@@ -126,12 +127,12 @@
       <div class="row">
         <div class="col-xl-4 order-xl-2">
           <div class="card card-profile">
-            <img src="../assets/img/brand/img2.jpg" alt="Image placeholder" class="card-img-top">
+            <img src="{{asset('/assets/images/img2.jpg')}}" alt="Image placeholder" class="card-img-top">
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
                   <a href="#">
-                    <img src="../assets/img/brand/acc2.png" class="rounded-circle" width="100px">
+                    <img src="{{asset('/assets/images/acc2.png')}}" class="rounded-circle" width="100px">
                   </a>
                 </div>
               </div>
@@ -203,26 +204,24 @@
   </div>
   <!-- Footer -->
   <footer class="footer pt-0">
-    <div class="row align-items-center justify-content-lg-between">
+    <div class="row align-items-center justify-content-lg-between container-fluid">
       <div class="col-lg-6">
-        <div class="copyright text-center  text-lg-left  text-muted">
-          &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">HIMASI UNAIR</a>
+        <div class="copyright text-center text-lg-left text-muted ml-3">
+          &copy; 2021 <a href="https://www.instagram.com/himasi_ua" class="font-weight-bold ml-1" target="_blank">HIMASI UNAIR</a>
         </div>
       </div>
       <div class="col-lg-6">
         <ul class="nav nav-footer justify-content-center justify-content-lg-end">
           <li class="nav-item">
-            <a href="https://www.creative-tim.com" class="nav-link" target="_blank">KAA 2021</a>
+            <a href="https://www.instagram.com/kaasemnas2021/" class="nav-link" target="_blank">KAA 2021</a>
           </li>
           <li class="nav-item">
-            <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Instagram</a>
+            <!-- <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Instagram</a> -->
           </li>
         </ul>
       </div>
     </div>
   </footer>
-  </div>
-  </div>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
@@ -232,6 +231,7 @@
   <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
   <!-- Argon JS -->
   <script src="../assets/js/argon.js?v=1.2.0"></script>
+  @include('layouts.scriptsGlobal')
 </body>
 
 </html>

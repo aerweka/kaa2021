@@ -24,17 +24,17 @@ class PesertaController extends Controller
         $now = Carbon::now('Asia/Jakarta');
         $open = Carbon::create(2020, 10, 19, 10, 00, 00, 'Asia/Jakarta');
 
-        return view('peserta/dashboard_user', compact("lolos", "now", "open"));
+        return view('peserta/dashboard_userv1', compact("lolos", "now", "open"));
     }
 
     public function alur_pembayaran()
     {
-        return view('peserta/alur_pembayaran');
+        return view('peserta/alur_pembayaranv1');
     }
 
     public function konfirmasi_pembayaran()
     {
-        return view('peserta/konfirmasi_pembayaran');
+        return view('peserta/konfirmasi_pembayaranv1');
     }
 
     public function store_pembayaran(Request $request)
@@ -74,14 +74,14 @@ class PesertaController extends Controller
             Mail::to(Auth::user()->email)->send(new KonfirmasiDiterimaMail($pendaftar));
         });
 
-        return redirect('/peserta/konfirmasi_pembayaran');
+        return redirect('/peserta/konfirmasi_pembayaranv1');
     }
 
     public function form_pendaftaran()
     {
         $daftar = Pendaftaran::where('status_pendaftaran', '=', '1')->first();
 
-        return view('peserta/form_pendaftaran', compact('daftar'));
+        return view('peserta/form_pendaftaranv1', compact('daftar'));
     }
     public function store_pendaftaran(Request $request)
     {
@@ -141,7 +141,7 @@ class PesertaController extends Controller
 
             session()->flash('success', 'Data Berhasil Di Tambahkan!');
         });
-        return redirect('/peserta/form_pendaftaran');
+        return redirect('/peserta/form_pendaftaranv1');
     }
 
     public function cetak_kartu_peserta()
@@ -149,7 +149,7 @@ class PesertaController extends Controller
         $bayar2 = Pendaftaran::Join('pembayaran as p', 'p.id_pendaftaran', '=', 'pendaftaran.id_pendaftaran')
             ->where('p.status_pembayaran', '=', '1')->first();
 
-        return view('peserta/cetak_kartu_peserta', compact('bayar2'));
+        return view('peserta/cetak_kartu_pesertav1', compact('bayar2'));
     }
 
     public function exportpdf() //mencetak kartu peserta menjadi pdf

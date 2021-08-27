@@ -32,6 +32,7 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
+    @include('layouts.stylesGlobal')
 </head>
 
 <body>
@@ -65,7 +66,7 @@
                             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="../assets/img/brand/acc2.png">
+                                        <img alt="Image placeholder" src="{{asset('/assets/images/acc2.png')}}">
                                     </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
                                         <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->pendaftaran->nama_pendaftar}}</span>
@@ -234,16 +235,16 @@
                     <div class="row alig n-items-center justify-content-lg-between">
                         <div class="col-lg-6">
                             <div class="copyright text-center  text-lg-left  text-muted">
-                                &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">HIMASI UNAIR</a>
+                                &copy; 2021 <a href="https://www.instagram.com/himasi_ua" class="font-weight-bold ml-1" target="_blank">HIMASI UNAIR</a>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                                 <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link" target="_blank">KAA 2021</a>
+                                    <a href="https://www.instagram.com/kaasemnas2021/" class="nav-link" target="_blank">KAA 2021</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Instagram</a>
+                                    <!-- <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Instagram</a> -->
                                 </li>
                             </ul>
                         </div>
@@ -263,6 +264,7 @@
         <script src="../assets/vendor/chart.js/dist/Chart.extension.js"></script>
         <!-- Argon JS -->
         <script src="../assets/js/argon.js?v=1.2.0"></script>
+        @include('layouts.scriptsGlobal')
 </body>
 
 </html>

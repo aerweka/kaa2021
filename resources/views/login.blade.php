@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Argon CSS -->
     <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
-    @include('layouts.stylesGlobal')
 </head>
 
 <body class="bg-default">
@@ -35,7 +34,7 @@
     <nav id="navbar-main" class="navbar navbar-horizontal navbar-white navbar-main navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('/img/logo kaa.png') }}">
+                <img src="../assets/img/brand/kaa fix biru dongker1.png">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -58,23 +57,29 @@
                 </div>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href="/" class="nav-link text-white">
+                        <a href="/" class="nav-link">
                             <span class="nav-link-inner--text">Home</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/login" class="nav-link text-white">
+                        <a href="/login" class="nav-link">
                             <span class="nav-link-inner--text">Login</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/register" class="nav-link text-white">
+                        <a href="/register" class="nav-link">
                             <span class="nav-link-inner--text">Register</span>
                         </a>
                     </li>
                 </ul>
                 <hr class="d-lg-none" />
                 <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -153,16 +158,16 @@
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col-xl-6">
                     <div class="copyright text-center  text-lg-left  text-muted">
-                        &copy; 2021 <a href="https://www.instagram.com/himasi_ua" class="font-weight-bold ml-1" target="_blank">HIMASI UNAIR</a>
+                        &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">HIMASI UNAIR</a>
                     </div>
                 </div>
                 <div class="col-xl-6">
                     <ul class="nav nav-footer justify-content-center justify-content-xl-end">
                         <li class="nav-item">
-                            <a href="https://www.instagram.com/kaasemnas2021/" class="nav-link" target="_blank">KAA 2021</a>
+                            <a href="https://www.creative-tim.com" class="nav-link" target="_blank">KAA 2021</a>
                         </li>
                         <li class="nav-item">
-                            <!-- <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a> -->
+                            <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
                         </li>
                     </ul>
                 </div>
@@ -170,15 +175,14 @@
         </div>
     </footer>
     <!-- Argon Scripts -->
-    @include('layouts.scriptsGlobal')
     <!-- Core -->
-    <!-- <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
     <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script> -->
+    <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
     <!-- Argon JS -->
-    <!-- <script src="../assets/js/argon.js?v=1.2.0"></script> -->
+    <script src="../assets/js/argon.js?v=1.2.0"></script>
 </body>
 
 </html>

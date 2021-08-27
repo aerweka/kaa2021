@@ -169,7 +169,7 @@
                 <div class="col-xl-6">
                     <ul class="nav nav-footer justify-content-center justify-content-xl-end">
                         <li class="nav-item">
-                            <a href="https://www.instagram.com/himasi_ua" class="nav-link" target="_blank">KAA 2021</a>
+                            <a href="https://www.instagram.com/kaasemnas2021/" class="nav-link" target="_blank">KAA 2021</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
