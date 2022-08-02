@@ -121,7 +121,7 @@
               <h4 class="subheading">Pendaftaran</h4>
             </div>
             <div class="timeline-body">
-              <p class="text-muted">29 Agustus - 06 Oktober</p>
+              <p class="text-muted">30 Agustus - 06 Oktober</p>
             </div>
           </div>
         </li>
@@ -204,15 +204,16 @@
         <div class="col-md-6 text-center">
           <h2 class="section-heading text-uppercase" style="color: #909AD7">Mekanisme Pendaftaran</h2>
           <h3 class="section-heading text-muted" style="font-size: 14px; line-height: 25px; text-align: justify">1. Peserta mengakses website resmi Kompetisi Akuntansi Airlangga 2021
-            http://<br>
+            https://kaasemnasunair2021.com<br>
             2. Peserta membuat akun pendaftaran.<br>
             3. Peserta melakukan pembayaran biaya pendaftaran.<br>
             4. Peserta melakukan konfirmasi pembayaran dengan cara mengunggah bukti pembayaran.<br>
             5. Setelah pembayaran dikonfirmasi oleh panitia, peserta dapat mengisi data diri pada form yang disediakan.<br>
             6. Peserta melakukan verifikasi data dengan mengunggah berkas :<br>
-            - Scan KTM (jpg)<br>
-            - Pas foto berukuran 3x4 (jpg)<br>
-            - Scan surat keterangan aktif dari fakultas untuk mahasiswa angkatan 2017 keatas untuk S1 dan angkatan 2018 keatas untuk D3 (jpg)*<br>
+            - Scan KTM (.jpg, .jpeg, .png)<br>
+            - Pas foto berukuran 3x4 (.jpg, .jpeg, .png)<br>
+            - Scan surat keterangan aktif dari fakultas untuk mahasiswa angkatan 2017 keatas untuk S1 dan angkatan 2018 keatas untuk D3 (.pdf)
+            <br>* <u style="color: #FF6B6B;">dikirimkan ke CP yang tersedia</u><br>
             7. Peserta memeriksa kembali data-data yang dimasukkan, data yang dimasukkan adalah data yang sebenarnya. Setelah itu, peserta diharapkan untuk lock dan submit data.<br>
             8. Peserta dapat mengunduh kartu peserta untuk mengakhiri proses pendaftaran. Pada kartu peserta terdapat username dan password yang akan digunakan untuk login saat pengerjaan preliminary round dan maint event.
           </h3>
@@ -234,7 +235,7 @@
       <div class="row text-center">
         <div class="col-md-6">
           <h4 class="my-3 text-muted">Official Account</h4>
-          <a class="btn-dark btn-social mx-2 mt-4" href="https://www.instagram.com/kaasemnas2020/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a class="btn-dark btn-social mx-2 mt-4" href="https://www.instagram.com/kaasemnas2021/" target="_blank"><i class="fab fa-instagram"></i></a>
           <p class="text-muted">@KAASemnas2021</p>
           <!-- <a class="btn-dark btn-social mx-2" href="line://ti/p/@vmu7594p" target="_blank"><i class="fab fa-line"></i></a>
           <p class="text-muted">@vmu7594p</p> -->

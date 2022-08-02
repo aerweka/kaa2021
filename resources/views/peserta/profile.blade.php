@@ -175,19 +175,19 @@
                 <div class="">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Password</label>
-                    <input class="form-control" type="password" placeholder="Password" name="pwnow" required>
+                    <input class="form-control" type="password" placeholder="Password" name="oldPW" required>
                   </div>
                 </div>
                 <div class="">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">New Password</label>
-                    <input class="form-control" type="password" placeholder="New Password" name="pwnew" minlength="8" required>
+                    <input class="form-control" type="password" placeholder="New Password" name="newPW" minlength="8" required>
                   </div>
                 </div>
                 <div class="">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Confirmation Password</label>
-                    <input class="form-control" type="password" placeholder="Confirmation Password" name="pwnew2" required>
+                    <input class="form-control" type="password" placeholder="Confirmation Password" name="confirmPW" required>
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -222,15 +222,6 @@
       </div>
     </div>
   </footer>
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- Argon JS -->
-  <script src="../assets/js/argon.js?v=1.2.0"></script>
   @include('layouts.scriptsGlobal')
 </body>
 

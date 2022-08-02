@@ -497,63 +497,6 @@
                   <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
               </div>
-              <!-- <div id="">
-                    <h2>Berkas</h2>
-                    scan ktm
-                    <div class="row">
-                      <div class="col-md-4">
-                        <span>Scan KTM</span>
-                      </div>
-                      <div class="col-md-4">
-                        <span class="scan_ktm badge">
-                        </span>
-                      </div>
-                      <div class="col-md-4 d-flex justify-content-center link_ktm">
-                        <a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Lihat Berkas">
-                          <i class="far fa-eye mx-3"></i>
-                        </a>
-                        <a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/download')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Unduh Berkas">
-                          <i class="fas fa-cloud-download-alt"></i>
-                        </a>
-                      </div>
-                    </div>
-                    pas foto
-                    <div class="row mt-3">
-                      <div class="col-md-4">
-                        <span>Pas Foto</span>
-                      </div>
-                      <div class="col-md-4">
-                        <span class="pas_foto badge ">
-                        </span>
-                      </div>
-                      <div class="col-md-4 d-flex justify-content-center link_foto">
-                        <a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Lihat Berkas">
-                          <i class="far fa-eye mx-3"></i>
-                        </a>
-                        <a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/download')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Unduh Berkas">
-                          <i class="fas fa-cloud-download-alt"></i>
-                        </a>
-                      </div>
-                    </div>
-                    suket aktif
-                    <div class="row mt-3">
-                      <div class="col-md-4">
-                        <span>Scan Keterangan</span>
-                      </div>
-                      <div class="col-md-4">
-                        <span class="scan_suket_aktif badge">
-                        </span>
-                      </div>
-                      <div class="col-md-4 d-flex justify-content-center link_suket_aktif">
-                        <a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/view')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Lihat sadf Berkas">
-                          <i class="far fa-eye mx-3"></i>
-                        </a>
-                        <a href="{{url('/admin/pendaftar/scan_suket_aktif/'.$d->id_pendaftaran.'/download')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Unduh Berkas">
-                          <i class="fas fa-cloud-download-alt"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div> -->
             </div>
           </div>
         </div>
@@ -650,7 +593,7 @@
 <script>
   $('[data-toggle=modal]').on('click', function() {
     const id = $(this).data('id')
-    var url = `http://127.0.0.1:8000/admin/getPembayaran/${id}`;
+    var url = "{{url('/admin/getPembayaran')}}" + '/' + id;
     $.ajax({
       method: 'GET',
       url: url,
@@ -686,7 +629,7 @@
         $('.an_rekening').html(data.atas_nama_rekening)
         $('.no_rekening').html(data.nomor_rekening)
         $('#bukti_tf img').attr('src', "{{url('storage')}}" + '/' + data.bukti_pembayaran)
-        if (data.status_pembayaran === 1) {
+        if (data.status_pembayaran === 1 || data.status_pembayaran === 2) {
           $('#card_confirmation').hide();
         } else {
           $('#card_confirmation').show();
@@ -712,8 +655,7 @@
       if (e.value === true) {
         $.ajax({
           type: 'GET',
-          url: `http://127.0.0.1:8000/admin/verifikasi/true/${id}`,
-          // "{{url('/admin/verifikasi/true/')}}" + id,
+          url: "{{url('/admin/verifikasi/true')}}" + '/' + id,
           success: function(results) {
             if (results.success) {
               Swal.fire(
@@ -758,8 +700,7 @@
 
         $.ajax({
           type: 'GET',
-          url: `http://127.0.0.1:8000/admin/verifikasi/false/${id}`,
-          // "{{url('/admin/verifikasi/false/')}}" + id,
+          url: "{{url('/admin/verifikasi/false')}}" + '/' + id,
           success: function(results) {
             if (results.success === true) {
               Swal.fire(

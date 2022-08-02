@@ -476,10 +476,10 @@
                         </span>
                       </div>
                       <div class="col-md-4 d-flex justify-content-center link_ktm">
-                        <a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/view')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Lihat Berkas">
+                        <a href="#" class="view_ktm" type="button" data-toggle="tooltip" data-placement="bottom" title="Lihat Berkas">
                           <i class="far fa-eye mx-3"></i>
                         </a>
-                        <a href="{{url('/admin/pendaftar/scan_ktm/'.$d->id_pendaftaran.'/download')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Unduh Berkas">
+                        <a href="#" class="download_ktm" type="button" data-toggle="tooltip" data-placement="bottom" title="Unduh Berkas">
                           <i class="fas fa-cloud-download-alt"></i>
                         </a>
                       </div>
@@ -494,10 +494,10 @@
                         </span>
                       </div>
                       <div class="col-md-4 d-flex justify-content-center link_foto">
-                        <a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/view')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Lihat Berkas">
+                        <a href="#" class="view_foto" type="button" data-toggle="tooltip" data-placement="bottom" title="Lihat Berkas">
                           <i class="far fa-eye mx-3"></i>
                         </a>
-                        <a href="{{url('/admin/pendaftar/pas_foto/'.$d->id_pendaftaran.'/download')}}" type="button" data-toggle="tooltip" data-placement="bottom" title="Unduh Berkas">
+                        <a href="#" class="download_foto" type="button" data-toggle="tooltip" data-placement="bottom" title="Unduh Berkas">
                           <i class="fas fa-cloud-download-alt"></i>
                         </a>
                       </div>
@@ -630,14 +630,7 @@
 <script>
   $('[data-toggle=modal]').on('click', function() {
     const id = $(this).data('id')
-    var url = `http://127.0.0.1:8000/admin/getPendaftarAtauPeserta/${id}`;
-    // if ($(this).data('tab') === 'pendaftar') {
-    //   url = `http://127.0.0.1:8000/getPendaftar/${id}`
-    // } else if ($(this).data('tab') === 'peserta') {
-    //   url = `http://127.0.0.1:8000/getPeserta/${id}`
-    // } else {
-    //   console.log('semua');
-    // }
+    var url = "{{url('/admin/getPendaftarAtauPeserta')}}" + '/' + id;
     $.ajax({
       method: 'GET',
       url: url,
@@ -674,6 +667,8 @@
           })
         } else {
           $('.scan_ktm').addClass('badge-success').html('Tersedia')
+          $('.view_ktm').attr('href', `{{url('/admin/pendaftar/scan_ktm/${data.id_pendaftaran}/view')}}`)
+          $('.download_ktm').attr('href', `{{url('/admin/pendaftar/scan_ktm/${data.id_pendaftaran}/download')}}`)
         }
         if (data.pas_foto === null) {
           $('.pas_foto').addClass('badge-danger').html('Belum Diupload')
@@ -683,6 +678,8 @@
           })
         } else {
           $('.pas_foto').addClass('badge-success').html('Tersedia')
+          $('.view_foto').attr('href', `{{url('/admin/pendaftar/pas_foto/${data.id_pendaftaran}/view')}}`)
+          $('.download_foto').attr('href', `{{url('/admin/pendaftar/pas_foto/${data.id_pendaftaran}/download')}}`)
         }
         // if (data.scan_suket_aktif === null) {
         //   $('.scan_suket_aktif').addClass('badge-danger').html('Belum Diupload')

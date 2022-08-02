@@ -188,7 +188,7 @@
                       Tetap semangat dan sampai jumpa di KAA 2022!</b>
                       @endif
                       @else
-                      Pengumuman akan dibuka pukul 10.00 WIB
+                      Pengumuman akan dibuka pada tanggal <b>12 Oktober 2021 pukul 10.00 WIB</b>
                       @endif
                     </h3>
 
@@ -220,18 +220,6 @@
         </footer>
       </div>
     </div>
-    <!-- Argon Scripts -->
-    <!-- Core -->
-    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
-    <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-    <!-- Optional JS -->
-    <script src="../assets/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="../assets/vendor/chart.js/dist/Chart.extension.js"></script>
-    <!-- Argon JS -->
-    <script src="../assets/js/argon.js?v=1.2.0"></script>
     @include('layouts.scriptsGlobal')
 </body>
 

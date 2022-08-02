@@ -22,15 +22,14 @@ class AdminController extends Controller
 {
   public function home()
   {
-    $dateMin1 = date("Y-m-d", strtotime("2021-08-31"));
-    $dateMax1 = date("Y-m-d", strtotime("2021-08-31"));
-    $dateMax2 = date("Y-m-d", strtotime("2021-09-7"));
-    $dateMax3 = date("Y-m-d", strtotime("2021-09-14"));
-    $dateMax4 = date("Y-m-d", strtotime("2021-09-21"));
-    $dateMax5 = date("Y-m-d", strtotime("2021-09-28"));
-    $dateMax6 = date("Y-m-d", strtotime("2021-10-5"));
-    $dateMax7 = date("Y-m-d", strtotime("2021-10-12"));
-    $dateMax8 = date("Y-m-d", strtotime("2021-10-19"));
+    $dateMin1 = date("Y-m-d", strtotime("2021-08-30"));
+    $dateMax1 = date("Y-m-d", strtotime("2021-08-30"));
+    $dateMax2 = date("Y-m-d", strtotime("2021-09-6"));
+    $dateMax3 = date("Y-m-d", strtotime("2021-09-13"));
+    $dateMax4 = date("Y-m-d", strtotime("2021-09-20"));
+    $dateMax5 = date("Y-m-d", strtotime("2021-09-27"));
+    $dateMax6 = date("Y-m-d", strtotime("2021-10-4"));
+    $dateMax7 = date("Y-m-d", strtotime("2021-10-6"));
 
     $peserta = Pendaftaran::where('status_pendaftaran', '=', 1)->count();
     $pendaftar = Pendaftaran::count();
@@ -61,9 +60,16 @@ class AdminController extends Controller
       ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax6])->count();
     $datagraphic7 = Pendaftaran::where('status_pendaftaran', '=', '0')
       ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax7])->count();
-    $datagraphic8 = Pendaftaran::where('status_pendaftaran', '=', '0')
-      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax8])->count();
-    $datagraphic = [$datagraphic1, $datagraphic2, $datagraphic3, $datagraphic4, $datagraphic5, $datagraphic6, $datagraphic7, $datagraphic8];
+    $datagraphic =
+      [
+        $datagraphic1,
+        $datagraphic2,
+        $datagraphic3,
+        $datagraphic4,
+        $datagraphic5,
+        $datagraphic6,
+        $datagraphic7
+      ];
 
     $datagraphic2_p = Pendaftaran::where('status_pendaftaran', '=', '1')
       ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax2])->count();
@@ -79,8 +85,6 @@ class AdminController extends Controller
       ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax6])->count();
     $datagraphic7_p = Pendaftaran::where('status_pendaftaran', '=', '1')
       ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax7])->count();
-    $datagraphic8_p = Pendaftaran::where('status_pendaftaran', '=', '1')
-      ->whereBetween(DB::raw('DATE(tgl_pendaftaran)'), [$dateMin1, $dateMax8])->count();
     $datagraphic_p =
       [
         $datagraphic1_p,
@@ -89,8 +93,7 @@ class AdminController extends Controller
         $datagraphic4_p,
         $datagraphic5_p,
         $datagraphic6_p,
-        $datagraphic7_p,
-        $datagraphic8_p
+        $datagraphic7_p
       ];
 
     $datakonfirmasi = Pembayaran::select('p.pas_foto', 'p.nama_pendaftar', 'total_pembayaran', 'status_pembayaran')
@@ -237,7 +240,6 @@ class AdminController extends Controller
   public function verifikasiTrue($id)
   {
     $pembayaran = Pembayaran::find($id);
-    var_dump($id);
     $pembayaran->status_pembayaran = 1;
     $pembayaran->save();
 

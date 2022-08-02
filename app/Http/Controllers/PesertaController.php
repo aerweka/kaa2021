@@ -23,7 +23,7 @@ class PesertaController extends Controller
     {
         $lolos = DB::table('lolos_preliminary')->where('email', '=', Auth::user()->email)->whereNotNull('email')->exists();
         $now = Carbon::now('Asia/Jakarta');
-        $open = Carbon::create(2021, 8, 29, 10, 00, 00, 'Asia/Jakarta');
+        $open = Carbon::create(2021, 10, 12, 10, 00, 00, 'Asia/Jakarta');
 
         return view('peserta/dashboard_userv1', compact("lolos", "now", "open"));
     }

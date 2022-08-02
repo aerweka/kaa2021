@@ -13,7 +13,7 @@
       <div class="card-body" style="height: 100px;">
         <div class="row">
           <div class="col">
-            <h5 class="card-title text-uppercase text-muted mb-0">Jumlah <span id="addOnSpace" style="visibility: hidden;">---</span> Peserta</h5>
+            <h5 class="card-title text-uppercase text-muted mb-0">Jumlah <span id="addOnSpace" style="visibility: hidden;"></span> Peserta</h5>
             <span class="h2 font-weight-bold mb-0">{{$datacard[0]?? ''}}</span>
           </div>
           <div class="col-auto">
@@ -277,14 +277,13 @@
   console.log(jumlahPeserta);
   var lineChartData = {
     labels: [
-      '31 Agustus',
-      '7 September',
-      '14 September',
-      '21 September',
-      '28 September',
-      '5 Oktober',
-      '12 Oktober',
-      '19 Oktober'
+      '30 Agustus',
+      '6 September',
+      '13 September',
+      '20 September',
+      '27 September',
+      '4 Oktober',
+      '6 Oktober'
     ],
     datasets: [{
         label: 'Pendaftar',
@@ -296,8 +295,7 @@
           jumlahPendaftar[3],
           jumlahPendaftar[4],
           jumlahPendaftar[5],
-          jumlahPendaftar[6],
-          jumlahPendaftar[7]
+          jumlahPendaftar[6]
         ],
         borderColor: 'rgba(255, 72, 72, 1)',
         backgroundColor: 'rgba(255, 72, 72, .5)',
@@ -312,8 +310,7 @@
           jumlahPeserta[3],
           jumlahPeserta[4],
           jumlahPeserta[5],
-          jumlahPeserta[6],
-          jumlahPeserta[7]
+          jumlahPeserta[6]
         ],
         borderColor: 'rgba(119, 172, 241, 1)',
         backgroundColor: 'rgba(119, 172, 241, .5)',
